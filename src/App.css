@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap');
+
+*{
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Colors and Styles (Default) */
+:root{
+  --PrimaryColor: #70467E;
+  --HoverColor: #E7CDFE;
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: #9694AA;
+  /* --bgColor: hsl(220, 10%, 94%); 
+  --greyText: rgb(190, 190, 190); 
+  --inputColor: ■hsl(330, 12%, 97%); */
+
+  /* Font and Typography */
+  --biggestFontSize: 2.5rem; 
+  --h1FontSize: 1.5rem;
+  --h2FontSize: 1.25rem; 
+  --h3FontSize: 1rem;
+  --normalFontSize: .938rem; 
+  --smallFontSize: .813rem; 
+  --smallestFontSize: .75rem;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Default Styles */
+/* html {
+  font-size: 90%;
+} */
+
+a{
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+li{
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* .icon{
+  font-size: var(--h2FontSize);
+  cursor: pointer;
+} */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img{
+  width: 100%;
+  height: auto;
 }
