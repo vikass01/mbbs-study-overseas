@@ -135,6 +135,12 @@ const NavBar = () => {
                         >
                             Connect <FaAngleRight size={15} />
                         </Link>
+                        <Link
+                            to="/login"
+                            className="btn flex gap-1 items-center"
+                        >
+                            Login <FaAngleRight size={15} />
+                        </Link>
                     </div>
                 </nav>
 

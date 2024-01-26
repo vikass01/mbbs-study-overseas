@@ -15,7 +15,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import ScrollToTop from "./pages/ScrollToTop";
-import Splash from "./pages/Splash";
+// import Splash from "./pages/Splash";
 
 function App() {
   
@@ -25,8 +25,7 @@ function App() {
         <ScrollToTop />
         <NavBar />
         <Routes>
-        <Route path="/" element={<Splash/>} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<Company />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/blogs" element={<Blogs />} />
