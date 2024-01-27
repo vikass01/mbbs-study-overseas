@@ -15,6 +15,9 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import ScrollToTop from "./pages/ScrollToTop";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
 // import Splash from "./pages/Splash";
 
 function App() {
@@ -31,6 +34,9 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/post" element={<BlogPost />} />
           <Route path="/connect" element={<Connect />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

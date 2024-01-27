@@ -127,14 +127,11 @@ const NavBar = () => {
                         <Link to="/about" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Company
                         </Link>
+                        <Link to="/connect" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
+                            Connect
+                        </Link>
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <Link
-                            to="/connect"
-                            className="btn flex gap-1 items-center"
-                        >
-                            Connect <FaAngleRight size={15} />
-                        </Link>
                         <Link
                             to="/login"
                             className="btn flex gap-1 items-center"
@@ -224,12 +221,19 @@ const NavBar = () => {
                                     >
                                         Connect
                                     </Link> */}
-                                    <Link
+                                    <Link style={{marginBottom:20}}
                                         to="/connect"
                                         className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
                                         flex gap-1.5 items-center" onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Connect <FaArrowRight />
+                                    </Link>
+                                    <Link
+                                        to="/login"
+                                        className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
+                                        flex gap-1.5 items-center" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Login <FaArrowRight />
                                     </Link>
                                 </div>
                             </div>
