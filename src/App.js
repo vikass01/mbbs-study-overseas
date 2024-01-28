@@ -17,8 +17,12 @@ import "./App.css";
 import ScrollToTop from "./pages/ScrollToTop";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
+import MemberDashboard from "./pages/MemberDashboard";
 
-// import Splash from "./pages/Splash";
+
+
+
 
 function App() {
   
@@ -36,7 +40,8 @@ function App() {
           <Route path="/connect" element={<Connect />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
+          <Route path="/Home" element={<MemberDashboard />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

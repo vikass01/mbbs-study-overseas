@@ -60,7 +60,7 @@ input:hover,
 
 /* style the submit button */
 input[type=submit] {
-  background-color: #04AA6D;
+  background-color: #70467E;
   color: white;
   cursor: pointer;
 }
@@ -123,17 +123,28 @@ input[type=submit]:hover {
 }
 
 .vvbbb{
-  margin-top: 200px;
+  margin-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 20px;
+  padding: 0px 50px;
+  border-radius: 40;
 
 }
 
 .coll{
-  padding: 0px 50px;
+  padding: 0px 0px;
 }
+
+.ftfh{
+  width: 80%;
+  height: auto;
+  background-size: cover;
+}
+
+
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 650px) {
@@ -152,9 +163,23 @@ input[type=submit]:hover {
   }
   .vvbb{
     margin-top: 100px;
+    padding: 70px 0px;
+  }
+
+  .vvbbb{
+    padding: 35px 0px;
   }
   .ggg{
     display: none;
+  }
+  .ftfh{
+    display: none;
+  }
+  .coll{
+    padding: 0px 50px;
+  }
+  .mkoi{
+    margin-left: 50px;
   }
   
 
