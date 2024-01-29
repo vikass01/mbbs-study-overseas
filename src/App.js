@@ -19,6 +19,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import MemberDashboard from "./pages/MemberDashboard";
+import Profile from "./pages/Profile";
+
 
 
 
@@ -42,6 +44,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/Home" element={<MemberDashboard />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

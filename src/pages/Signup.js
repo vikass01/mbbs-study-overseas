@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "../css/Login.css";
 import { Link } from 'react-router-dom'
 import  app from '../Config';
-import {  getAuth, createUserWithEmailAndPassword  } from 'firebase/auth';
+import {  getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -10,20 +10,17 @@ function Signup() {
   const navigate = useNavigate()
   const [email, setemail] = useState("")
   const [password, setPassword] = useState("")
- 
 
-  const RegisterUser = () => {
+  
+
+  const RegisterUser = async() => {
     const auth = getAuth(app);
-    createUserWithEmailAndPassword(auth, email, password).then((result)=>{
+    await createUserWithEmailAndPassword(auth, email, password).then((result)=>{
       console.log(result)
-    navigate('/home')
+      navigate('/home')    
     
     })
-    
-    
 
-          
- 
   }
 
 
