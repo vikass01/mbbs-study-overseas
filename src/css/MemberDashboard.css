@@ -5,9 +5,7 @@ body{
     background-color: #e2e8f0;    
 }
 
-.expad{
-    padding: 80px 150px 150px 150px;
-}
+
 .main-body {
     padding: 15px;
 }
@@ -55,3 +53,21 @@ body{
 .shadow-none {
     box-shadow: none!important;
 }
+
+@media screen and (max-width: 650px) {
+    
+    .expad{
+        margin-top: 100px;
+    }
+    
+  
+}
+
+  @media screen and (min-width: 651px) {
+   
+    .expad{
+        padding: 80px 150px 150px 150px;
+    }
+
+
+}  
