@@ -1,16 +1,10 @@
 import React, { useState } from 'react'
 import "../css/Login.css";
-import { Link, useNavigate } from 'react-router-dom'
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import {
-  FirebaseAuthProvider,
-  // FirebaseAuthConsumer,
-  // IfFirebaseAuthed,
-  // IfFirebaseAuthedAnd
-} from "@react-firebase/auth";
-import { auth } from '../Config';
+import { useNavigate } from 'react-router-dom'
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+import app from '../Config';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -20,7 +14,7 @@ function Login() {
     const [password, setPassword] = useState('');
 
   const LoginUser =()=>{
-    
+    const auth = getAuth(app);
       signInWithEmailAndPassword(auth, email, password)
       .then(() => {
           console.log('Login Successfully');
@@ -36,8 +30,20 @@ function Login() {
 
 
   const loginGoogle =()=>{
-    const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(googleAuthProvider)
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    console.log(result);
+    navigate('/home')
+    
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    console.log(error);
+    // ...
+  });
   }
 
   // const loginTwitter =()=>{
@@ -45,10 +51,22 @@ function Login() {
   //   firebase.auth().signInWithPopup(googleAuthProvider)
   // }
 
-  // const loginFacebook=()=>{
-  //   const googleAuthProvider = new firebase.auth.FacebookAuthProvider();
-  //   firebase.auth().signInWithPopup(googleAuthProvider)
-  // }
+  const loginFacebook=()=>{
+    const auth = getAuth(app);
+    const provider = new FacebookAuthProvider();
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    console.log(result);
+    navigate('/home')
+    
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    console.log(error);
+    // ...
+  });
+  }
   return (
     
     <div className="vvbb">      
@@ -69,13 +87,13 @@ function Login() {
                 <span className="vl-innertext">or</span>
               </div>
               <div className="col">
-                <Link to="/" className="fb btn lgbtn ggg" >
+                <Link className="fb btn lgbtn ggg" onClick={loginFacebook}>
                   <i className="fa fa-facebook fa-fw" /> Login with Facebook
                 </Link>
                 <Link to="/" className="twitter btn lgbtn ggg">
                   <i className="fa fa-twitter fa-fw" /> Login with Twitter
                 </Link>
-                <Link to="/" className="google btn lgbtn" onClick={loginGoogle}>
+                <Link className="google btn lgbtn" onClick={loginGoogle}>
                   <i className="fa fa-google fa-fw" /> Login with Google+
                 </Link>
               </div>
