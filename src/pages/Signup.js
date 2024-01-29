@@ -1,8 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../css/Login.css";
 import { Link } from 'react-router-dom'
+import  app from '../Config';
+import {  getAuth, createUserWithEmailAndPassword  } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+
 
 function Signup() {
+  const navigate = useNavigate()
+  const [email, setemail] = useState("")
+  const [password, setPassword] = useState("")
+ 
+
+  const RegisterUser = () => {
+    const auth = getAuth(app);
+    createUserWithEmailAndPassword(auth, email, password).then((result)=>{
+      console.log(result)
+    navigate('/home')
+    
+    })
+    
+    
+
+          
+ 
+  }
+
+
+
   return (
     <div className="vvbbb">
       <div className='ftfh'>
@@ -13,13 +38,13 @@ function Signup() {
             <div className="md-lg">
                 <p style={{textAlign:'center', }}>Signup with Username and Password</p>
             </div>
-                <form action="/action_page.php" style={{margin:'45px 0px'}}>
+                <form style={{margin:'45px 0px'}}>
                   <div className="coll">
                       
-                      <input type="text" name="username" placeholder="Username" required />
-                      <input type="password" name="password" placeholder="Password" required />
-                      <input type="password" name="password" placeholder="Password" required />
-                      <input type="submit" defaultValue="Login" />
+                      <input value={email} type="text" name="username" placeholder="Username" required onChange={(e)=>setemail(e.target.value)} />
+                      <input value={password} type="password" name="password" placeholder="Password" required onChange={(e)=>setPassword(e.target.value)} />
+                      <input  type="password" name="password" placeholder="Password" required  disabled />
+                      <input type='button' onClick={RegisterUser} value='Create' style={{backgroundColor:"#70467E", color:"#fff", cursor:'pointer'}} />
                     </div>
                 </form>
                   <div style={{ marginTop:20, marginBottom:20, }} >

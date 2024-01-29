@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import { Link } from 'react-router-dom'
+import { auth } from '../Config';
 
 //icons
 import {
@@ -40,6 +41,13 @@ const NavBar = () => {
     const handlePopoverClose = () => {
         setPopoverOpen(false);
     }
+
+    const userLogout =()=>{
+        setMobileMenuOpen(false)
+        auth.signOut()
+    }
+
+    
 
     return (
         <div className='bg-white'>
@@ -234,6 +242,13 @@ const NavBar = () => {
                                         flex gap-1.5 items-center" onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Login <FaArrowRight />
+                                    </Link>
+                                    <Link
+                                        to="/login"
+                                        className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
+                                        flex gap-1.5 items-center" onClick={userLogout}
+                                    >
+                                        Logout <FaArrowRight />
                                     </Link>
                                 </div>
                             </div>
