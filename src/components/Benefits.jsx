@@ -48,17 +48,17 @@ const Benefits = () => {
             <div className="hidden md:grid max-w-screen-lg gap-8 row-gap-5 mb-8 md:grid-cols-3 mx-auto">
                 <img
                     className="object-cover w-full h-56 shadow-2xl rounded-3xl"
-                    src="https://dl.dropboxusercontent.com/scl/fi/ktv016xouzzhif78mu9f7/highschool.jpg?rlkey=yul0ffnnm8tjnc3npshphyoe8&dl=0"
+                    src={require('../assets/programs/highschool.jpg')}
                     alt="Student"
                 />
                 <img
                     className="object-cover w-full h-56 shadow-2xl rounded-3xl"
-                    src="https://dl.dropboxusercontent.com/scl/fi/9los9266k6btpmraze6co/ug.jpg?rlkey=av09wkbwvf7lqoipfbnssp973&dl=0"
+                    src={require('../assets/programs/ug.jpg')}
                     alt="College Student"
                 />
                 <img
                     className="object-cover w-full h-56 shadow-2xl rounded-3xl"
-                    src="https://dl.dropboxusercontent.com/scl/fi/w6umea0ooxx1x7fstb42q/professional.jpg?rlkey=dsq0rux43ogvu7uph085wau8n&dl=0"
+                    src={require('../assets/programs/professional.jpg')}
                     alt="Professional"
                 />
                 {/* <img
@@ -69,7 +69,7 @@ const Benefits = () => {
             </div>
             <div className='mt-16 text space-y-8'>
                 <p>
-                    At <span className='text-primary font-semibold hover:text-gray-700 cursor-pointer duration-300 transition-colors'> www.headstart.co.in</span>, we believe that every student, regardless of their background or academic goals, can benefit from the unique services provided by our counsellors. Whether you are a high school student exploring college options, an undergraduate looking to choose a major, or a professional seeking a career change, our dedicated team is here to support you every step of the way.
+                    At <span className='text-primary font-semibold hover:text-gray-700 cursor-pointer duration-300 transition-colors'> www.mbbsstudyoverseas.com</span>, we believe that every student, regardless of their background or academic goals, can benefit from the unique services provided by our counsellors. Whether you are a high school student exploring college options, an undergraduate looking to choose a major, or a professional seeking a career change, our dedicated team is here to support you every step of the way.
                 </p>
 
                 <p>

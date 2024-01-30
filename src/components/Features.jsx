@@ -36,7 +36,7 @@ const Features = () => {
                                 height="24"
                             />
                         </svg>
-                        <span className="relative text-primary title">Features</span>
+                        <span className="relative title" style={{color:'#70467E'}}>Features</span>
                     </span>
                 </h2>
                 {/* <p className="text-sm lg:text-base text-gray-600 font-medium mb-10"> */}
@@ -103,10 +103,10 @@ const FeatureCard = ({ icon, title, details }) => {
             <div className="mt-10 px-2 w-1/2 lg:w-1/6">
                 <div className="mb-2 rounded-[20px] bg-white p-5 shadow-md md:px-2 xl:px-5">
                     <div
-                        className={`mb-6 flex h-[60px] w-[60px] p-3 items-center justify-center rounded-2xl bg-primary`}>
+                        className={`mb-6 flex h-[60px] w-[60px] p-3 items-center justify-center rounded-2xl`} style={{backgroundColor:'#70467E'}}>
                         {icon}
                     </div>
-                    <h4 className="text-sm sm:text-base mb-2 font-semibold text-primary">{title}</h4>
+                    <h4 className="text-sm sm:text-base mb-2 font-semibold" style={{color:'#70467E'}}>{title}</h4>
                     {/* <p className="text-base font-medium">{details}</p> */}
                 </div>
             </div>

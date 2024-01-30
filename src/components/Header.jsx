@@ -24,7 +24,7 @@ const Header = () => {
           <div className="hidden md:mb-8 md:flex md:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our Latest Program for Medical Students.{' '}
-              <Link to="#" className="font-semibold text-primary">
+              <Link to="#" className="font-semibold" style={{color:'#70467E'}}>
                 <span className="absolute inset-0" aria-hidden="true" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </Link>
@@ -32,7 +32,7 @@ const Header = () => {
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-semibold tracking-tight text-gray-800 sm:text-5xl">
-              Create Pathways for Students to <span className='text-primary'>Study Abroad.</span>
+              Create Pathways for Students to <span style={{color:'#70467E'}}>Study Abroad.</span>
             </h1>
             <p className="flex justify-center mt-6 text-sm text-gray-700 font-medium lg:text-base">
               <span className='w-4/6'>

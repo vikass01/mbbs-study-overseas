@@ -26,7 +26,7 @@ function Signup() {
 
 
   return (
-    <div className="vvbbb">
+    <div className="vvbb">
       <div className='ftfh'>
           <img style={{borderRadius:40}} alt='study locations' src='https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/03/02165322/MBBS-Abroad-Consultants.jpg'/>
      </div>
@@ -36,17 +36,16 @@ function Signup() {
                 <p style={{textAlign:'center', }}>Signup with Username and Password</p>
             </div>
                 <form style={{margin:'45px 0px'}}>
-                  <div className="coll">
-                      
+                    <div className="coll">
                       <input value={email} type="text" name="username" placeholder="Username" required onChange={(e)=>setemail(e.target.value)} />
                       <input value={password} type="password" name="password" placeholder="Password" required onChange={(e)=>setPassword(e.target.value)} />
                       <input  type="password" name="password" placeholder="Password" required  disabled />
                       <input type='button' onClick={RegisterUser} value='Create' style={{backgroundColor:"#70467E", color:"#fff", cursor:'pointer'}} />
                     </div>
                 </form>
-                  <div style={{ marginTop:20, marginBottom:20, }} >
-                    <div className='mkoi' style={{display:'flex',flexDirection:'start'}}>
-                      <Link to="/login" style={{color: 'black',marginRight:30,}} >Login</Link>
+                  <div style={{ marginTop:20}} >
+                    <div style={{display:"flex", flexDirection:'column', gap:10 }}>
+                      <Link to="/login" style={{color: 'black'}} >Login</Link>
                       <Link to="/ForgotPassword" style={{color: 'black'}} >Forgot password?</Link>
                     </div>
                   </div>

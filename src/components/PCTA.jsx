@@ -31,13 +31,13 @@ const PCTA = () => {
           <div className="mt-28 lg:mt-0 grid grid-cols-5 grid-rows-4 gap-4 lg:w-6/12">
             <div className="col-span-2 row-span-4">
               {/* <img src="https://dl.dropboxusercontent.com/scl/fi/3t0d7giyh4chiwmvowl1u/1.jpg?rlkey=zbpqh971s5bu3ic8us913pkb8&dl=0" className="rounded-full" width="640" height="960" alt="shoes" loading="lazy" />    */}
-              <img src="https://dl.dropboxusercontent.com/scl/fi/3t0d7giyh4chiwmvowl1u/1.jpg?rlkey=zbpqh971s5bu3ic8us913pkb8&dl=0" className="rounded-full shadow-2xl" width="640" height="960" alt="Student with Books" />
+              <img src={require('../assets/programs/b1.jpg')} className="rounded-full shadow-2xl" width="640" height="960" alt="Student with Books" />
             </div>
             <div className="col-span-2 row-span-2">
-              <img src="https://dl.dropboxusercontent.com/scl/fi/ont67gwrw0iyuoveelh5r/3.jpg?rlkey=c0nb31kq4cutd2tebvm6967jk&dl=0" className="w-full h-full object-cover object-top shadow-2xl rounded-2xl sm:rounded-3xl" width="640" height="640" alt="Student Holding Degree" />
+              <img src={require('../assets/programs/b3.jpg')} className="w-full h-full object-cover object-top shadow-2xl rounded-2xl sm:rounded-3xl" width="640" height="640" alt="Student Holding Degree" />
             </div>
             <div className="col-span-3 row-span-3">
-              <img src="https://dl.dropboxusercontent.com/scl/fi/uu2dzzxsxwd0zgq319727/2.jpg?rlkey=q1kf1th31uq7tdh0bek4q4x6i&dl=0" className="w-full h-full object-cover object-top shadow-2xl rounded-2xl sm:rounded-3xl" width="640" height="427" alt="Student Sitting with Bag" />
+              <img src={require('../assets/programs/b2.jpg')} className="w-full h-full object-cover object-top shadow-2xl rounded-2xl sm:rounded-3xl" width="640" height="427" alt="Student Sitting with Bag" />
             </div>
           </div>
         </div>

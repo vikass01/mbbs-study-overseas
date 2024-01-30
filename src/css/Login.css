@@ -118,8 +118,15 @@ input[type=submit]:hover {
 }
 
 .vvbb{
-  margin-top: 200px;
-  padding: 0px 10px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  padding: 0px 50px;
+  border-radius: 40;
+
 }
 
 .vvbbb{
@@ -142,6 +149,11 @@ input[type=submit]:hover {
   width: 80%;
   height: auto;
   background-size: cover;
+  padding: 100px;
+}
+
+.zxzx{
+  max-width: 350px;
 }
 
 
