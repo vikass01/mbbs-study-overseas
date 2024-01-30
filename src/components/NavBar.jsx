@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom'
-import { auth } from '../Config';
+import { Link, useNavigate } from 'react-router-dom'
+import app from '../Config';
 
 //icons
 import {
@@ -16,6 +16,8 @@ import { FaAngleRight, FaArrowRight } from 'react-icons/fa'
 //images
 import brandicon from '../assets/brandlogo.png'
 import brandiconmd from '../assets/brandlogomd.png'
+import { getAuth } from 'firebase/auth';
+
 
 const programs = [
     { name: 'Bachelors', description: 'Study Bachelors in Germany', href: 'https://www.ug.headstart.co.in/', icon: AcademicCapIcon },
@@ -30,9 +32,21 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
+
+
 const NavBar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isPopoverOpen, setPopoverOpen] = useState(false);
+    const [userLogged, setuserLogged] = useState(false);
+    const navigate = useNavigate()
+    useEffect(()=>{
+        const auth = getAuth(app);
+        if (auth.currentUser?.email){
+            setuserLogged(true)
+        }else{
+            setuserLogged(false)
+        }
+    },[])
 
     const handlePopoverOpen = () => {
         setPopoverOpen(true);
@@ -43,8 +57,16 @@ const NavBar = () => {
     }
 
     const userLogout =()=>{
+        const auth = getAuth(app);
         setMobileMenuOpen(false)
-        auth.signOut()
+        auth.signOut().then(() => {
+            // Sign-out successful.
+                console.log("Signed out successfully")
+                navigate('/login')
+            }).catch((error) => {
+            // An error happened.
+            console.log(error);
+            });
     }
 
     
@@ -140,12 +162,21 @@ const NavBar = () => {
                         </Link>
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        {userLogged ? 
+                        <Link
+                            onClick={userLogout}
+                            className="btn flex gap-1 items-center"
+                        >
+                            Logout <FaAngleRight size={15} />
+                        </Link>
+                            :
                         <Link
                             to="/login"
                             className="btn flex gap-1 items-center"
                         >
                             Login <FaAngleRight size={15} />
                         </Link>
+                        }
                     </div>
                 </nav>
 
@@ -236,6 +267,15 @@ const NavBar = () => {
                                     >
                                         Connect <FaArrowRight />
                                     </Link>
+                                    {userLogged? 
+                                    <Link
+                                        
+                                        className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
+                                        flex gap-1.5 items-center" onClick={userLogout}
+                                    >
+                                        Logout <FaArrowRight />
+                                    </Link>
+                                    :
                                     <Link
                                         to="/login"
                                         className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
@@ -243,13 +283,7 @@ const NavBar = () => {
                                     >
                                         Login <FaArrowRight />
                                     </Link>
-                                    <Link
-                                        to="/login"
-                                        className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
-                                        flex gap-1.5 items-center" onClick={userLogout}
-                                    >
-                                        Logout <FaArrowRight />
-                                    </Link>
+                                    }
                                 </div>
                             </div>
                         </div>
