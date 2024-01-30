@@ -1,43 +1,46 @@
 import React, { useEffect, useState } from 'react'
 import app from '../Config';
-import { getAuth, onAuthStateChanged, sendEmailVerification } from "firebase/auth";
+import { getAuth, onAuthStateChanged, sendEmailVerification, updateProfile } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import {  signOut } from "firebase/auth";
 import "../css/MemberDashboard.css"
 
 
-
+const auth = getAuth(app);
 
 function MemberDashboard() {
+  
   const navigate = useNavigate()
  const [userData,setuserData] = useState(null)
+//  const [editprofile,seteditprofile] = useState(true)
+
+const getData =()=>{
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      if(!user.emailVerified){
+        alert('Please Verify Email, Link Sent on your email id')
+        sendEmailVerification(auth.currentUser).then(() => {
+          console.log("Email verification sent!");
+        })
+      }else if(user.emailVerified){
+        setuserData(user)
+        console.log(user);
+      }
+      
+    } else {
+      console.log("something bad ");
+    }
+  });
+}
 
   useEffect(()=>{  
-
-    const auth = getAuth(app);   
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        if(!user.emailVerified){
-          alert('Please Verify Email, Link Sent on your email id')
-          sendEmailVerification(auth.currentUser).then(() => {
-            console.log("Email verification sent!");
-          })
-        }else if(user.emailVerified){
-          setuserData(user)
-          console.log(user);
-        }
-        
-      } else {
-        console.log("something bad ");
-      }
-    });
-   }, [userData])
+    getData()
+   }, [])
      
   
 
   
   const userLogout =async()=>{
-    const auth = getAuth(app);
     await signOut(auth).then(() => {
       // Sign-out successful.
           console.log("Signed out successfully")
@@ -46,6 +49,15 @@ function MemberDashboard() {
       // An error happened.
       console.log(error);
       });
+  }
+
+  const updateaccount=async()=>{
+    const result = await updateProfile(auth.currentUser, {
+      displayName: "Jane ddd User", photoURL: "https://example.com/jane-q-user/profile.jpg"
+    })
+
+    console.log(result);
+    getData()
   }
 
   return (
@@ -67,10 +79,10 @@ function MemberDashboard() {
                   <div className="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width={150} />
                     <div className="mt-3">
-                      <h4>John Doe</h4>
+                      <p>{userData?.auth?.currentUser?.displayName}</p>
                       <p className="text-secondary mb-1">Full Stack Developer</p>
                       <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button className="btn btn-primary" style={{marginRight:5}}>Follow</button>
+                      <button className="btn btn-primary" style={{marginRight:5}} onClick={updateaccount}>Follow</button>
                       <button className="btn btn-outline-primary" onClick={userLogout}>Logout</button>
                     </div>
                   </div>
@@ -101,15 +113,17 @@ function MemberDashboard() {
                 </ul>
               </div>
             </div>
+            {/* 000000000000000000000000000000000000000000000000000000000 */}
+           
             <div className="col-md-8">
               <div className="card mb-3">
                 <div className="card-body">
                   <div className="row">
                     <div className="col-sm-3">
-                      <h6 className="mb-0">Full Name</h6>
+                      <h6 className="mb-0">Name</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                    {userData?.auth?.currentUser?.displayName}
                     </div>
                   </div>
                   <hr />
@@ -118,7 +132,7 @@ function MemberDashboard() {
                       <h6 className="mb-0">Email</h6>
                     </div>
                     <div className="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                      {userData?.auth?.currentUser?.email}
                     </div>
                   </div>
                   <hr />
@@ -148,14 +162,69 @@ function MemberDashboard() {
                       Bay Area, San Francisco, CA
                     </div>
                   </div>
-                  <hr />
+                  {/* <hr />
                   <div className="row">
                     <div className="col-sm-12">
                       <a className="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
                     </div>
+                  </div> */}
+                </div>
+              </div>
+              {/* 00000000000000000000000000000000000000000000000000000000000000000000000000000000000 */}
+
+                  {/* <div className="col-lg-8 editProfile">
+            <div className="card">
+              <div className="card-body">
+                <div className="row mb-3">
+                  <div className="col-sm-3">
+                    <h6 className="mb-0">Full Name</h6>
+                  </div>
+                  <div className="col-sm-9 text-secondary">
+                    <input type="text" className="form-control" defaultValue="John Doe" />
+                  </div>
+                </div>
+                <div className="row mb-3">
+                  <div className="col-sm-3">
+                    <h6 className="mb-0">Email</h6>
+                  </div>
+                  <div className="col-sm-9 text-secondary">
+                    <input type="text" className="form-control" defaultValue="john@example.com" />
+                  </div>
+                </div>
+                <div className="row mb-3">
+                  <div className="col-sm-3">
+                    <h6 className="mb-0">Phone</h6>
+                  </div>
+                  <div className="col-sm-9 text-secondary">
+                    <input type="text" className="form-control" defaultValue="(239) 816-9029" />
+                  </div>
+                </div>
+                <div className="row mb-3">
+                  <div className="col-sm-3">
+                    <h6 className="mb-0">Mobile</h6>
+                  </div>
+                  <div className="col-sm-9 text-secondary">
+                    <input type="text" className="form-control" defaultValue="(320) 380-4539" />
+                  </div>
+                </div>
+                <div className="row mb-3">
+                  <div className="col-sm-3">
+                    <h6 className="mb-0">Address</h6>
+                  </div>
+                  <div className="col-sm-9 text-secondary">
+                    <input type="text" className="form-control" defaultValue="Bay Area, San Francisco, CA" />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-sm-3" />
+                  <div className="col-sm-9 text-secondary">
+                    <input type="button" className="btn btn-primary px-4" defaultValue="Save Changes" />
                   </div>
                 </div>
               </div>
+            </div>
+          </div> */}
+              {/* 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 */}
               <div className="row gutters-sm">
                 <div className="col-sm-6 mb-3">
                   <div className="card h-100">

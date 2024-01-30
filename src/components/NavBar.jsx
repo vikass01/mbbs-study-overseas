@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import app from '../Config';
 
 //icons
@@ -16,7 +16,7 @@ import { FaAngleRight, FaArrowRight } from 'react-icons/fa'
 //images
 import brandicon from '../assets/brandlogo.png'
 import brandiconmd from '../assets/brandlogomd.png'
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 const programs = [
@@ -38,14 +38,22 @@ const NavBar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isPopoverOpen, setPopoverOpen] = useState(false);
     const [userLogged, setuserLogged] = useState(false);
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
+
     useEffect(()=>{
-        const auth = getAuth(app);
-        if (auth.currentUser?.email){
+        const auth = getAuth(app);   
+    onAuthStateChanged(auth, (user) => {
+        if(user?.email){
             setuserLogged(true)
-        }else{
+          }else {
             setuserLogged(false)
-        }
+          }
+    })
+
+        
+            
+
+
     },[])
 
     const handlePopoverOpen = () => {
@@ -56,18 +64,18 @@ const NavBar = () => {
         setPopoverOpen(false);
     }
 
-    const userLogout =()=>{
-        const auth = getAuth(app);
-        setMobileMenuOpen(false)
-        auth.signOut().then(() => {
-            // Sign-out successful.
-                console.log("Signed out successfully")
-                navigate('/login')
-            }).catch((error) => {
-            // An error happened.
-            console.log(error);
-            });
-    }
+    // const userLogout =()=>{
+    //     const auth = getAuth(app);
+    //     setMobileMenuOpen(false)
+    //     auth.signOut().then(() => {
+    //         // Sign-out successful.
+    //             console.log("Signed out successfully")
+    //             navigate('/login')
+    //         }).catch((error) => {
+    //         // An error happened.
+    //         console.log(error);
+    //         });
+    // }
 
     
 
@@ -164,10 +172,10 @@ const NavBar = () => {
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                         {userLogged ? 
                         <Link
-                            onClick={userLogout}
+                            to="/home"
                             className="btn flex gap-1 items-center"
                         >
-                            Logout <FaAngleRight size={15} />
+                            My Account <FaAngleRight size={15} />
                         </Link>
                             :
                         <Link
@@ -269,11 +277,11 @@ const NavBar = () => {
                                     </Link>
                                     {userLogged? 
                                     <Link
-                                        
+                                        to="/home"
                                         className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
-                                        flex gap-1.5 items-center" onClick={userLogout}
+                                        flex gap-1.5 items-center" 
                                     >
-                                        Logout <FaArrowRight />
+                                        My Account <FaArrowRight />
                                     </Link>
                                     :
                                     <Link
