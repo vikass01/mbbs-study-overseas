@@ -27,6 +27,7 @@ import Profile from "./pages/Profile";
 
 
 function App() {
+  console.log(process.env.REACT_APP_apiKey)
   
   return (
     <>

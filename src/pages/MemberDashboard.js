@@ -4,18 +4,24 @@ import { getAuth, onAuthStateChanged, sendEmailVerification, updateProfile } fro
 import { useNavigate } from 'react-router-dom';
 import {  signOut } from "firebase/auth";
 import "../css/MemberDashboard.css"
+import { Link } from 'react-router-dom';
+import { getStorage, ref,uploadBytes,getDownloadURL } from "firebase/storage";
+const storage = getStorage(app);
 
 
-const auth = getAuth(app);
+
 
 function MemberDashboard() {
   
   const navigate = useNavigate()
  const [userData,setuserData] = useState(null)
-//  const [editprofile,seteditprofile] = useState(true)
+const [editprofile,seteditprofile] = useState(true)
+const [photo,setphoto] = useState("https://cdn.iconscout.com/icon/free/png-256/free-avatar-372-456324.png")
 
 const getData =()=>{
+  const auth = getAuth(app);
   onAuthStateChanged(auth, (user) => {
+    
     if (user) {
       if(!user.emailVerified){
         alert('Please Verify Email, Link Sent on your email id')
@@ -35,12 +41,21 @@ const getData =()=>{
 
   useEffect(()=>{  
     getData()
+    // const auth = getAuth(app);
+    // const urlProfile = ref(storage, `profileImages/${auth.currentUser?.uid}.png`)
+    // getDownloadURL(urlProfile)
+    // .then((url) => {
+    //   setphoto(url)
+    //   console.log('this is error', url);
+    // })
+    
    }, [])
      
   
 
   
   const userLogout =async()=>{
+    const auth = await getAuth(app);
     await signOut(auth).then(() => {
       // Sign-out successful.
           console.log("Signed out successfully")
@@ -52,13 +67,56 @@ const getData =()=>{
   }
 
   const updateaccount=async()=>{
+    const auth = await getAuth(app);
     const result = await updateProfile(auth.currentUser, {
-      displayName: "Jane ddd User", photoURL: "https://example.com/jane-q-user/profile.jpg"
+      displayName: "Jane singh User", photoURL: "https://bootdey.com/img/Content/avatar/avatar7.png", phoneNumber: "9891012345"
     })
 
     console.log(result);
     getData()
   }
+
+  const getpic =async()=>{
+    const auth = await getAuth(app);
+    const mountainsRef = ref(storage, `profileImages/${auth.currentUser.uid}.png`)
+    await uploadBytes(mountainsRef, photo).then((response) => {
+      console.log('Uploaded a blob or file!');
+      console.log("command 2");
+      getDownloadURL(mountainsRef)
+    .then((url) => {
+      console.log('this is url',url);
+      console.log("command 3");
+    })
+      
+    });
+    
+  }
+
+  const profilepictureurl = async()=>{
+    const auth = await getAuth(app);
+    const url = ref(storage, `profileImages/${auth.currentUser.uid}.png`);
+    await getDownloadURL(url)
+    .then((url) => {
+      console.log('this is url',url);
+      console.log("command 3");
+    })
+  }
+    
+
+  const upladPicture =async(e)=>{
+      try {
+        setphoto(e.target.files[0])
+        console.log("command 1");
+      } catch (error) {
+        console.log("command 1 error");
+      }
+      
+      getpic()
+      profilepictureurl()
+    
+  }
+
+  
 
   return (
     <div className="container expad" >
@@ -77,7 +135,11 @@ const getData =()=>{
               <div className="card">
                 <div className="card-body">
                   <div className="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width={150} />
+                    <img src={userData?.auth?.currentUser?.photoURL} alt="Admin" className="rounded-circle" width={150} />
+                    {/* <div style={{position:'absolute'}}>
+                      <img alt='bbb' src={photo} style={{height:100,width:100}}/>
+                    <input type='file' placeholder='Upload Picture' onChange={upladPicture} />
+                    </div> */}
                     <div className="mt-3">
                       <p>{userData?.auth?.currentUser?.displayName}</p>
                       <p className="text-secondary mb-1">Full Stack Developer</p>
@@ -115,117 +177,136 @@ const getData =()=>{
             </div>
             {/* 000000000000000000000000000000000000000000000000000000000 */}
            
-            <div className="col-md-8">
-              <div className="card mb-3">
-                <div className="card-body">
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Name</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {userData?.auth?.currentUser?.displayName}
-                    </div>
-                  </div>
-                  <hr />
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Email</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                      {userData?.auth?.currentUser?.email}
-                    </div>
-                  </div>
-                  <hr />
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Phone</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                      (239) 816-9029
-                    </div>
-                  </div>
-                  <hr />
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Mobile</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                      (320) 380-4539
-                    </div>
-                  </div>
-                  <hr />
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Address</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
-                    </div>
-                  </div>
-                  {/* <hr />
-                  <div className="row">
-                    <div className="col-sm-12">
-                      <a className="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                    </div>
-                  </div> */}
-                </div>
-              </div>
-              {/* 00000000000000000000000000000000000000000000000000000000000000000000000000000000000 */}
+            <div className="col-md-8" >
+            {editprofile ?
+              <div className="card mb-3" >
+               
+                <div className="card-body" >
+                      <div className="row">
+                          <div className="col-sm-3">
+                              <h6 className="mb-0">Name</h6>
+                          </div>
+                          <div className="col-sm-9 text-secondary">
+                              {userData?.auth?.currentUser?.displayName}
+                          </div>
+                      </div>
+                      <hr />
+                      <div className="row">
+                          <div className="col-sm-3">
+                              <h6 className="mb-0">Email</h6>
+                          </div>
+                          <div className="col-sm-9 text-secondary">
+                            {userData?.auth?.currentUser?.email}
+                          </div>
+                      </div>
+                      <hr />
+                      <div className="row">
+                          <div className="col-sm-3">
+                              <h6 className="mb-0">Phone</h6>
+                          </div>
+                          <div className="col-sm-9 text-secondary">
+                              (239) 816-9029
+                          </div>
+                      </div>
+                      <hr />
+                      <div className="row">
+                          <div className="col-sm-3">
+                              <h6 className="mb-0">Mobile</h6>
+                          </div>
+                          <div className="col-sm-9 text-secondary">
+                              (320) 380-4539
+                          </div>
+                      </div>
+                      <hr />
+                      <div className="row">
+                          <div className="col-sm-3">
+                              <h6 className="mb-0">Address</h6>
+                          </div>
+                          <div className="col-sm-9 text-secondary">
+                              Bay Area, San Francisco, CA
+                          </div>
+                      </div>
+                      <hr />
+                      <div className="row" style={{marginTop:5}}>
+                          <div className="col-sm-12" onClick={()=>seteditprofile(false)}>
+                              <Link className="btn btn-info " to='#' >Edit</Link>
+                          </div>
+                      </div>
+                      </div>
+                </div>:
 
-                  {/* <div className="col-lg-8 editProfile">
-            <div className="card">
-              <div className="card-body">
-                <div className="row mb-3">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Full Name</h6>
-                  </div>
-                  <div className="col-sm-9 text-secondary">
-                    <input type="text" className="form-control" defaultValue="John Doe" />
-                  </div>
-                </div>
-                <div className="row mb-3">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Email</h6>
-                  </div>
-                  <div className="col-sm-9 text-secondary">
-                    <input type="text" className="form-control" defaultValue="john@example.com" />
-                  </div>
-                </div>
-                <div className="row mb-3">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Phone</h6>
-                  </div>
-                  <div className="col-sm-9 text-secondary">
-                    <input type="text" className="form-control" defaultValue="(239) 816-9029" />
-                  </div>
-                </div>
-                <div className="row mb-3">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Mobile</h6>
-                  </div>
-                  <div className="col-sm-9 text-secondary">
-                    <input type="text" className="form-control" defaultValue="(320) 380-4539" />
-                  </div>
-                </div>
-                <div className="row mb-3">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Address</h6>
-                  </div>
-                  <div className="col-sm-9 text-secondary">
-                    <input type="text" className="form-control" defaultValue="Bay Area, San Francisco, CA" />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-sm-3" />
-                  <div className="col-sm-9 text-secondary">
-                    <input type="button" className="btn btn-primary px-4" defaultValue="Save Changes" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
+
+              
+              
+              
+              <div className="col-lg-8 editProfile" >
+                    <div className="card">
+                        <div className="card-body">
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                    <h6 className="mb-0">Full Name</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary">
+                                    <input type="text" className="form-control" defaultValue="John Doe" />
+                                  </div>
+                              </div>
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                      <h6 className="mb-0">Email</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary">
+                                      <input type="text" className="form-control" defaultValue="john@example.com" />
+                                  </div>
+                              </div>
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                      <h6 className="mb-0">Phone</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary">
+                                      <input type="text" className="form-control" defaultValue="(239) 816-9029" />
+                                  </div>
+                              </div>
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                      <h6 className="mb-0">Mobile</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary">
+                                      <input type="text" className="form-control" defaultValue="(320) 380-4539" />
+                                  </div>
+                              </div>
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                      <h6 className="mb-0">Address</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary">
+                                      <input type="text" className="form-control" defaultValue="Bay Area, San Francisco, CA" />
+                                  </div>
+                              </div>
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                      <h6 className="mb-0"> </h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary" style={{display:'flex',gap:2}}>
+                                      <input type="text" className="form-control" defaultValue="State" />
+                                      <input type="text" className="form-control" defaultValue="Pin Code" />
+                                  </div>
+                              </div>
+                              <div className="row">
+                                  <div className="col-sm-3" />
+                                      <div className="col-sm-9 text-secondary" onClick={()=>seteditprofile(true)}>
+                                          <input type="button" className="btn btn-primary px-4" defaultValue="Save Changes" />
+                                      </div>
+                                  </div>
+                              </div>
+                        </div> 
+                        
+                           
+                    </div>}
+
+                    
+              
               {/* 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 */}
-              <div className="row gutters-sm">
+              <div className="row gutters-sm" style={{marginTop:20}}>
                 <div className="col-sm-6 mb-3">
                   <div className="card h-100">
                     <div className="card-body">
@@ -281,10 +362,13 @@ const getData =()=>{
                   </div>
                 </div>
               </div>
+
+              
+              </div>   
             </div>
           </div>
         </div>
-      </div>
+      
   )
 }
 

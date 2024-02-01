@@ -1,3 +1,4 @@
+
 // import React from 'react'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -10,13 +11,13 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDZpNP39PBOECaaUlQaHpq_ar9vdE2sWKs",
-  authDomain: "mbbs-study-overseas.firebaseapp.com",
-  projectId: "mbbs-study-overseas",
-  storageBucket: "mbbs-study-overseas.appspot.com",
-  messagingSenderId: "533857373470",
-  appId: "1:533857373470:web:9160dfb9886d8726364d0f",
-  measurementId: "G-26QFEK1P60"
+apiKey: process.env.REACT_APP_apiKey,
+authDomain: process.env.REACT_APP_authDomain,
+projectId: process.env.REACT_APP_projectId,
+storageBucket: process.env.REACT_APP_storageBucket,
+messagingSenderId: process.env.REACT_APP_messagingSenderId,
+appId: process.env.REACT_APP_appId,
+measurementId: process.env.REACT_APP_measurementId
 };
 
 const app = initializeApp(firebaseConfig);
