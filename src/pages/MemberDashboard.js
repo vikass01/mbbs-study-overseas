@@ -79,7 +79,7 @@ const getData =()=>{
   const getpic =async()=>{
     const auth = await getAuth(app);
     const mountainsRef = ref(storage, `profileImages/${auth.currentUser.uid}.png`)
-    await uploadBytes(mountainsRef, photo).then((response) => {
+    await uploadBytes(mountainsRef, photo).then(() => {
       console.log('Uploaded a blob or file!');
       console.log("command 2");
       getDownloadURL(mountainsRef)
