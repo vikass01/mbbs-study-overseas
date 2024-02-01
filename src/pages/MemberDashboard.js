@@ -16,7 +16,7 @@ function MemberDashboard() {
   const navigate = useNavigate()
  const [userData,setuserData] = useState(null)
 const [editprofile,seteditprofile] = useState(true)
-const [photo,setphoto] = useState("https://cdn.iconscout.com/icon/free/png-256/free-avatar-372-456324.png")
+//const [photo,setphoto] = useState("https://cdn.iconscout.com/icon/free/png-256/free-avatar-372-456324.png")
 
 const getData =()=>{
   const auth = getAuth(app);
@@ -39,17 +39,17 @@ const getData =()=>{
   });
 }
 
-  useEffect(()=>{  
-    getData()
-    // const auth = getAuth(app);
-    // const urlProfile = ref(storage, `profileImages/${auth.currentUser?.uid}.png`)
-    // getDownloadURL(urlProfile)
-    // .then((url) => {
-    //   setphoto(url)
-    //   console.log('this is error', url);
-    // })
+  // useEffect(()=>{  
+  //   getData()
+  //   const auth = getAuth(app);
+  //   const urlProfile = ref(storage, `profileImages/${auth.currentUser?.uid}.png`)
+  //   getDownloadURL(urlProfile)
+  //   .then((url) => {
+  //     setphoto(url)
+  //     console.log('this is error', url);
+  //   })
     
-   }, [])
+  //  }, [])
      
   
 
