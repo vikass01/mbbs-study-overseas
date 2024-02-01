@@ -16,7 +16,7 @@ function MemberDashboard() {
   const navigate = useNavigate()
  const [userData,setuserData] = useState(null)
 const [editprofile,seteditprofile] = useState(true)
-//const [photo,setphoto] = useState("https://cdn.iconscout.com/icon/free/png-256/free-avatar-372-456324.png")
+const [photo,setphoto] = useState("https://cdn.iconscout.com/icon/free/png-256/free-avatar-372-456324.png")
 
 const getData =()=>{
   const auth = getAuth(app);
@@ -39,17 +39,17 @@ const getData =()=>{
   });
 }
 
-  // useEffect(()=>{  
-  //   getData()
-  //   const auth = getAuth(app);
-  //   const urlProfile = ref(storage, `profileImages/${auth.currentUser?.uid}.png`)
-  //   getDownloadURL(urlProfile)
-  //   .then((url) => {
-  //     setphoto(url)
-  //     console.log('this is error', url);
-  //   })
+  useEffect(()=>{  
+    getData()
+    // const auth = getAuth(app);
+    // const urlProfile = ref(storage, `profileImages/${auth.currentUser?.uid}.png`)
+    // getDownloadURL(urlProfile)
+    // .then((url) => {
+    //   setphoto(url)
+    //   console.log('this is error', url);
+    // })
     
-  //  }, [])
+   }, [])
      
   
 
@@ -76,45 +76,45 @@ const getData =()=>{
     getData()
   }
 
-  // const getpic =async()=>{
-  //   const auth = await getAuth(app);
-  //   const mountainsRef = ref(storage, `profileImages/${auth.currentUser.uid}.png`)
-  //   await uploadBytes(mountainsRef, photo).then(() => {
-  //     console.log('Uploaded a blob or file!');
-  //     console.log("command 2");
-  //     getDownloadURL(mountainsRef)
-  //   .then((url) => {
-  //     console.log('this is url',url);
-  //     console.log("command 3");
-  //   })
+  const getpic =async()=>{
+    // const auth = await getAuth(app);
+    // const mountainsRef = ref(storage, `profileImages/${auth.currentUser.uid}.png`)
+    // await uploadBytes(mountainsRef, photo).then(() => {
+    //   console.log('Uploaded a blob or file!');
+    //   console.log("command 2");
+    //   getDownloadURL(mountainsRef)
+    // .then((url) => {
+    //   console.log('this is url',url);
+    //   console.log("command 3");
+    // })
       
-  //   });
+    // });
     
-  // }
+  }
 
-  // const profilepictureurl = async()=>{
-  //   const auth = await getAuth(app);
-  //   const url = ref(storage, `profileImages/${auth.currentUser.uid}.png`);
-  //   await getDownloadURL(url)
-  //   .then((url) => {
-  //     console.log('this is url',url);
-  //     console.log("command 3");
-  //   })
-  // }
+  const profilepictureurl = async()=>{
+    const auth = await getAuth(app);
+    const url = ref(storage, `profileImages/${auth.currentUser.uid}.png`);
+    await getDownloadURL(url)
+    .then((url) => {
+      console.log('this is url',url);
+      console.log("command 3");
+    })
+  }
     
 
-  // const upladPicture =async(e)=>{
-  //     try {
-  //       setphoto(e.target.files[0])
-  //       console.log("command 1");
-  //     } catch (error) {
-  //       console.log("command 1 error");
-  //     }
+  const upladPicture =async(e)=>{
+      // try {
+      //   setphoto(e.target.files[0])
+      //   console.log("command 1");
+      // } catch (error) {
+      //   console.log("command 1 error");
+      // }
       
-  //     getpic()
-  //     profilepictureurl()
+      getpic()
+      profilepictureurl()
     
-  // }
+  }
 
   
 
