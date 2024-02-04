@@ -1,58 +1,54 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext, } from 'react'
 import app from '../Config';
-import { getAuth, onAuthStateChanged, sendEmailVerification, updateProfile } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import {  signOut } from "firebase/auth";
 import "../css/MemberDashboard.css"
 import { Link } from 'react-router-dom';
 import { getStorage, ref,uploadBytes,getDownloadURL } from "firebase/storage";
-const storage = getStorage(app);
+import { Context } from '../App';
+// import EmailVerification from './EmailVerification';
+import ErrorPages from './ErrorPages';
 
 
 
 
-function MemberDashboard() {
-  
-  const navigate = useNavigate()
- const [userData,setuserData] = useState(null)
-const [editprofile,seteditprofile] = useState(true)
-const [photo,setphoto] = useState("https://cdn.iconscout.com/icon/free/png-256/free-avatar-372-456324.png")
 
-const getData =()=>{
+
+const MemberDashboard=()=> {
+
+  const {authUser} = useContext(Context);
+  console.log("data received in home.js", authUser);
+  var navigate = useNavigate()
   const auth = getAuth(app);
-  onAuthStateChanged(auth, (user) => {
-    
-    if (user) {
-      if(!user.emailVerified){
-        alert('Please Verify Email, Link Sent on your email id')
-        sendEmailVerification(auth.currentUser).then(() => {
-          console.log("Email verification sent!");
-        })
-      }else if(user.emailVerified){
-        setuserData(user)
-        console.log(user);
-      }
-      
-    } else {
-      console.log("something bad ");
-    }
-  });
-}
+  console.log('direct auth data',auth);
+  const storage = getStorage(app)
 
-  useEffect(()=>{  
-    getData()
-    // const auth = getAuth(app);
-    // const urlProfile = ref(storage, `profileImages/${auth.currentUser?.uid}.png`)
-    // getDownloadURL(urlProfile)
-    // .then((url) => {
-    //   setphoto(url)
-    //   console.log('this is error', url);
-    // })
-    
-   }, [])
-     
+  const [usernamee, setusernamee] = useState("John sing doe")
+  const [mobile,setmobile] = useState("(239) 816-9029")
+  const [address,setaddress] = useState("Bay Area, San Francisco, CA")
+  const [statee,setstatee] = useState("Maharashtra")
+  const [pincode,setpincode] = useState("456789")
+  const [newprofile, setnewprofile] = useState("https://static.vecteezy.com/system/resources/previews/029/271/069/original/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg")
+  const [editprofile,seteditprofile] = useState(true)
+
+
+  
+  
   
 
+  
+ 
+  useEffect(() => {  
+    window.addEventListener("beforeunload", alertUser)
+    // return () => {
+    //   window.removeEventListener("beforeunload", alertUser);
+    // };
+  }, []);
+  const alertUser = (e) => {
+    e.preventDefault();
+    e.returnValue = "are you sure ?";
+  };
   
   const userLogout =async()=>{
     const auth = await getAuth(app);
@@ -66,58 +62,34 @@ const getData =()=>{
       });
   }
 
-  const updateaccount=async()=>{
-    const auth = await getAuth(app);
-    const result = await updateProfile(auth.currentUser, {
-      displayName: "Jane singh User", photoURL: "https://bootdey.com/img/Content/avatar/avatar7.png", phoneNumber: "9891012345"
-    })
-
-    console.log(result);
-    getData()
-  }
-
-  const getpic =async()=>{
-    // const auth = await getAuth(app);
-    // const mountainsRef = ref(storage, `profileImages/${auth.currentUser.uid}.png`)
-    // await uploadBytes(mountainsRef, photo).then(() => {
-    //   console.log('Uploaded a blob or file!');
-    //   console.log("command 2");
-    //   getDownloadURL(mountainsRef)
-    // .then((url) => {
-    //   console.log('this is url',url);
-    //   console.log("command 3");
-    // })
-      
-    // });
-    
-  }
-
-  const profilepictureurl = async()=>{
-    const auth = await getAuth(app);
-    const url = ref(storage, `profileImages/${auth.currentUser.uid}.png`);
-    await getDownloadURL(url)
-    .then((url) => {
-      console.log('this is url',url);
-      console.log("command 3");
-    })
-  }
-    
-
-  const upladPicture =async(e)=>{
-      // try {
-      //   setphoto(e.target.files[0])
-      //   console.log("command 1");
-      // } catch (error) {
-      //   console.log("command 1 error");
-      // }
-      
-      getpic()
-      profilepictureurl()
-    
-  }
-
   
+    
 
+  const saveEditData =async(e)=>{
+      console.log(usernamee,mobile,address,statee,pincode);
+      const storeLocation = ref(storage, `profileImages/${authUser.user.uid}.png`)
+      await uploadBytes(storeLocation, newprofile).then(() => {
+      });
+      await getDownloadURL(storeLocation).then((url) => {
+      updateProfile(auth.currentUser, {
+        displayName: usernamee, photoURL: url
+      }).then((resp)=>{console.log("upload url response",resp)})
+      })
+      
+    
+  }
+
+  if(authUser.user.emailVerified === false){
+    return <ErrorPages Error={"This means your email verfication process is not complete yet. You'll need to head over to your email to activate and complete the signup process to verify the ownership of the account."}/>
+  
+  }else if(authUser?.user?.emailVerified === undefined){
+    return <ErrorPages Error={"You refreshed incorrectly or logged out from website, login agian to use again."} />
+    
+  }else if(authUser.operationType === "signOut") {
+    return <ErrorPages Error={"You refreshed incorrectly or logged out from website, login agian to use again."} />
+           
+  }
+  
   return (
     <div className="container expad" >
         <div className="main-body">
@@ -135,16 +107,18 @@ const getData =()=>{
               <div className="card">
                 <div className="card-body">
                   <div className="d-flex flex-column align-items-center text-center">
-                    <img src={userData?.auth?.currentUser?.photoURL} alt="Admin" className="rounded-circle" width={150} />
+                    {/* <img src={authUser.auth.currentUser.photoURL||"https://bootdey.com/img/Content/avatar/avatar7.png"} alt="Admin" className="rounded-circle" width={150} /> */}
+                    <img src={authUser.user.photoURL} alt="Admin" className="rounded-circle" style={{width:150}} />
                     {/* <div style={{position:'absolute'}}>
                       <img alt='bbb' src={photo} style={{height:100,width:100}}/>
                     <input type='file' placeholder='Upload Picture' onChange={upladPicture} />
                     </div> */}
                     <div className="mt-3">
-                      <p>{userData?.auth?.currentUser?.displayName}</p>
+                      {/* <p>{authUser.auth.currentUser.displayName||"abc kumar"}</p> */}
+                      <p>{authUser.user.displayName}</p>
                       <p className="text-secondary mb-1">Full Stack Developer</p>
                       <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button className="btn btn-primary" style={{marginRight:5}} onClick={updateaccount}>Follow</button>
+                      <button className="btn btn-primary" style={{marginRight:5}} >Follow</button>
                       <button className="btn btn-outline-primary" onClick={userLogout}>Logout</button>
                     </div>
                   </div>
@@ -187,7 +161,8 @@ const getData =()=>{
                               <h6 className="mb-0">Name</h6>
                           </div>
                           <div className="col-sm-9 text-secondary">
-                              {userData?.auth?.currentUser?.displayName}
+                              {/* {authUser.auth.currentUser.displayName||"abc kumar"} */}
+                              {authUser.user.displayName}
                           </div>
                       </div>
                       <hr />
@@ -196,7 +171,8 @@ const getData =()=>{
                               <h6 className="mb-0">Email</h6>
                           </div>
                           <div className="col-sm-9 text-secondary">
-                            {userData?.auth?.currentUser?.email}
+                            {/* {authUser.auth.currentUser.email||"abc@demo.com"} */}
+                            {authUser.user.email}
                           </div>
                       </div>
                       <hr />
@@ -247,7 +223,7 @@ const getData =()=>{
                                     <h6 className="mb-0">Full Name</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                    <input type="text" className="form-control" defaultValue="John Doe" />
+                                    <input type="text" className="form-control" placeholder={authUser.user.displayName || "Mr. John Dicosta"} onChange={(event)=>setusernamee(event.target.value)} />
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -255,15 +231,7 @@ const getData =()=>{
                                       <h6 className="mb-0">Email</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                      <input type="text" className="form-control" defaultValue="john@example.com" />
-                                  </div>
-                              </div>
-                              <div className="row mb-0">
-                                  <div className="col-sm-3">
-                                      <h6 className="mb-0">Phone</h6>
-                                  </div>
-                                  <div className="col-sm-9 text-secondary">
-                                      <input type="text" className="form-control" defaultValue="(239) 816-9029" />
+                                      <input type="text" className="form-control" placeholder= {authUser.user.email || "john@example.com"} disabled/>
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -271,15 +239,23 @@ const getData =()=>{
                                       <h6 className="mb-0">Mobile</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                      <input type="text" className="form-control" defaultValue="(320) 380-4539" />
+                                      <input type="text" className="form-control" placeholder={mobile} onChange={(event)=>setmobile(event.target.value)} />
                                   </div>
                               </div>
+                              {/* <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                      <h6 className="mb-0">Mobile</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary">
+                                      <input type="text" className="form-control" defaultValue="(320) 380-4539" />
+                                  </div>
+                              </div> */}
                               <div className="row mb-0">
                                   <div className="col-sm-3">
                                       <h6 className="mb-0">Address</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                      <input type="text" className="form-control" defaultValue="Bay Area, San Francisco, CA" />
+                                      <input type="text" className="form-control" placeholder={address} onChange={(event)=>setaddress(event.target.value)}/>
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -287,17 +263,26 @@ const getData =()=>{
                                       <h6 className="mb-0"> </h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary" style={{display:'flex',gap:2}}>
-                                      <input type="text" className="form-control" defaultValue="State" />
-                                      <input type="text" className="form-control" defaultValue="Pin Code" />
+                                      <input type="text" className="form-control" placeholder={statee} onChange={(event)=>setstatee(event.target.value)}/>
+                                      <input type="text" className="form-control" placeholder={pincode} onChange={(event)=>setpincode(event.target.value)}/>
                                   </div>
                               </div>
-                              <div className="row">
-                                  <div className="col-sm-3" />
-                                      <div className="col-sm-9 text-secondary" onClick={()=>seteditprofile(true)}>
-                                          <input type="button" className="btn btn-primary px-4" defaultValue="Save Changes" />
-                                      </div>
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                      <h6 className="mb-0">Profile Picture</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary" aria-placeholder=''>
+                                      <input type="file" className="form-control" onChange={(event)=>setnewprofile(event.target.files[0])} />
                                   </div>
                               </div>
+                                  
+                                <div className="text-secondary" style={{display:'flex',justifyContent:'flex-start', flexDirection:'row-reverse', width:'100%', gap:130}}>                                          
+                                    <Link className="btn btn-info "  onClick={saveEditData} > Save Data  </Link>
+                                    <Link className="btn btn-info "  onClick={()=>seteditprofile(true)} > Back  </Link>                                      
+                                </div>
+                                                                            
+                            </div>
+                              
                         </div> 
                         
                            
@@ -368,6 +353,7 @@ const getData =()=>{
             </div>
           </div>
         </div>
+        
       
   )
 }

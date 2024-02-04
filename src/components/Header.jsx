@@ -55,7 +55,7 @@ const Header = () => {
                                           <Link
                                             to="/connect"
                                             className="btn">
-                                            Connect
+                                            Contact Us
                                           </Link>
                                           <Link to="/programs" className="text-sm font-semibold flex items-center gap-1.5 leading-6 text-gray-700 hover:text-gray-500  duration-300 transition-colors">
                                             Our Programs<FaArrowRight />
@@ -85,7 +85,7 @@ const Header = () => {
                       <Link
                         to="/connect"
                         className="btn">
-                        Connect
+                        Contact
                       </Link>
                       <Link to="/programs" className="text-sm font-semibold flex items-center gap-1.5 leading-6 text-gray-700 hover:text-gray-500  duration-300 transition-colors">
                         Our Programs<FaArrowRight />

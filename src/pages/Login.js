@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import "../css/Login.css";
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 import app from '../Config';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import { Link } from 'react-router-dom';
-
+import { Context } from '../App';
 
 function Login() {
+  const {getLoginData} = useContext(Context)
+  
+  
   const navigate = useNavigate()
 
   const [email, setEmail] = useState('');
@@ -16,8 +19,9 @@ function Login() {
   const LoginUser =()=>{
     const auth = getAuth(app);
       signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-          console.log('Login Successfully');
+      .then((result) => {          
+          getLoginData(result)
+          console.log('Current User Data Sent ......',result.operationType);
           navigate("/home")
       })
       .catch((error) => {

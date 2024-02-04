@@ -20,17 +20,62 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import MemberDashboard from "./pages/MemberDashboard";
 import Profile from "./pages/Profile";
+import { useState,createContext} from "react";
+export const Context = createContext();
 
 
 
 
 
 
-function App() {
-  console.log(process.env.REACT_APP_apiKey)
+
+
+
+const App = ()=> {
+  const defaultUser = {
+    operationType:"signOut",
+    user:{     
+      displayName:"Mr. abc Kumar",
+      email:'testabc@gmail.com',
+      photoURL:"https://static.toiimg.com/thumb/resizemode-4,msid-76729536,width-1200,height-900/76729536.jpg"
+  
+    }   
+
+  }
+  // const [userDataonstate,setuserDataonstate] = useState(null) 
+  // useEffect(()=>{
+  //   onAuthStateChanged(getAuth(app), (user)=>{
+  //     console.log("data from app.js", user)
+  //     setuserDataonstate(user)
+      
+  //   })
+  // },[])
+  const [userData,setuserData] = useState(defaultUser)  
+    
+    if (userData) {
+      console.log('data received in App.js',userData);
+      
+    } else {
+      console.log("something bad in app and data not received from login page ");
+    }
+  
+
+  const LoginData =(data)=>{
+    setuserData(data)
+    console.log();
+  }
+
+
+
+
+
+ 
+
+  
   
   return (
     <>
+    <Context.Provider value={{ authUser: userData ,getLoginData:LoginData }}>
       <Router>
         <ScrollToTop />
         <NavBar />
@@ -44,12 +89,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
-          <Route path="/Home" element={<MemberDashboard />} />
+          <Route path="/home" element={<MemberDashboard />} />          
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
       </Router>
+      </Context.Provider>
     </>
   );
 }

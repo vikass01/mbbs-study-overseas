@@ -10,16 +10,27 @@ function Signup() {
   const navigate = useNavigate()
   const [email, setemail] = useState("")
   const [password, setPassword] = useState("")
+  const [repassword, setrePassword] = useState("")
 
+
+
+  
   
 
   const RegisterUser = async() => {
     const auth = getAuth(app);
-    await createUserWithEmailAndPassword(auth, email, password).then((result)=>{
-      console.log(result)
-      navigate('/home')    
+    if(password === repassword){
+      await createUserWithEmailAndPassword(auth, email, password).then((result)=>{
+        console.log("account create response",result)
+        navigate('/home')    
+      
+      }).catch((error)=>{
+        alert("Account Already Exists with this email id ,Error : ", error)
+      })
+    }else{
+      alert("Password not matching")
+    }
     
-    })
 
   }
 
@@ -39,7 +50,7 @@ function Signup() {
                     <div className="coll">
                       <input value={email} type="text" name="username" placeholder="Username" required onChange={(e)=>setemail(e.target.value)} />
                       <input value={password} type="password" name="password" placeholder="Password" required onChange={(e)=>setPassword(e.target.value)} />
-                      <input  type="password" name="password" placeholder="Password" required  disabled />
+                      <input value={repassword} type="password" name="password" placeholder="Password" required onChange={(e)=>setrePassword(e.target.value)} />
                       <input type='button' onClick={RegisterUser} value='Create' style={{backgroundColor:"#70467E", color:"#fff", cursor:'pointer'}} />
                     </div>
                 </form>

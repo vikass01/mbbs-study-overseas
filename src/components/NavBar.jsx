@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom'
 import app from '../Config';
+import { Link, useNavigate } from 'react-router-dom';
 
 //icons
 import {
@@ -17,6 +17,7 @@ import { FaAngleRight, FaArrowRight } from 'react-icons/fa'
 import brandicon from '../assets/brandlogo.png'
 import brandiconmd from '../assets/brandlogomd.png'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 
 
 const programs = [
@@ -35,10 +36,11 @@ function classNames(...classes) {
 
 
 const NavBar = () => {
+    const navigate = useNavigate()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isPopoverOpen, setPopoverOpen] = useState(false);
     const [userLogged, setuserLogged] = useState(false);
-    // const navigate = useNavigate()
+    
 
     useEffect(()=>{
         const auth = getAuth(app);   
@@ -62,6 +64,12 @@ const NavBar = () => {
 
     const handlePopoverClose = () => {
         setPopoverOpen(false);
+    }
+
+    const navMyAccount =()=>{
+        alert('helllllo')        
+        setMobileMenuOpen(false)
+        navigate('/home')
     }
 
     // const userLogout =()=>{
@@ -166,7 +174,7 @@ const NavBar = () => {
                             Company
                         </Link>
                         <Link to="/connect" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
-                            Connect
+                            Contact Us
                         </Link>
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -277,7 +285,7 @@ const NavBar = () => {
                                     </Link>
                                     {userLogged? 
                                     <Link
-                                        to="/home"
+                                        onClick={navMyAccount}
                                         className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
                                         flex gap-1.5 items-center" 
                                     >
