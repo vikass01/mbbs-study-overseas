@@ -5,18 +5,44 @@ import { useState } from "react";
 
 
 const Universities = () => {
-    const [collages,setcollages] = useState(DbData.default)
+    const [collages,setcollages] = useState(DbData.countries.default)
     const [selectedCountry,setselectedCountry] = useState("")
         
-    useEffect(()=>{
-        console.log('selectedCountry',selectedCountry);
-    },[])
-      
-    const countrydata =(data)=>{
-        console.log(data);
+   
+    const countrydata =async(data)=>{
+        
+        if (data === "russia"){
+            setcollages(DbData.countries.russia)
+        }else if( data === "germany"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "kazakhstan"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "georgia"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "poland"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "moldova"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "serbia"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "nepal"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "italy"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "kyrgyzstan"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "uzbekistan"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "bangladesh"){
+            setcollages(DbData.countries.germany)
+        }else if( data === "armenia"){
+            setcollages(DbData.countries.germany)
+        }else {
+            setcollages(DbData.countries.default)
+        }
+
         setselectedCountry(data)
-        const fz = data.toString()
-        console.log(`${DbData}.${fz}`);
+        
     }
     return (
         <div style={{marginTop:150, marginBottom:200}}>
