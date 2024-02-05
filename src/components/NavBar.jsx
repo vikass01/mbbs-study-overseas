@@ -21,7 +21,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 const programs = [
-    { name: 'Bachelors', description: 'Study Bachelors in Germany', href: 'https://www.ug.headstart.co.in/', icon: AcademicCapIcon },
+    { name: 'Universities', description: 'Study mbbs in abroad', href: '/universities', icon: AcademicCapIcon },
     { name: 'PG Medical', description: 'Study PG Medicine and Work as a Doctor in Germany', href: 'https://www.pgmedicine.com/', icon: BuildingLibraryIcon },
     { name: 'Work in Germany', description: 'Start your Dream Career after 12th', href: 'https://www.ws.headstart.co.in/', icon: BriefcaseIcon },
 ]
@@ -70,6 +70,10 @@ const NavBar = () => {
         alert('helllllo')        
         setMobileMenuOpen(false)
         navigate('/home')
+    }
+
+    const zfzfzf =()=>{
+        setPopoverOpen(false);
     }
 
     // const userLogout =()=>{
@@ -130,19 +134,19 @@ const NavBar = () => {
                                 >
                                     <Popover.Panel className="absolute -left-44 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                                         <div className="p-4">
-                                            {programs.map((item) => (
+                                            {programs.map((item,index) => (
                                                 <div
-                                                    key={item.name}
+                                                    key={index}
                                                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                                                 >
                                                     <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                                         <item.icon className="h-6 w-6 text-gray-700 group-hover:text-primary" aria-hidden="true" />
                                                     </div>
                                                     <div className="flex-auto">
-                                                        <a href={item.href} className="block font-semibold text-gray-900" target="_blank" rel="noopener noreferrer">
+                                                        <Link to={item.href} onClick={zfzfzf} className="block font-semibold text-gray-900" rel="noopener noreferrer">
                                                             {item.name}
                                                             <span className="absolute inset-0" />
-                                                        </a>
+                                                        </Link>
                                                         <p className="mt-1 text-gray-700">{item.description}</p>
                                                     </div>
                                                 </div>
@@ -268,6 +272,12 @@ const NavBar = () => {
                                     >
                                         Company
                                     </Link>
+                                    <Link
+                                        to="/connect"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Contact Us
+                                    </Link>
                                 </div>
                                 <div className="py-6">
                                     {/* <Link
@@ -276,13 +286,13 @@ const NavBar = () => {
                                     >
                                         Connect
                                     </Link> */}
-                                    <Link style={{marginBottom:20}}
+                                    {/* <Link style={{marginBottom:20}}
                                         to="/connect"
                                         className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
                                         flex gap-1.5 items-center" onClick={() => setMobileMenuOpen(false)}
                                     >
-                                        Connect <FaArrowRight />
-                                    </Link>
+                                        Contact us <FaArrowRight />
+                                    </Link> */}
                                     {userLogged? 
                                     <Link
                                         onClick={navMyAccount}

@@ -12,7 +12,7 @@ import { RiInstagramFill, RiFacebookFill, RiTwitterFill, RiYoutubeFill } from 'r
 const Footer = () => {
     return (
         // <div className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-        <div className="p-6 mx-auto max-w-sm sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
+        <div className="p-6 mx-auto max-w-sm sm:max-w-xl md:max-w-full lg:max-w-screen-xl" style={{borderTopColor:"#fff",borderWidth:2}}>
             <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
                 <div className="md:max-w-md lg:col-span-2">
                     <Link
@@ -30,7 +30,7 @@ const Footer = () => {
                     </Link>
                     <div className="mt-4 lg:max-w-sm">
                         <p className="text-sm text-gray-700 leading-6">
-                            Welcome to HeadStart International Education Consultancy, your trusted partner in the journey towards higher education in the world's top universities.
+                            Welcome to MSO International Education Consultancy, your trusted partner in the journey towards higher education in the world's top universities.
                         </p>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col justify-between pt-5 pb-10 border-t sm:flex-row">
                 <p className="text-sm text-gray-600">
-                    © Copyright 2023 Headstart. All rights reserved.
+                    © Copyright 2024 MSO. All rights reserved.
                 </p>
                 <div className="flex items-center mt-4 space-x-4 sm:mt-0">
                     {/* <Link

@@ -9,7 +9,7 @@
 
 /* Colors and Styles (Default) */
 :root{
-  --PrimaryColor: #70467E;
+  --PrimaryColor: #70467E; 
   --HoverColor: #E7CDFE;
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0%, 18%);

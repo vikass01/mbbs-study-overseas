@@ -21,6 +21,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import MemberDashboard from "./pages/MemberDashboard";
 import Profile from "./pages/Profile";
 import { useState,createContext} from "react";
+import Universities from "./pages/Universities";
 export const Context = createContext();
 
 
@@ -91,6 +92,7 @@ const App = ()=> {
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/home" element={<MemberDashboard />} />          
           <Route path="/profile" element={<Profile />} />
+          <Route path="/universities" element={<Universities />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
