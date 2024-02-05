@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import DbData from "../components/DB";
 import { useState } from "react";
+import "../css/Universities.css"
 
 
 
 const Universities = () => {
     const [collages,setcollages] = useState(DbData.countries.default)
-    const [selectedCountry,setselectedCountry] = useState("")
+    const [selectedCountry,setselectedCountry] = useState("de")
         
    
     const countrydata =async(data)=>{
@@ -76,7 +77,7 @@ const Universities = () => {
                 </h2>
                 {/* <p className="text-sm lg:text-base text-gray-600 font-medium mb-10"> */}
                 <div style={{display:'flex', flexWrap:'nowrap', justifyContent:'center', gap:10, padding:"0px 10px", margin:"10px 0px" }}>
-                    <select value={selectedCountry} name="country" id="countries" style={{width:"90%",borderRadius:10}} onChange={(event)=>countrydata(event.target.value)}>
+                    <select className="bhuio" value={selectedCountry} name="country" id="countries" style={{width:"90%",borderRadius:10}} onChange={(event)=>countrydata(event.target.value)}>
                         <option value="default">Choose Country</option>
                         <option value="russia">Russia</option>
                         <option value="germany">Germany</option>
@@ -93,12 +94,13 @@ const Universities = () => {
                         <option value="armenia">Armenia</option>
                     </select>
                 </div>
-                <p className="mb-10 subdesc" style={{padding:'0px 20px'}}>
+                <p className="mb-10 subdesc" style={{padding:'0px 20px',fontSize:12}}>
                 Study MBBS in Europe and choose from 8 countries and 16 universities.
+                
                 <br/>
-                With our help you can!
+                <span style={{color:"#70467E"}}>University List in {selectedCountry.charAt(0).toUpperCase()+selectedCountry.slice(1)}</span>
                 </p>
-                <p style={{color:"#70467E"}}>University List in Russia</p>
+                {/* <p style={{color:"#70467E"}}>University List in {selectedCountry.charAt(0).toUpperCase()+selectedCountry.slice(1)}</p> */}
                 
             </div>
             <div className="flex justify-center items-center gap-2 flex-wrap mx-auto lg:max-w-screen-xxl" >
@@ -120,7 +122,7 @@ export default Universities;
 const FeatureCard = ({ url, name, details }) => {
     return (
         <>
-            <div style={{height:170, width:300, backgroundImage:`URL(${url})`, backgroundSize:'cover', display:'flex',justifyContent:'center', alignItems:'center',borderRadius:15  }}>
+            <div className="bhuio" style={{height:170, width:300, backgroundImage:`URL(${url})`, backgroundSize:'cover', display:'flex',justifyContent:'center', alignItems:'center',borderRadius:15  }}>
                     <div style={{padding:10,backgroundColor:"rgba(0,0,0,0.5)", borderRadius:10}}>
                         <p style={{fontSize:15, fontWeight:700,color:'#ccc', textAlign:'center'}}>{name.toUpperCase()}</p>
                     </div>
@@ -128,3 +130,5 @@ const FeatureCard = ({ url, name, details }) => {
         </>
     );
 };
+
+
