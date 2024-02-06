@@ -3,9 +3,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+.bhuio{
+    border-color: #838383;
+    border-width: 2px;
+}
 
 .bhuio:hover{
     border-color: #70467E;
     border-width: 2px;
     cursor: pointer;
+    .mainCase{
+        display: block;
+    }
 }
+
+.mainCase{
+    display: none;
+}
+
+.bhuio:hover .mainCase{
+        display: block;
+   
+}
+

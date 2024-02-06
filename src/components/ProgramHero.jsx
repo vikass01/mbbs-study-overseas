@@ -18,9 +18,9 @@ const ProgramHero = () => {
 
     return (
         <section className="overflow-hidden">
-            <div className="bg-purple-50 overflow-hidden">
+            <div className="overflow-hidden">
                 {/* <div className="pt-20 pb-14 bg-purple-50 overflow-hidden"> */}
-                <div className="px-10 mx-auto py-44 sm:px-20">
+                <div className="px-10 mx-auto pt-44 sm:px-20">
                     {/* <div className="px-10 mx-auto py-36 sm:px-20 sm:py-16 lg:py-28"> */}
                     <div className="flex flex-wrap -m-8">
                         <div className="w-full md:w-1/2 p-8">
@@ -74,7 +74,7 @@ const ProgramHero = () => {
                         </div>
                         <div className="w-full md:w-1/2 p-8">
                             {/* <img className="transform hover:-translate-y-2 transition duration-500" src="basko-assets/images/headers/dashboard.png" alt="" /> */}
-                            <img class="object-cover object-center mx-auto shadow-2xl rounded-2xl sm:rounded-3xl" alt="hero" src={hero} />
+                            <img className="object-cover object-center mx-auto shadow-2xl rounded-2xl sm:rounded-3xl" alt="hero" src={hero} />
                         </div>
                     </div>
                 </div>

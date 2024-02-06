@@ -39,7 +39,7 @@ function Signup() {
   return (
     <div className="vvbb">
       <div className='ftfh'>
-          <img style={{borderRadius:40}} alt='study locations' src='https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/03/02165322/MBBS-Abroad-Consultants.jpg'/>
+          <img style={{borderRadius:40}} alt='study locations' src='https://cdn.imgbin.com/18/21/21/imgbin-nursing-college-health-care-student-nurse-doctors-and-nurses-BQq59yVgNGPg4gwPuLpM5PQ72.jpg'/>
      </div>
           {/* 000000000000000000000000000000000000000000000000000000000000 */}
         <div className="zxzx" >
@@ -48,7 +48,7 @@ function Signup() {
             </div>
                 <form style={{margin:'45px 0px'}}>
                     <div className="coll">
-                      <input value={email} type="text" name="username" placeholder="Username" required onChange={(e)=>setemail(e.target.value)} />
+                      <input value={email} type="text" name="username" placeholder="Email id" required onChange={(e)=>setemail(e.target.value)} />
                       <input value={password} type="password" name="password" placeholder="Password" required onChange={(e)=>setPassword(e.target.value)} />
                       <input value={repassword} type="password" name="password" placeholder="Password" required onChange={(e)=>setrePassword(e.target.value)} />
                       <input type='button' onClick={RegisterUser} value='Create' style={{backgroundColor:"#70467E", color:"#fff", cursor:'pointer'}} />
@@ -56,8 +56,8 @@ function Signup() {
                 </form>
                   <div style={{ marginTop:20}} >
                     <div style={{display:"flex", flexDirection:'column', gap:10 }}>
-                      <Link to="/login" style={{color: 'black'}} >Login</Link>
-                      <Link to="/ForgotPassword" style={{color: 'black'}} >Forgot password?</Link>
+                      <Link to="/login" style={{color: 'black'}} >Already have a account ?</Link>
+                      <Link to="/ForgotPassword" style={{color: 'black'}} >Forgot password ?</Link>
                     </div>
                   </div>
         </div>

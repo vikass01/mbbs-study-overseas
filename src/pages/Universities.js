@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import DbData from "../components/DB";
 import { useState } from "react";
 import "../css/Universities.css"
+import { Link } from "react-router-dom";
+import healthfile from '../assets/true_global_left_v2.png'
 
 
 
@@ -46,8 +48,8 @@ const Universities = () => {
         
     }
     return (
-        <div style={{marginTop:150, marginBottom:200}}>
-            <div className="max-w-xl text-center mx-auto lg:max-w-2xl mb-12">
+        <div style={{marginTop:150, marginBottom:200,backgroundImage:`URL(${healthfile})`, backgroundSize:'contain'}} >
+            <div className="max-w-xl text-center mx-auto lg:max-w-2xl mb-12" >
                 <h2 className="mb-6">
                     <span className="relative inline-block">
                         <svg
@@ -122,10 +124,21 @@ export default Universities;
 const FeatureCard = ({ url, name, details }) => {
     return (
         <>
-            <div className="bhuio" style={{height:170, width:300, backgroundImage:`URL(${url})`, backgroundSize:'cover', display:'flex',justifyContent:'center', alignItems:'center',borderRadius:15  }}>
-                    <div style={{padding:10,backgroundColor:"rgba(0,0,0,0.5)", borderRadius:10}}>
-                        <p style={{fontSize:15, fontWeight:700,color:'#ccc', textAlign:'center'}}>{name.toUpperCase()}</p>
+            <div className="bhuio" style={{height:170, width:300, backgroundImage:`URL(${url})`, backgroundBlendMode:"darken", backgroundSize:'cover', display:'flex', justifyContent:'center', alignItems:'flex-end',borderRadius:15, }}>
+                    <div className="firstCase" style={{padding:10,width:"100%",backgroundColor:"rgba(0,0,0,0.7)", borderBottomRightRadius:15, borderBottomLeftRadius:15 }}>
+                        <p style={{fontSize:10, fontWeight:700,color:'#ccc', textAlign:'center'}}>{name.toUpperCase()}</p>
+                        <div className="mainCase" >
+                            <div style={{width:"100%",display:'flex',justifyContent:'space-between',padding:10, }}>
+                                <div className="secondCase" >
+                                    <p style={{fontSize:12, fontWeight:700,color:'#ccc', textAlign:'center', }}><Link to="/">Get Complete Details &#10158;</Link></p>
+                                </div>
+                                <div className="secondCase" >
+                                    <p style={{fontSize:12, fontWeight:700,color:'#ccc', textAlign:'center'}}><Link to="/" >Apply Now &#10158;</Link></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
             </div>
         </>
     );

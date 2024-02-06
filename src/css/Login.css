@@ -154,6 +154,9 @@ input[type=submit]:hover {
 
 .zxzx{
   max-width: 350px;
+  background-color: #fff;
+  padding: 34px;
+  border-radius: 40px;
 }
 
 
@@ -187,11 +190,15 @@ input[type=submit]:hover {
   .ftfh{
     display: none;
   }
-  .coll{
-    padding: 0px 50px;
-  }
+  /* .coll{
+    margin: 0px 50px;
+  } */
   .mkoi{
     margin-left: 50px;
+  }
+
+  .zxzx{
+    margin:0px 20px;
   }
   
 
