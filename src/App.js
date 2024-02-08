@@ -8,6 +8,7 @@ import Connect from "./pages/Connect";
 import BlogPost from "./components/BlogPost";
 import Company from "./pages/Company";
 
+
 import {
   BrowserRouter as Router,
   Route,
@@ -22,7 +23,10 @@ import MemberDashboard from "./pages/MemberDashboard";
 import Profile from "./pages/Profile";
 import { useState,createContext} from "react";
 import Universities from "./pages/Universities";
+import UniversityHeader from "./components/UniversityHeader";
+import GetUniversityDetail from "./pages/GetUniversityDetail";
 export const Context = createContext();
+
 
 
 
@@ -93,6 +97,8 @@ const App = ()=> {
           <Route path="/home" element={<MemberDashboard />} />          
           <Route path="/profile" element={<Profile />} />
           <Route path="/universities" element={<Universities />} />
+          <Route path="/universityheader" element={<UniversityHeader />} />
+          <Route path="/getdetail/:id" element={<GetUniversityDetail />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

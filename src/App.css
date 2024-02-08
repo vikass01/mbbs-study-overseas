@@ -7,6 +7,12 @@
   font-family: 'Inter', sans-serif;
 }
 
+body{
+  color: #1a202c;
+  text-align: left;
+  background-color: #ffffff;    
+}
+
 /* Colors and Styles (Default) */
 :root{
   --PrimaryColor: #70467E; 
@@ -14,6 +20,8 @@
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(0, 0%, 18%);
   --textColor: #9694AA;
+
+  
   /* --bgColor: hsl(220, 10%, 94%); 
   --greyText: rgb(190, 190, 190); 
   --inputColor: ■hsl(330, 12%, 97%); */

@@ -97,7 +97,7 @@ const NavBar = () => {
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         <Link to="/" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Headstart</span>
+                            <span className="sr-only">MBBS STUDY OVERSEAS</span>
                             <img className="h-10 w-auto lg:hidden" src={brandiconmd} alt="brandlogo" />
                             <img className="hidden h-10 w-auto lg:block" src={brandicon} alt="brandlogo" />
                         </Link>
