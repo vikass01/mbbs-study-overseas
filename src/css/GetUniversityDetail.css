@@ -1,0 +1,403 @@
+
+.vbgy{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+}
+
+.dfhtu{
+    width: 100%;
+    margin: auto;
+    height: 250px;
+    background: url("https://edificeeducation.com/public/images/top/mbbsinrussia.jpg"), rgba(0, 0, 0, 0.5);
+    background-blend-mode:multiply;
+    background-size: cover;
+    background-position: top;
+
+}
+
+.dfhtu h2{
+  color: #fff;
+  padding: 14% 0px 0px 30px;
+}
+
+
+
+
+
+
+@media (min-width:0px) and (max-width:450px){
+ 
+
+  .dfhtu{
+    height: 120px;
+  }
+
+  .nffd h3{
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .nffd td {
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+
+  .cxdsf th, td{
+    font-size: 10px;
+  }
+
+  .cxdsf table{
+    background-color: #FCF6B1;
+  }
+
+  .sdgdfghf{
+    flex-wrap: wrap;
+    
+  }
+
+  /* .sdgdfghf img{
+    position: relative;
+    width: 200px;
+    height: 150px;
+    
+  } */
+
+  .gsfas h3{
+    font-size: 12px;
+    font-weight: 800;
+    
+  }
+
+  .packageForSixYear th,td{
+    font-size: 7px;
+    font-weight: 600;
+    padding: 10px 20px;
+  }
+
+  .dfhtu h2{
+    font-size: 18px;
+  }
+
+  
+
+  
+}
+
+
+
+@media (min-width:0px) and (max-width:696px){
+  .wityu{
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    top: -70px;
+    z-index: 10;
+    gap: 20px;
+  }
+
+  .wityu p{
+    text-align: justify; 
+      font-size: 16px; 
+  }
+
+  .nffd img{
+    display: none
+  }
+
+  .wityu img{
+    display: none;
+  }
+
+  .nhjip h3{
+    text-align: center;
+  }
+
+  
+
+
+
+}
+
+
+
+
+.imgvbgh{
+  width: 100%;
+  background-color: aquamarine;
+  
+}
+
+.wityu{
+  /* background-color: rgb(150, 127, 255); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.wityu img{
+  min-width: 200px;
+  width: 30%;
+  
+ 
+  box-shadow: 10px 10px 30px black;
+}
+
+.wityu p{
+  padding: 20px 40px;
+  width: 600px;
+  text-align: justify; 
+}
+
+
+
+
+
+
+
+
+/* .imgvbgh{
+    height: 300px;
+    width: 50%;
+    
+}
+
+.imgvbgh h3{
+    background-color: #ff9818;
+    border-radius: 10px;
+    padding: 10px;
+} */
+
+.wityu button{
+    background-color: #70467E;
+    padding: 10px;
+    color: #fff;
+    
+}
+
+.wityu button:hover{
+  background-color: #73547e;
+  
+}
+
+/* .imgvb{
+    height: 430px;
+    margin: 50px;
+    width: 50%;
+    border-radius: 3px solid black;
+    
+} */
+
+/* 0000000000000000000000000000000000000000000 */
+
+.nffd{
+  width: 100%;
+  /* background-color: #dadada; */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  
+  padding: 40px;
+}
+
+.nffd img{
+  width: 30%;
+  height: 10%;
+  /* box-shadow: 10px 10px 30px black; */
+}
+
+
+/* 00000000000000000000000000000000000000000000000000000000000 */
+
+
+.bfgthj{
+    padding: 50px 0px;
+    
+}
+
+
+
+.bfgthj button{
+    padding: 10px;
+    background-color: #ff9818;
+}
+.bfgthj p{
+    font-size: 16px;
+}
+
+.fghgjghf{
+    flex-direction: row-reverse;
+}
+
+.bjkop{
+
+    background-image: url("https://mediplor.com/wp-content/uploads/2023/05/Mediplor-Banner-Russia.webp");
+    background-size: contain;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+/* .nhjip{
+    padding: 0px 50px;
+    
+} */
+
+.cxdsf{
+    width: 100%;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.rtjklycdr{
+  width: 1000px;
+  
+}
+
+
+
+/* 00000000000000000000000000000000000000000000000000 */
+
+.gsfas{
+  width: 100%;
+  padding: 50px;
+  background-color: #dadada;
+  
+}
+
+.gsfas h3{
+  background-color: #ff9818;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
+.gsfas img{
+  width: 35%;
+  height: 10%;
+  box-shadow: 10px 10px 30px black;
+  
+}
+
+.gsfas .sdgdfghf{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.gsfas .sdgdfghf p{
+  text-align: justify;
+  
+}
+
+
+
+
+
+
+/* 000000000000000000000000000000000000000000000000000000 */
+
+.ugvuids{
+    width: 90%;
+}
+
+.aasvhnfg{
+  width: 1000px;
+  overflow-x: scroll;
+}
+
+
+
+.ugvuids h2{
+    background-color:#ff9818;
+    border-radius: 10px;
+}
+
+.ugvui{
+    width: 90%;
+    padding: 0px 41px;
+}
+
+.ugvuids h2{
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .packageForFirstYear{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fgjhfghfg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .fgjhfghfg h2{
+    background-color: #ff9818;
+    border-radius: 10px;
+  }
+
+  .fgjhfghfg td{
+   
+    text-align: center;
+    line-height: 1.5;
+  vertical-align: middle;
+  }
+
+  .packageForSixYear{
+    width: 100%;
+    background-color: #dadada;
+  }
+
+  .packageForSixYear table{
+    WIDTH: 90%;
+    margin: auto;
+  }
+
+  
+
+  .packageForSixYear h3{
+    background-color: #ff9818;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .mainSec ul{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .packageForSixYear h1{
+    
+    text-align: center;
+
+  }
+
+ 

@@ -153,9 +153,9 @@ const NavBar = () => {
                                             ))}
                                         </div>
                                         <div className="divide-gray-900/5 bg-gray-50">
-                                            {callsToAction.map((item) => (
+                                            {callsToAction.map((item,index) => (
                                                 <Link
-                                                    key={item.name}
+                                                    key={index}
                                                     to={item.href}
                                                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                                                     onClick={handlePopoverClose}
@@ -245,9 +245,9 @@ const NavBar = () => {
                                                     />
                                                 </Disclosure.Button>
                                                 <Disclosure.Panel className="mt-2 space-y-2">
-                                                    {[...programs, ...callsToAction].map((item) => (
+                                                    {[...programs, ...callsToAction].map((item,index) => (
                                                         <Link
-                                                            key={item.name}
+                                                            key={index}
                                                             to={item.href}
                                                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-700 hover:bg-gray-50"
                                                             onClick={() => setMobileMenuOpen(false)}

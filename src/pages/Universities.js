@@ -4,15 +4,16 @@ import { useState } from "react";
 import "../css/Universities.css"
 import { Link } from "react-router-dom";
 import UniversityHeader from "../components/UniversityHeader";
+import Useful from "./Useful";
+
 
 
 const Universities = () => {
-    const [collages,setcollages] = useState(DbData.countries.default)
+    const [collages,setcollages] = useState(DbData.countries.russia)
     const [selectedCountry,setselectedCountry] = useState("de")
-        const rr = collages.find((x)=>{
-            return x.id === '7'
-        })
-        console.log(rr);
+    const [showCountry,setShowCountry] = useState(true)
+    
+    
     const countrydata =async(data)=>{
         
         if (data === "russia"){
@@ -48,10 +49,14 @@ const Universities = () => {
         setselectedCountry(data)
         
     }
+
+    const funChange =()=>{
+        setShowCountry(true)
+    }
     return (
         <>
         <UniversityHeader/>
-        
+        {showCountry ? 
         <div style={{ marginBottom:100}} >
             
             <div className="max-w-xl text-center mx-auto lg:max-w-2xl mb-12" >
@@ -83,11 +88,12 @@ const Universities = () => {
                     </span>
                 </h2>
                 {/* <p className="text-sm lg:text-base text-gray-600 font-medium mb-10"> */}
-                <div style={{position:'relative',top:-25,zIndex:100,display:'flex', flexWrap:'nowrap', justifyContent:'center', gap:10, padding:"0px 10px", margin:"10px 0px" }}>
-                    <select className="bhuio" value={selectedCountry} name="country" id="countries" style={{width:"90%",borderRadius:10,}} onChange={(event)=>countrydata(event.target.value)}>
-                        <option value="default">Choose Country</option>
+                <div style={{position:'relative',top:-25,zIndex:100,display:'flex', flexDirection:"column", flexWrap:'nowrap',                  justifyContent:'center', alignItems:"center", gap:10, padding:"0px 10px", margin:"10px 0px" }}>
+                    <label style={{width:"100%"}} htmlFor="country">Choose a Country:
+                    <select className="vbnm" value={selectedCountry} name="country" id="countries" style={{width:"90%",borderRadius:10,}} onChange={(event)=>countrydata(event.target.value)}>
+                        {/* <option value="default">Choose Country</option> */}
                         <option value="russia">Russia</option>
-                        <option value="germany">Germany</option>
+                        <option value="germany" >Germany</option>
                         <option value="kazakhstan">Kazakhstan</option>
                         <option value="georgia">Georgia</option>
                         <option value="poland">Poland</option>
@@ -100,6 +106,8 @@ const Universities = () => {
                         <option value="bangladesh">Bangladesh</option>
                         <option value="armenia">Armenia</option>
                     </select>
+                    </label>
+                    <Link onClick={()=>setShowCountry(false)} style={{margin:'5px 0px'}}><span style={{color:'blue'}}>Click here</span> : Useful About {selectedCountry} </Link>
                 </div>
                 {/* <p className="mb-10 subdesc" style={{padding:'0px 20px',fontSize:12}}>
                 Study MBBS in Europe and choose from 8 countries and 16 universities.
@@ -107,10 +115,9 @@ const Universities = () => {
                 <br/>
                 <span style={{color:"#70467E"}}>University List in {selectedCountry.charAt(0).toUpperCase()+selectedCountry.slice(1)}</span>
                 </p> */}
-                {/* <p style={{color:"#70467E"}}>University List in {selectedCountry.charAt(0).toUpperCase()+selectedCountry.slice(1)}</p> */}
-                
             </div>
-            <div style={{position:'relative',top:-60, }} className="flex justify-center items-center gap-4 flex-wrap mx-auto lg:max-w-screen-xxl" >
+            
+            <div style={{position:'relative',top:-60, }} className="mkimki flex justify-center items-center gap-4 flex-wrap mx-auto lg:max-w-screen-xxl" >
                 
                 {
                 
@@ -121,6 +128,12 @@ const Universities = () => {
                 
             </div>
         </div>
+        : 
+        <div>
+            <Useful Change={funChange} collag={collages}  />
+            <Link onClick={()=>setShowCountry(true)} style={{margin:'5px 0px'}}>Back </Link>
+        </div>
+        }
         </>
     );
 };
@@ -130,16 +143,16 @@ export default Universities;
 const FeatureCard = ({ url, name, id }) => {
     return (
         <>
-            <div className="bhuio bnmk" style={{height:280, width:200, backgroundImage: `URL(${url})`, backgroundPosition:"center",backgroundColor:"rgba(0,0,0,0.1)", backgroundBlendMode:"darken", backgroundSize:'cover', display:'flex', justifyContent:'center', alignItems:'flex-end',borderRadius:3, }}>
+            <div className="bhuio bnmk" style={{backgroundImage: `URL(${url})`, backgroundPosition:"center",backgroundColor:"rgba(0,0,0,0.1)", backgroundBlendMode:"darken", backgroundSize:'cover', display:'flex', justifyContent:'center', alignItems:'flex-end',borderRadius:3, }}>
                     <div className="firstCase" style={{padding:10, width:"100%",backgroundColor:"rgba(0,0,0,0.5)", borderBottomRightRadius:5, borderBottomLeftRadius:5 }}>
-                        <p style={{fontSize:16, fontWeight:700,color:'#ccc', textAlign:'center'}}>{name.toUpperCase()}</p>
+                        <p className="vfr">{name.toUpperCase()}</p>
                         <div className="mainCase" >
-                            <div style={{width:"100%",display:'flex',flexDirection:"column", gap:20, justifyContent:'space-between',padding:10, }}>
-                                <div className="secondCase" >
-                                    <p style={{fontSize:16, fontWeight:700,color:'#ccc', textAlign:'center', }}><Link to={`/getdetail/${id}`} className="btn flex gap-1 items-center" >Get Details &#10158;</Link></p>
+                            <div className="subMainCase" >
+                                <div className="firstCase" >
+                                    <p className="vfr"><Link to={`/getdetail/${id}`} className="xcxc " >Get Details &#10158;</Link></p>
                                 </div>
                                 <div className="secondCase" >
-                                    <p style={{fontSize:16, fontWeight:700,color:'#ccc', textAlign:'center'}}><Link to="/" className="btn flex gap-1 items-center" >Apply Now &#10158;</Link></p>
+                                    <p className="vfr"><Link to="/login" className="xcxc " >Apply Now &#10158;</Link></p>
                                 </div>
                             </div>
                         </div>
