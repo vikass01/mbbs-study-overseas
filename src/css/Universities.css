@@ -32,6 +32,7 @@
 .bnmk:hover .firstCase{
     height: 100%;
     
+    
 }
 
 .vbnm:focus{
@@ -45,6 +46,7 @@
     flex-direction: column;
     height: fit-content;
     transition: .75s ease-in;
+    border-radius: 30px;
 }
 
 .mainCase{
@@ -69,6 +71,7 @@
 .bnmk{
     width: 200px;
     height: 280px;
+    border-radius: 30px;
 }
 
 .vfr{
@@ -92,6 +95,7 @@
     .bnmk{
         width: 300px;
         height: 170px;
+        
     }
     .vfr{
         font-size: 12px;

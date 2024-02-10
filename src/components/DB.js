@@ -9,7 +9,7 @@ const DbData = {
                 "url1":"https://www.pngkit.com/png/full/254-2543504_doctors-getting-into-medical-school-the-premedical-students.png",
                 "name": "Altai State Medical University",
                 "header": {
-                    "title": "Altai State Medical University, Russia : Fees & Admission 2024-25",
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
                     "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
                 },
                 "brief":{
@@ -22,14 +22,55 @@ const DbData = {
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
-                    "intake":""
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
                 },
                 "table":{
                     "tution_fee":"3,23,600",
                     "hostal_fee":"35,000",
                     "otc":"2500$",
                     "incentive":"1200$"
-                }
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "2",
@@ -170,8 +211,72 @@ const DbData = {
         "germany": [
             {
                 "id": "29",
+                "country":"germany",
                 "backgroundurl": "https://images.collegedunia.com/public/college_data/images/studyabroad/appImage/college_690_14-16:11_cov.jpeg?h=185&w=375&mode=stretch",
-                "name": "Ludwig Maxmilian-Universitat Munchen"
+                "name": "Ludwig Maxmilian-Universitat Munchen",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "MBBS in Germany is very famous among Indian students. For every individual, Germany is becoming very popular because of its low-cost education. It is not completely free but the fee structure is comparatively low. MBBS from Germany has become a top choice in the last few years. It also includes the learning German language also with qualified lectures. It offers a very wide variety of programs for local and international students. "
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "30",
@@ -192,8 +297,72 @@ const DbData = {
         "kazakhstan": [
             {
                 "id": "33",
+                "country":"Kazakhstan",
                 "backgroundurl": "https://www.tutelagestudy.com/uploads/university/IMG_20221215_172408.jpg",
-                "name": "Al-Farebi National University"
+                "name": "Al-Farebi National University",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "34",
@@ -239,8 +408,72 @@ const DbData = {
         "georgia": [
             {
                 "id": "42",
+                "country":"Georgia",
                 "backgroundurl": "https://www.moksh16.com/uploads/images/alte-university-school-of-medicine-georgia/alte-university-school-of-medicine-georgia.webp",
-                "name": "Alte University"
+                "name": "Alte University",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "43",
@@ -352,8 +585,72 @@ const DbData = {
         "poland": [
             {
                 "id": "62",
+                "country":"Poland",
                 "backgroundurl": "https://www.mbbsuniversities.com/files/catalog/jagiellonian_uni1_1.jpg",
-                "name": "Jagiellonian University Medical College"
+                "name": "Jagiellonian University Medical College",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "63",
@@ -404,15 +701,143 @@ const DbData = {
         "moldova": [
             {
                 "id": "72",
+                "country":"Moldova",
                 "backgroundurl": "https://luminisabroad.com/wp-content/uploads/2022/08/slider3.jpg",
-                "name": "Nicole Testemitanu state University of Medicine and Pharmacy"
+                "name": "Nicole Testemitanu state University of Medicine and Pharmacy",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             }
         ],
         "serbia": [
             {
                 "id": "73",
+                "country":"Serbia",
                 "backgroundurl": "https://www.moksh16.com/uploads/images/Serbia/University-of-Kragujevac.webp",
-                "name": "University of Kraguyievac"
+                "name": "University of Kraguyievac",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "74",
@@ -433,8 +858,72 @@ const DbData = {
         "nepal": [
             {
                 "id": "77",
+                "country":"nepal",
                 "backgroundurl": "https://www.besonline.in/blog/wp-content/uploads/2019/08/Iom.jpg",
-                "name": "Institute Of Medicine (IOM)"
+                "name": "Institute Of Medicine (IOM)",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "78",
@@ -546,8 +1035,72 @@ const DbData = {
         "italy": [
             {
                 "id": "99",
+                "country":"Italy",
                 "backgroundurl": "https://www.tutelagestudy.com/uploads/university/IMG_20221215_172408.jpg",
-                "name": "Al-Farebi National University"
+                "name": "Al-Farebi National University",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "100",
@@ -593,8 +1146,72 @@ const DbData = {
         "kyrgyzstan": [
             {
                 "id": "108",
+                "country":"Kyrgyzstan",
                 "backgroundurl": "https://images.collegedunia.com/public/college_data/images/studyabroad/appImage/college_690_14-16:11_cov.jpeg?h=185&w=375&mode=stretch",
-                "name": "Asian Medical Institute"
+                "name": "Asian Medical Institute",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "109",
@@ -635,8 +1252,72 @@ const DbData = {
         "uzbekistan": [
             {
                 "id": "116",
+                "country":"Uzbekistan",
                 "backgroundurl": "https://images.collegedunia.com/public/college_data/images/studyabroad/appImage/college_690_14-16:11_cov.jpeg?h=185&w=375&mode=stretch",
-                "name": "Andijan State Medical Institute"
+                "name": "Andijan State Medical Institute",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "117",
@@ -667,8 +1348,72 @@ const DbData = {
         "bangladesh": [
             {
                 "id": "122",
+                "country":"Bangladesh",
                 "backgroundurl": "https://www.riaoverseas.com/wp-content/uploads/2020/02/334481852jalalabad.jpg",
-                "name": "Jalalabd Ragib Rabeya Medical College"
+                "name": "Jalalabd Ragib Rabeya Medical College",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "123",
@@ -810,8 +1555,72 @@ const DbData = {
         "armenia": [
             {
                 "id": "150",
+                "country":"Armenia",
                 "backgroundurl": "https://images.collegedunia.com/public/college_data/images/studyabroad/appImage/college_690_14-16:11_cov.jpeg?h=185&w=375&mode=stretch",
-                "name": "Armenian Medical Institute"
+                "name": "Armenian Medical Institute",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
             },
             {
                 "id": "151",
@@ -837,6 +1646,92 @@ const DbData = {
                 "id": "155",
                 "backgroundurl": "https://www.fu-berlin.de/en/sites/nachhaltigkeit/_media/karussell/Holzelaube-fuer-web.jpg?width=500",
                 "name": "Yerevan State Medical University"
+            }
+        ],
+        "belarus": [
+            {
+                "id": "156",
+                "country":"Belarus",
+                "backgroundurl": "https://images.collegedunia.com/public/college_data/images/studyabroad/appImage/college_690_14-16:11_cov.jpeg?h=185&w=375&mode=stretch",
+                "name": "Ludwig Maxmilian-Universitat Munchen",
+                "header": {
+                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
+                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                },
+                "brief":{
+                    "capital":"Moscow",
+                    "population":"14.41 crore(2020)",
+                    "medium":"English",
+                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency_short":"ruble",
+                    "in_airport":"Moscow",
+                    "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
+                    "duration":"6 Year (5 + 1 Year's Internship)",
+                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "intake":"October",
+                    "score_required":"50% in PCB",
+                    "hostel":"200 to 260 USD Per Month",
+                    "neet_req":"Yes"
+                },
+                "table":{
+                    "tution_fee":"3,23,600",
+                    "hostal_fee":"35,000",
+                    "otc":"2500$",
+                    "incentive":"1200$"
+                },
+                "duration":[
+                    "5 years of total academic term",
+                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
+                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                ],
+                "medium_teaching":[
+                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
+                    "English being the global language helps students and professors to connect and communicate."
+                ],
+                "intake":[
+                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
+                    "Classes of MBBS study in Ukraine starts from the first week of September.",
+                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
+                    "The seats are specified based on first come first serve.",
+                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
+                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                ],
+                "eligibility":[
+                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
+                    "Student must be from a science background in 10+2",
+                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
+                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
+                    "Must not be from any open school.",
+                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                ],
+                "documents":[
+                    "Birth certificate",
+                    "10th and 12th mark sheet (Scanned or softcopy)",
+                    "Migration certificate",
+                    "Bank statement of parents to know if you can afford the university’s tuition fees",
+                    "Significant Passport",
+                    "Student visa",
+                    "Medical Reports",
+                    "Passport size photos",
+                    "Offer letter from the college where you got seat",
+                    "Scanned or soft copy of your NEET scorecard.",
+                    "Flight tickets"
+                ],
+            },
+            {
+                "id": "157",
+                "backgroundurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Berlin-Mitte_Bebelplatz1_05-2014.jpg/533px-Berlin-Mitte_Bebelplatz1_05-2014.jpg",
+                "name": "Humboldt-Universitat zu Berlin"
+            },
+            {
+                "id": "158",
+                "backgroundurl": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/346000/346837-Universitatsbibliothek.jpg",
+                "name": "Universitat Heidelberg"
+            },
+            {
+                "id": "159",
+                "backgroundurl": "https://www.fu-berlin.de/en/sites/nachhaltigkeit/_media/karussell/Holzelaube-fuer-web.jpg?width=500",
+                "name": "Freie Universitat Berlin"
             }
         ],
         "default": [

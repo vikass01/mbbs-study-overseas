@@ -10,7 +10,7 @@ import Useful from "./Useful";
 
 const Universities = () => {
     const [collages,setcollages] = useState(DbData.countries.russia)
-    const [selectedCountry,setselectedCountry] = useState("de")
+    const [selectedCountry,setselectedCountry] = useState("Russia")
     const [showCountry,setShowCountry] = useState(true)
     
     
@@ -42,6 +42,8 @@ const Universities = () => {
             setcollages(DbData.countries.bangladesh)
         }else if( data === "armenia"){
             setcollages(DbData.countries.armenia)
+        }else if( data === "belarus"){
+            setcollages(DbData.countries.belarus)
         }else {
             setcollages(DbData.countries.default)
         }
@@ -88,8 +90,8 @@ const Universities = () => {
                     </span>
                 </h2>
                 {/* <p className="text-sm lg:text-base text-gray-600 font-medium mb-10"> */}
-                <div style={{position:'relative',top:-25,zIndex:100,display:'flex', flexDirection:"column", flexWrap:'nowrap',                  justifyContent:'center', alignItems:"center", gap:10, padding:"0px 10px", margin:"10px 0px" }}>
-                    <label style={{width:"100%"}} htmlFor="country">Choose a Country:
+                <div style={{position:'relative',top:-25,display:'flex', flexDirection:"column", flexWrap:'nowrap',                  justifyContent:'center', alignItems:"center", gap:10, padding:"0px 10px", margin:"10px 0px" }}>
+                    <label style={{width:"100%", zIndex:0}} htmlFor="country">Choose a Country:</label>
                     <select className="vbnm" value={selectedCountry} name="country" id="countries" style={{width:"90%",borderRadius:10,}} onChange={(event)=>countrydata(event.target.value)}>
                         {/* <option value="default">Choose Country</option> */}
                         <option value="russia">Russia</option>
@@ -105,9 +107,10 @@ const Universities = () => {
                         <option value="uzbekistan">Uzbekistan</option>
                         <option value="bangladesh">Bangladesh</option>
                         <option value="armenia">Armenia</option>
+                        <option value="belarus">Belarus</option>
                     </select>
-                    </label>
-                    <Link onClick={()=>setShowCountry(false)} style={{margin:'5px 0px'}}><span style={{color:'blue'}}>Click here</span> : Useful About {selectedCountry} </Link>
+                    
+                    <p style={{margin:'5px 0px'}}><Link onClick={()=>setShowCountry(false)} ><span style={{color:'blue'}}>Click here</span></Link> : Useful About Fees Structure, Admission In {selectedCountry} </p>
                 </div>
                 {/* <p className="mb-10 subdesc" style={{padding:'0px 20px',fontSize:12}}>
                 Study MBBS in Europe and choose from 8 countries and 16 universities.
@@ -131,7 +134,6 @@ const Universities = () => {
         : 
         <div>
             <Useful Change={funChange} collag={collages}  />
-            <Link onClick={()=>setShowCountry(true)} style={{margin:'5px 0px'}}>Back </Link>
         </div>
         }
         </>
@@ -143,16 +145,16 @@ export default Universities;
 const FeatureCard = ({ url, name, id }) => {
     return (
         <>
-            <div className="bhuio bnmk" style={{backgroundImage: `URL(${url})`, backgroundPosition:"center",backgroundColor:"rgba(0,0,0,0.1)", backgroundBlendMode:"darken", backgroundSize:'cover', display:'flex', justifyContent:'center', alignItems:'flex-end',borderRadius:3, }}>
-                    <div className="firstCase" style={{padding:10, width:"100%",backgroundColor:"rgba(0,0,0,0.5)", borderBottomRightRadius:5, borderBottomLeftRadius:5 }}>
-                        <p className="vfr">{name.toUpperCase()}</p>
+            <div className="bhuio bnmk" style={{backgroundImage: `URL(${url})`, backgroundPosition:"center",backgroundColor:"rgba(0,0,0,0.1)", backgroundBlendMode:"darken", backgroundSize:'cover', display:'flex', justifyContent:'center', alignItems:'flex-end' }}>
+                    <div className="firstCase" style={{padding:10, width:"100%",backgroundColor:"rgba(0,0,0,0.5)", borderBottomRightRadius:30, borderBottomLeftRadius:30 }}>
+                        <p className="vfr">{name?.toUpperCase()}</p>
                         <div className="mainCase" >
                             <div className="subMainCase" >
-                                <div className="firstCase" >
+                                {/* <div className="firstCase" >
                                     <p className="vfr"><Link to={`/getdetail/${id}`} className="xcxc " >Get Details &#10158;</Link></p>
-                                </div>
+                                </div> */}
                                 <div className="secondCase" >
-                                    <p className="vfr"><Link to="/login" className="xcxc " >Apply Now &#10158;</Link></p>
+                                    <p className="vfr"><Link to="/login" className="xcxc " >Apply For Admission &#10158;</Link></p>
                                 </div>
                             </div>
                         </div>

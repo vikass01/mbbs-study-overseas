@@ -62,9 +62,9 @@ const NavBar = () => {
         setPopoverOpen(true);
     }
 
-    const handlePopoverClose = () => {
-        setPopoverOpen(false);
-    }
+    // const handlePopoverClose = () => {
+    //     setPopoverOpen(false);
+    // }
 
     const navMyAccount =()=>{
         alert('helllllo')        
@@ -72,9 +72,9 @@ const NavBar = () => {
         navigate('/home')
     }
 
-    const zfzfzf =()=>{
-        setPopoverOpen(false);
-    }
+    // const zfzfzf =()=>{
+    //     setPopoverOpen(false);
+    // }
 
     // const userLogout =()=>{
     //     const auth = getAuth(app);
@@ -122,7 +122,7 @@ const NavBar = () => {
                                 Programs
                             </Popover.Button>
 
-                            {isPopoverOpen && (
+                            {/* {isPopoverOpen && (
                                 <Transition
                                     as={Fragment}
                                     enter="transition ease-out duration-200"
@@ -168,8 +168,12 @@ const NavBar = () => {
                                         </div>
                                     </Popover.Panel>
                                 </Transition>
-                            )}
+                            )} */}
                         </Popover>
+
+                        <Link to="/universities" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
+                            Universities
+                        </Link>
 
                         <Link to="/blogs" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Blogs
@@ -225,7 +229,7 @@ const NavBar = () => {
                                 {/* <XMarkIcon className="h-6 w-6" aria-hidden="true" /> */}
                             </button>
                         </div>
-                        <div className="mt-16 flow-root">
+                        <div className="mt-16 flow-root" >
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
                                     <Link
@@ -234,7 +238,7 @@ const NavBar = () => {
                                     >
                                         Home
                                     </Link>
-                                    <Disclosure as="div" className="-mx-3">
+                                    {/* <Disclosure as="div" className="-mx-3">
                                         {({ open }) => (
                                             <>
                                                 <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50">
@@ -259,7 +263,13 @@ const NavBar = () => {
                                                 </Disclosure.Panel>
                                             </>
                                         )}
-                                    </Disclosure>
+                                    </Disclosure> */}
+                                    <Link
+                                        to="/universities"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Universities
+                                    </Link>
                                     <Link
                                         to="/blogs"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}

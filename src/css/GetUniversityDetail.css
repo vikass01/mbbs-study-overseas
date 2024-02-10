@@ -105,7 +105,7 @@
     display: none
   }
 
-  .wityu img{
+  .sert{
     display: none;
   }
 
@@ -113,11 +113,35 @@
     text-align: center;
   }
 
+  .vgty{
+    width: 80%;
+  }
+
+  .vfrty{
+    padding-bottom: 20px;
+  }
+
   
 
 
 
 }
+
+@media screen and (min-width: 800px) {
+    
+  .vfrty{
+    padding:50px 150px
+  }
+  
+
+
+
+}
+
+/* .vfrty{
+  padding:10px 0px
+} */
+
 
 
 
@@ -135,20 +159,25 @@
   align-items: center;
   gap: 30px;
   margin-top: 15px;
+  flex-direction: column;
 }
 
 .wityu img{
-  min-width: 200px;
-  width: 30%;
+  min-width: 400px;
+  border-radius: 30px;
+  
   
  
   box-shadow: 10px 10px 30px black;
 }
 
+
+
 .wityu p{
-  padding: 20px 40px;
-  width: 600px;
-  text-align: justify; 
+  padding: 20px 0px;
+  /* width:80% ; */
+  text-align: justify;
+  max-width: 700px; 
 }
 
 
