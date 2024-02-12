@@ -9,6 +9,11 @@ import { getStorage, ref,uploadBytes,getDownloadURL } from "firebase/storage";
 import { Context } from '../App';
 // import EmailVerification from './EmailVerification';
 import ErrorPages from './ErrorPages';
+import Splash from './Splash';
+import { getFirestore } from "firebase/firestore"
+import { collection, addDoc,doc, setDoc } from "firebase/firestore"; 
+
+
 
 
 
@@ -16,7 +21,7 @@ import ErrorPages from './ErrorPages';
 
 
 const MemberDashboard=()=> {
-
+  const db = getFirestore(app);
   const {authUser} = useContext(Context);
   console.log("data received in home.js", authUser);
   var navigate = useNavigate()
@@ -24,15 +29,33 @@ const MemberDashboard=()=> {
   console.log('direct auth data',auth);
   const storage = getStorage(app)
 
-  const [usernamee, setusernamee] = useState("John sing doe")
+  const [usernamee, setusernamee] = useState("Your Name Here")
+  const [title, setTitle] = useState("Your Title Here")
   const [mobile,setmobile] = useState("(239) 816-9029")
   const [address,setaddress] = useState("Bay Area, San Francisco, CA")
   const [statee,setstatee] = useState("Maharashtra")
   const [pincode,setpincode] = useState("456789")
   const [newprofile, setnewprofile] = useState("https://static.vecteezy.com/system/resources/previews/029/271/069/original/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg")
   const [editprofile,seteditprofile] = useState(true)
+  const [showLoader, setShowLoader] = useState(false);
 
+  const writeUserData =async()=>{
+    
+    try {
+      const docRef = await setDoc(doc(db, "users", authUser.user.email), {
+        username: usernamee,
+        title: title,
+        address: address,
+        state:statee,
+        pincode:pincode
+      });
+      console.log("Document written with ID: ", docRef);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
 
+  
   
   
   
@@ -65,16 +88,19 @@ const MemberDashboard=()=> {
   
     
 
-  const saveEditData =async(e)=>{
+  const saveProfilePhoto =async(e)=>{
+    setShowLoader(true)
       console.log(usernamee,mobile,address,statee,pincode);
       const storeLocation = ref(storage, `profileImages/${authUser.user.uid}.png`)
       await uploadBytes(storeLocation, newprofile).then(() => {
       });
-      await getDownloadURL(storeLocation).then((url) => {
-      updateProfile(auth.currentUser, {
-        displayName: usernamee, photoURL: url
+      await getDownloadURL(storeLocation).then(async(url) => {
+      await updateProfile(auth.currentUser, {
+        photoURL: url
       }).then((resp)=>{console.log("upload url response",resp)})
       })
+      await seteditprofile(true)
+      setShowLoader(false)
       
     
   }
@@ -92,6 +118,7 @@ const MemberDashboard=()=> {
   
   return (
     <div className="container expad" >
+      {showLoader && <Splash/>}
         <div className="main-body">
           {/* Breadcrumb */}
           {/* <nav aria-label="breadcrumb" className="main-breadcrumb">
@@ -106,45 +133,52 @@ const MemberDashboard=()=> {
             <div className="col-md-4 mb-3">
               <div className="card">
                 <div className="card-body">
-                  <div className="d-flex flex-column align-items-center text-center">
+                  <div className="d-flex flex-column align-items-center text-center" >
                     {/* <img src={authUser.auth.currentUser.photoURL||"https://bootdey.com/img/Content/avatar/avatar7.png"} alt="Admin" className="rounded-circle" width={150} /> */}
-                    <img src={authUser.user.photoURL} alt="Admin" className="rounded-circle" style={{width:150}} />
+                    <img src={authUser.user.photoURL ||"https://bootdey.com/img/Content/avatar/avatar7.png"} alt="Admin" className="rounded-circle adminPhoto" style={{width:150,height:"auto", boxShadow:"5px 5px 10px 10px"}} />
                     {/* <div style={{position:'absolute'}}>
                       <img alt='bbb' src={photo} style={{height:100,width:100}}/>
                     <input type='file' placeholder='Upload Picture' onChange={upladPicture} />
                     </div> */}
                     <div className="mt-3">
                       {/* <p>{authUser.auth.currentUser.displayName||"abc kumar"}</p> */}
-                      <p>{authUser.user.displayName}</p>
+                      <p>{authUser.user.displayName|| "Your Name"}</p>
                       <p className="text-secondary mb-1">Full Stack Developer</p>
-                      <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button className="btn btn-primary" style={{marginRight:5}} >Follow</button>
+                      {/* <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p> */}
+                      
+                      <button className="btn btn-primary" style={{marginRight:5}} onClick={()=>seteditprofile(false)} >Edit</button>
                       <button className="btn btn-outline-primary" onClick={userLogout}>Logout</button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="card mt-3">
-                <ul className="list-group list-group-flush">
+              <div className="card mt-3" >
+                <ul className="list-group list-group-flush" >
                   <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-globe mr-2 icon-inline"><circle cx={12} cy={12} r={10} /><line x1={2} y1={12} x2={22} y2={12} /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>Website</h6>
-                    <span className="text-secondary">https://bootdey.com</span>
+                    {/* <h6 className="mb-0">Website</h6>
+                    <span className="text-secondary">https://bootdey.com</span> */}
+                    <Link style={{width:"100%"}} className="btn">Profile</Link>
+                    
                   </li>
                   <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-github mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>Github</h6>
-                    <span className="text-secondary">bootdey</span>
+                    {/* <h6 className="mb-0">Github</h6>
+                    <span className="text-secondary">bootdey</span> */}
+                    <Link style={{width:"100%"}} className="btn ">Profile</Link>
                   </li>
                   <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-twitter mr-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" /></svg>Twitter</h6>
-                    <span className="text-secondary">@bootdey</span>
+                    {/* <h6 className="mb-0">Twitter</h6>
+                    <span className="text-secondary">@bootdey</span> */}
+                    <Link style={{width:"100%"}} className="btn">Profile</Link>
                   </li>
                   <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-instagram mr-2 icon-inline text-danger"><rect x={2} y={2} width={20} height={20} rx={5} ry={5} /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>Instagram</h6>
-                    <span className="text-secondary">bootdey</span>
+                    {/* <h6 className="mb-0">Instagram</h6>
+                    <span className="text-secondary">bootdey</span> */}
+                    <Link style={{width:"100%"}} className="btn">Profile</Link>
                   </li>
                   <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <h6 className="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</h6>
-                    <span className="text-secondary">bootdey</span>
+                    {/* <h6 className="mb-0">Facebook</h6>
+                    <span className="text-secondary">bootdey</span> */}
+                    <Link style={{width:"100%"}} className="btn">Profile</Link>
                   </li>
                 </ul>
               </div>
@@ -162,7 +196,7 @@ const MemberDashboard=()=> {
                           </div>
                           <div className="col-sm-9 text-secondary">
                               {/* {authUser.auth.currentUser.displayName||"abc kumar"} */}
-                              {authUser.user.displayName}
+                              {authUser?.user?.displayName|| "Your Name"}
                           </div>
                       </div>
                       <hr />
@@ -202,12 +236,12 @@ const MemberDashboard=()=> {
                               Bay Area, San Francisco, CA
                           </div>
                       </div>
-                      <hr />
-                      <div className="row" style={{marginTop:5}}>
+                      {/* <hr /> */}
+                      {/* <div className="row" style={{marginTop:5}}>
                           <div className="col-sm-12" onClick={()=>seteditprofile(false)}>
-                              <Link className="btn btn-info " to='#' >Edit</Link>
+                              <Link className="btn btn-info "  >Edit</Link>
                           </div>
-                      </div>
+                      </div> */}
                       </div>
                 </div>:
 
@@ -215,7 +249,7 @@ const MemberDashboard=()=> {
               
               
               
-              <div className="col-lg-8 editProfile" >
+              <div className="col-lg-8 editProfile" style={{width:"100%"}} >
                     <div className="card">
                         <div className="card-body">
                               <div className="row mb-0">
@@ -223,7 +257,15 @@ const MemberDashboard=()=> {
                                     <h6 className="mb-0">Full Name</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                    <input type="text" className="form-control" placeholder={authUser.user.displayName || "Mr. John Dicosta"} onChange={(event)=>setusernamee(event.target.value)} />
+                                    <input type="text" className="form-control" placeholder={authUser.user.displayName || usernamee} onChange={(event)=>setusernamee(event.target.value)} />
+                                  </div>
+                              </div>
+                              <div className="row mb-0">
+                                  <div className="col-sm-3">
+                                    <h6 className="mb-0">Title</h6>
+                                  </div>
+                                  <div className="col-sm-9 text-secondary">
+                                    <input type="text" className="form-control" placeholder={authUser?.user?.title || title} onChange={(event)=>setTitle(event.target.value)} />
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -231,7 +273,7 @@ const MemberDashboard=()=> {
                                       <h6 className="mb-0">Email</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                      <input type="text" className="form-control" placeholder= {authUser.user.email || "john@example.com"} disabled/>
+                                      <input type="text" className="form-control" placeholder= {authUser.user.email || "Your Email here"} disabled/>
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -272,13 +314,14 @@ const MemberDashboard=()=> {
                                       <h6 className="mb-0">Profile Picture</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary" aria-placeholder=''>
-                                      <input type="file" className="form-control" onChange={(event)=>setnewprofile(event.target.files[0])} />
+                                      <input type="file" accept="image/*" className="form-control" onChange={(event)=>setnewprofile(event.target.files[0])} />
+                                      <Link onClick={saveProfilePhoto} > Upload Profile Picture </Link>
                                   </div>
                               </div>
                                   
-                                <div className="text-secondary" style={{display:'flex',justifyContent:'flex-start', flexDirection:'row-reverse', width:'100%', gap:130}}>                                          
-                                    <Link className="btn btn-info "  onClick={saveEditData} > Save Data  </Link>
-                                    <Link className="btn btn-info "  onClick={()=>seteditprofile(true)} > Back  </Link>                                      
+                                <div className="text-secondary" style={{display:'flex', flexDirection:'row-reverse', width:'100%', gap:30, marginTop:50}}>                                          
+                                    <Link className="btn btn-primary" onClick={writeUserData}  > Save Data  </Link>
+                                    <Link className="btn btn-outline-primary"  onClick={()=>seteditprofile(true)} > Back  </Link>                                      
                                 </div>
                                                                             
                             </div>
@@ -295,26 +338,26 @@ const MemberDashboard=()=> {
                 <div className="col-sm-6 mb-3">
                   <div className="card h-100">
                     <div className="card-body">
-                      <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
+                      <h6 className="d-flex align-items-center mb-3"><span style={{fontWeight:600}} className="material-icons text-info mr-2">Admission</span>Application Status</h6>
+                      <small>ALTAI STATE MEDICAL UNIVERSITY</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '80%'}} aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '80%',backgroundColor:"#70467E"}} aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>Website Markup</small>
+                      <small>FIRST MOSCOW STATE MEDICAL UNIVERSITY</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '72%'}} aria-valuenow={72} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '72%',backgroundColor:"#70467E"}} aria-valuenow={72} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>One Page</small>
+                      <small>FIRST MOSCOW STATE MEDICAL UNIVERSITY</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '89%'}} aria-valuenow={89} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '89%',backgroundColor:"#70467E"}} aria-valuenow={89} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>Mobile Template</small>
+                      <small>GOMEL STATE MEDICAL UNIVERSITY</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '55%'}} aria-valuenow={55} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '55%',backgroundColor:"#70467E"}} aria-valuenow={55} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>Backend API</small>
+                      <small>TASHKENT MEDICAL ACADEMY</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '66%'}} aria-valuenow={66} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '66%',backgroundColor:"#70467E"}} aria-valuenow={66} aria-valuemin={0} aria-valuemax={100} />
                       </div>
                     </div>
                   </div>
@@ -322,26 +365,26 @@ const MemberDashboard=()=> {
                 <div className="col-sm-6 mb-3">
                   <div className="card h-100">
                     <div className="card-body">
-                      <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
+                      <h6 className="d-flex align-items-center mb-3"><span style={{fontWeight:600}} className="material-icons text-info mr-2">Admission</span>Status by Universities</h6>
                       <small>Web Design</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '80%'}} aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '80%',backgroundColor:"#70467E"}} aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
                       </div>
                       <small>Website Markup</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '72%'}} aria-valuenow={72} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '72%',backgroundColor:"#70467E"}} aria-valuenow={72} aria-valuemin={0} aria-valuemax={100} />
                       </div>
                       <small>One Page</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '89%'}} aria-valuenow={89} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '89%',backgroundColor:"#70467E"}} aria-valuenow={89} aria-valuemin={0} aria-valuemax={100} />
                       </div>
                       <small>Mobile Template</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '55%'}} aria-valuenow={55} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '55%',backgroundColor:"#70467E"}} aria-valuenow={55} aria-valuemin={0} aria-valuemax={100} />
                       </div>
                       <small>Backend API</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar bg-primary" role="progressbar" style={{width: '66%'}} aria-valuenow={66} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '66%',backgroundColor:"#70467E"}} aria-valuenow={66} aria-valuemin={0} aria-valuemax={100} />
                       </div>
                     </div>
                   </div>

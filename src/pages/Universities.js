@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DbData from "../components/DB";
 import { useState } from "react";
 import "../css/Universities.css"
@@ -55,6 +55,11 @@ const Universities = () => {
     const funChange =()=>{
         setShowCountry(true)
     }
+
+    useEffect(()=>{
+        setShowCountry(true)
+    },[])
+
     return (
         <>
         <UniversityHeader/>

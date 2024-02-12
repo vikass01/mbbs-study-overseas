@@ -7,12 +7,13 @@ import Error from "./pages/Error";
 import Connect from "./pages/Connect";
 import BlogPost from "./components/BlogPost";
 import Company from "./pages/Company";
+import Splash from "./pages/Splash"
 
 
 import {
   BrowserRouter as Router,
   Route,
-  Routes,
+  Routes
 } from "react-router-dom";
 import "./App.css";
 import ScrollToTop from "./pages/ScrollToTop";
@@ -36,7 +37,11 @@ export const Context = createContext();
 
 
 
+
+
 const App = ()=> {
+ 
+  
   const defaultUser = {
     operationType:"signOut",
     user:{     
@@ -47,14 +52,9 @@ const App = ()=> {
     }   
 
   }
-  // const [userDataonstate,setuserDataonstate] = useState(null) 
-  // useEffect(()=>{
-  //   onAuthStateChanged(getAuth(app), (user)=>{
-  //     console.log("data from app.js", user)
-  //     setuserDataonstate(user)
-      
-  //   })
-  // },[])
+ const funChange = ()=>{
+
+ }
   const [userData,setuserData] = useState(defaultUser)  
     
     if (userData) {
@@ -67,7 +67,6 @@ const App = ()=> {
 
   const LoginData =(data)=>{
     setuserData(data)
-    console.log();
   }
 
 
@@ -99,6 +98,7 @@ const App = ()=> {
           <Route path="/universities" element={<Universities />} />
           <Route path="/universityheader" element={<UniversityHeader />} />
           <Route path="/getdetail/:id" element={<GetUniversityDetail />} />
+          <Route path="/splash" element={<Splash />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

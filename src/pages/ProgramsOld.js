@@ -17,37 +17,37 @@ const features = [
   {
     name: 'Economical Study Options',
     description:
-      'HeadStart provides affordable study options, scholarships, and financial aid to make education accessible. They prioritize budget-friendly solutions for students, enabling them to pursue their dreams without financial barriers.',
+      'Mbbs Study Overseas provides affordable study options, scholarships, and financial aid to make education accessible. They prioritize budget-friendly solutions for students, enabling them to pursue their dreams without financial barriers.',
     icon: BanknotesIcon,
   },
   {
     name: 'Comprehensive Programs and Resources',
     description:
-      'HeadStart empowers students with programs and courses for academic and professional success. They offer resources for test prep, career guidance, and skill development. With tailored support, HeadStart helps students excel in academia and achieve career goals.',
+      'Mbbs Study Overseas empowers students with programs and courses for academic and professional success. They offer resources for test prep, career guidance, and skill development. With tailored support, Mbbs Study Overseas helps students excel in academia and achieve career goals.',
     icon: BookOpenIcon,
   },
   {
     name: 'Excellent Job Opportunities',
     description:
-      'HeadStart connects students to excellent job opportunities through industry connections and career development resources. They organize job fairs, internships, and workshops to help students succeed in the professional world. With HeadStart, students gain the skills and networking opportunities needed to stand out in the job market and secure desirable positions.',
+      'Mbbs Study Overseas connects students to excellent job opportunities through industry connections and career development resources. They organize job fairs, internships, and workshops to help students succeed in the professional world. With Mbbs Study Overseas, students gain the skills and networking opportunities needed to stand out in the job market and secure desirable positions.',
     icon: BriefcaseIcon,
   },
   {
     name: 'Best University Admissions',
     description:
-      'HeadStart secures top university admissions through personalized guidance. They help with applications, essays, and mock interviews to increase acceptance rates. For medical students, they provide assistance in exam prep and profile building for admission to prestigious medical schools.',
+      'Mbbs Study Overseas secures top university admissions through personalized guidance. They help with applications, essays, and mock interviews to increase acceptance rates. For medical students, they provide assistance in exam prep and profile building for admission to prestigious medical schools.',
     icon: AcademicCapIcon,
   },
   {
     name: 'Guranteed Outcomes',
     description:
-      'HeadStart guarantees successful outcomes by providing specialized training for high-paying careers. They support students in achieving their goals, including admission to top universities and securing jobs in their desired fields.',
+      'Mbbs Study Overseas guarantees successful outcomes by providing specialized training for high-paying careers. They support students in achieving their goals, including admission to top universities and securing jobs in their desired fields.',
     icon: CheckCircleIcon,
   },
   {
     name: 'Maximum Benefits',
     description:
-      'HeadStart prioritizes student success through valuable resources, support, and guidance. They offer budget-friendly programs, exclusive materials, counseling, and networking opportunities for an enhanced educational journey.',
+      'Mbbs Study Overseas prioritizes student success through valuable resources, support, and guidance. They offer budget-friendly programs, exclusive materials, counseling, and networking opportunities for an enhanced educational journey.',
     icon: StarIcon,
   },
 
@@ -104,12 +104,12 @@ const Programs = () => {
                       height="24"
                     />
                   </svg>
-                  <span className="relative">Headstart</span>
+                  <span className="relative">Mbbs Study Overseas</span>
                 </span>{' '}
                 Programs are Budget-Friendly.
               </h2>
               <p className="text-sm text-gray-600 font-medium lg:text-base">
-                The carefully hand-picked HeadStart Programs benefit you in a big way as they guarantee you financial freedom,
+                The carefully hand-picked Mbbs Study Overseas Programs benefit you in a big way as they guarantee you financial freedom,
                 ensure better universities, provide successful international career and thus help you make right study abroad decision.
               </p>
             </div>
@@ -169,13 +169,13 @@ const Programs = () => {
         </div>
       </section> */}
 
-      {/* Why Headstart */}
+      {/* Why Mbbs Study Overseas */}
       <div className="bg-white py-24 sm:py-32">
         <div className="flex flex-col items-center mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             {/* <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2> */}
             <p className="mt-2 text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
-              Why Headstart Programs?
+              Why Mbbs Study Overseas Programs?
             </p>
             <p className="mt-6 text-sm lg:text-base text-gray-600 font-medium">
               You can explore the features that we provide with fun and have their own feature.
@@ -272,7 +272,7 @@ const Programs = () => {
         </div>
         <div className='mt-16 text-justify text-base text-gray-600 space-y-8'>
           <p>
-            At <span className='text-primary font-semibold hover:text-gray-600 cursor-pointer'> www.headstart.co.in</span>, we believe that every student, regardless of their background or academic goals, can benefit from the unique services provided by our counsellors. Whether you are a high school student exploring college options, an undergraduate looking to choose a major, or a professional seeking a career change, our dedicated team is here to support you every step of the way.
+            At <span className='text-primary font-semibold hover:text-gray-600 cursor-pointer'> www.Mbbs Study Overseas.co.in</span>, we believe that every student, regardless of their background or academic goals, can benefit from the unique services provided by our counsellors. Whether you are a high school student exploring college options, an undergraduate looking to choose a major, or a professional seeking a career change, our dedicated team is here to support you every step of the way.
           </p>
 
           <p>

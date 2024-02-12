@@ -3,6 +3,7 @@
     /* background-color: aqua; */
     width: 100%;
     height: 100%;
+    margin-bottom: 50px;
 }
 
 .dfhtu{
@@ -105,6 +106,14 @@
     display: none
   }
 
+  .wityu img{
+    display: none
+  }
+
+  .wityu {
+    margin-top: 50px;
+  }
+
   .sert{
     display: none;
   }
@@ -153,33 +162,26 @@
 }
 
 .wityu{
+  position: relative;
   /* background-color: rgb(150, 127, 255); */
+  padding: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 30px;
-  margin-top: 15px;
-  flex-direction: column;
 }
 
 .wityu img{
-  min-width: 400px;
-  border-radius: 30px;
-  
-  
- 
+  min-width: 200px;
+  width: 40%;
+  min-height: 120px;
+  height: 10%;
   box-shadow: 10px 10px 30px black;
 }
 
-
-
 .wityu p{
-  padding: 20px 0px;
-  /* width:80% ; */
-  text-align: justify;
-  max-width: 700px; 
+  padding: 10px 10px;
+  width: 600px;
+  text-align: justify; 
 }
-
 
 
 

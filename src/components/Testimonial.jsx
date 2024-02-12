@@ -60,7 +60,7 @@ const Testimonial = () => {
                             <SwiperSlide className="p-6 pb-16">
                                 <div className="px-12">
                                     <blockquote>
-                                        <p className="text-sm md:text-lg font-medium text-gray-800">“After looking for various options to study in Europe, I decided with the help of Headstart counselors to study Masters in Business in Belgium. I am very happy, I took this decision.”</p>
+                                        <p className="text-sm md:text-lg font-medium text-gray-800">“After looking for various options to study in Europe, I decided with the help of Mbbs Study Overseas counselors to study Masters in Business in Belgium. I am very happy, I took this decision.”</p>
                                     </blockquote>
                                     <figcaption className="flex flex-col gap-4 sm:flex-row items-center sm:justify-center mt-6 space-x-3">
                                         <img className="w-12 h-12 rounded-full" src={sumeet} alt="Sumeet" />
@@ -74,7 +74,7 @@ const Testimonial = () => {
                             <SwiperSlide className="p-6 pb-16">
                                 <div className="px-12">
                                     <blockquote>
-                                        <p className="text-sm md:text-lg font-medium text-gray-800">“The Entire Education and the visa process was simplified for me with the help of systematic approch of the excellent counselors at Headstart.”</p>
+                                        <p className="text-sm md:text-lg font-medium text-gray-800">“The Entire Education and the visa process was simplified for me with the help of systematic approch of the excellent counselors at Mbbs Study Overseas.”</p>
                                     </blockquote>
                                     <figcaption className="flex flex-col gap-4 sm:flex-row items-center sm:justify-center mt-6 space-x-3">
                                         <img className="w-12 h-12 rounded-full" src={bhaskar} alt="Bhaskar" />
@@ -88,7 +88,7 @@ const Testimonial = () => {
                             <SwiperSlide className="p-6 pb-16">
                                 <div className="px-12">
                                     <blockquote>
-                                        <p className="text-sm md:text-lg font-medium text-gray-800">“Headstart changed my life! I couldn't have ever imagined that I'd be studying & living in a city like Frankfurt & Berlin on my own. I'm overwhelmed with the gratitude towards Mamta Ma'am.”</p>
+                                        <p className="text-sm md:text-lg font-medium text-gray-800">“Mbbs Study Overseas changed my life! I couldn't have ever imagined that I'd be studying & living in a city like Frankfurt & Berlin on my own. I'm overwhelmed with the gratitude towards Mamta Ma'am.”</p>
                                     </blockquote>
                                     <figcaption className="flex flex-col gap-4 sm:flex-row items-center sm:justify-center mt-6 space-x-3">
                                         <img className="w-12 h-12 rounded-full" src={ekta} alt="Ekta" />
@@ -102,7 +102,7 @@ const Testimonial = () => {
                             <SwiperSlide className="p-6 pb-16">
                                 <div className="px-12">
                                     <blockquote>
-                                        <p className="text-sm md:text-lg font-medium text-gray-800">“I am thanful to everybody in Headstart, specially for encouraging me to overcome my fears & flaws in communicating. Germany - A Dream come True for me.”</p>
+                                        <p className="text-sm md:text-lg font-medium text-gray-800">“I am thanful to everybody in Mbbs Study Overseas, specially for encouraging me to overcome my fears & flaws in communicating. Germany - A Dream come True for me.”</p>
                                     </blockquote>
                                     <figcaption className="flex flex-col gap-4 sm:flex-row items-center sm:justify-center mt-6 space-x-3">
                                         <img className="w-12 h-12 rounded-full" src={aakash} alt="Aakash" />
@@ -117,7 +117,7 @@ const Testimonial = () => {
                         {/* Testing Block */}
 
                         {/* <blockquote>
-                            <p className="text-2xl font-medium text-gray-800 dark:text-white">“The Entire Education and the visa process was simplified for me with the help of systematic approch of the excellent counselors at Headstart.”</p>
+                            <p className="text-2xl font-medium text-gray-800 dark:text-white">“The Entire Education and the visa process was simplified for me with the help of systematic approch of the excellent counselors at Mbbs Study Overseas.”</p>
                         </blockquote>
                         <figcaption className="flex items-center justify-center mt-6 space-x-3">
                             <img className="w-12 h-12 rounded-full" src={bhaskar} alt="Bhaskar" />

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import app from '../Config';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,13 +17,14 @@ import { FaAngleRight, FaArrowRight } from 'react-icons/fa'
 import brandicon from '../assets/brandlogo.png'
 import brandiconmd from '../assets/brandlogomd.png'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { Context } from '../App';
 
 
 
 const programs = [
     { name: 'Universities', description: 'Study mbbs in abroad', href: '/universities', icon: AcademicCapIcon },
     { name: 'PG Medical', description: 'Study PG Medicine and Work as a Doctor in Germany', href: 'https://www.pgmedicine.com/', icon: BuildingLibraryIcon },
-    { name: 'Work in Germany', description: 'Start your Dream Career after 12th', href: 'https://www.ws.headstart.co.in/', icon: BriefcaseIcon },
+    { name: 'Work in Germany', description: 'Start your Dream Career after 12th', href: 'https://www.ws.Mbbs Study Overseas.co.in/', icon: BriefcaseIcon },
 ]
 const callsToAction = [
     { direct: 'Go To Programs ->', href: '/programs', icon: QueueListIcon },
@@ -36,7 +37,9 @@ function classNames(...classes) {
 
 
 const NavBar = () => {
-    const navigate = useNavigate()
+    const {authUser} = useContext(Context);
+    console.log("testingggggggg",authUser.user.emailVerified)
+    const Navigate = useNavigate()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isPopoverOpen, setPopoverOpen] = useState(false);
     const [userLogged, setuserLogged] = useState(false);
@@ -67,9 +70,9 @@ const NavBar = () => {
     // }
 
     const navMyAccount =()=>{
-        alert('helllllo')        
+               
         setMobileMenuOpen(false)
-        navigate('/home')
+        
     }
 
     // const zfzfzf =()=>{
@@ -116,13 +119,16 @@ const NavBar = () => {
                         <Link to="/" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Home
                         </Link>
-                        <Popover className="relative">
+                        <Link to="/about" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
+                            About Us
+                        </Link>
+                        {/* <Popover className="relative">
                             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-700  hover:text-gray-500 duration-300 transition-colors" onClick={handlePopoverOpen}>
-                                {/* <Squares2X2Icon className="h-5 w-5 flex-none text-gray-600" aria-hidden="true" /> */}
+                                
                                 Programs
                             </Popover.Button>
 
-                            {/* {isPopoverOpen && (
+                            {isPopoverOpen && (
                                 <Transition
                                     as={Fragment}
                                     enter="transition ease-out duration-200"
@@ -168,8 +174,8 @@ const NavBar = () => {
                                         </div>
                                     </Popover.Panel>
                                 </Transition>
-                            )} */}
-                        </Popover>
+                            )}
+                        </Popover> */}
 
                         <Link to="/universities" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Universities
@@ -177,10 +183,7 @@ const NavBar = () => {
 
                         <Link to="/blogs" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Blogs
-                        </Link>
-                        <Link to="/about" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
-                            Company
-                        </Link>
+                        </Link>                        
                         <Link to="/connect" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Contact Us
                         </Link>
@@ -211,7 +214,7 @@ const NavBar = () => {
                     <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
                             <Link to="/" className="-m-1.5 p-1.5">
-                                <span className="sr-only">Headstart</span>
+                                <span className="sr-only">Mbbs Study Overseas</span>
                                 {/* <img
                                     className="h-8 w-auto"
                                     src={brandicon}
@@ -305,6 +308,7 @@ const NavBar = () => {
                                     </Link> */}
                                     {userLogged? 
                                     <Link
+                                        to="/home"
                                         onClick={navMyAccount}
                                         className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
                                         flex gap-1.5 items-center" 

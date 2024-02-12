@@ -1,16 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import "../css/Login.css";
 import { Link } from 'react-router-dom'
 import  app from '../Config';
-import {  getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import {  getAuth, createUserWithEmailAndPassword,sendEmailVerification} from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import Splash from './Splash';
+import { Context } from '../App';
+
 
 
 function Signup() {
+  const {getLoginData} = useContext(Context)
   const navigate = useNavigate()
   const [email, setemail] = useState("")
   const [password, setPassword] = useState("")
   const [repassword, setrePassword] = useState("")
+  const [showLoader, setShowLoader] = useState(false);
 
 
 
@@ -18,17 +23,28 @@ function Signup() {
   
 
   const RegisterUser = async() => {
+    setShowLoader(true)
     const auth = getAuth(app);
     if(password === repassword){
       await createUserWithEmailAndPassword(auth, email, password).then((result)=>{
         console.log("account create response",result)
-        navigate('/home')    
+        getLoginData(result)
+          console.log("result",result);
+        sendEmailVerification(result.user.auth.currentUser)
+        .then((resp) => {
+          console.log("email sent ", resp);
+        });
+
+        navigate('/home') 
+        setShowLoader(false)   
       
       }).catch((error)=>{
         alert("Account Already Exists with this email id ,Error : ", error)
+        setShowLoader(false)
       })
     }else{
       alert("Password not matching")
+      setShowLoader(false)
     }
     
 
@@ -38,6 +54,7 @@ function Signup() {
 
   return (
     <div className="vvbb">
+      {showLoader && <Splash/>}
       <div className='ftfh'>
           <img style={{borderRadius:40}} alt='study locations' src='https://cdn.imgbin.com/18/21/21/imgbin-nursing-college-health-care-student-nurse-doctors-and-nurses-BQq59yVgNGPg4gwPuLpM5PQ72.jpg'/>
      </div>

@@ -1,22 +1,17 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
-
-
+import React from 'react'
+import "../css/Splash.css"
 
 export default function Splash() {
-const navigate = useNavigate()
-
-setTimeout(() => {
-  navigate('/home')
-}, 2000);
-  
 
   return (
-    <div style={{height:'100vh', width:'100vw',backgroundColor:'#fff', display:'flex', justifyContent:'center', alignItems:'center'}}>
-      <div style={{height:200,width:200}}>
-      <img alt='logo' src={require('../assets/bbrandlogomd.png')} />
+    <div style={{height:'100vh', width:'100vw',position:"absolute", zIndex:10, backgroundColor:"rgba(0,0,0,0.5)", display:'flex', justifyContent:'center', flexDirection:"column", alignItems:'center'}}>
+      <div className='loader' >
+      <img alt='logo' src={require('../assets/esPEvsXVNsJczM8CSSPfprsfRlNRwzhLGs4vCdHs.gif')} />
       </div>
+      <div style={{width:"20%", marginTop:20}}>
+        <p style={{color:"#fff", textAlign:"center"}}>Please Wait...</p>
+      </div>
+      
       </div>
   )
 }

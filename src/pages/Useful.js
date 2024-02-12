@@ -9,36 +9,27 @@ function Useful(props) {
   const Navigate = useNavigate()    
 
   return (
-    
+    // <h1 className='text-center text-xl pt-10 px-10'>MBBS IN {collag[0]?.country.toUpperCase()}: Top Medical Universities, Fees Structure, Admission</h1>
       <div className="vbgy">
         
             <div className="wityu">
-                    <h1 className='text-center text-xl pt-10 px-10'>MBBS IN {collag[0]?.country.toUpperCase()}: Top Medical Universities, Fees Structure, Admission</h1>
-                    <div className='vfrty' style={{width:"100%", height:"fitContent", backgroundColor:"#70467E", color:"#fff", display:"flex",justifyContent:"center",flexDirection:"row", alignItems:"center"}}>
-                          <div className='sert'>
-                              <div style={{width:"50%"}}>
-                                  <img src={collag[0]?.backgroundurl} alt='hd'></img>
-                              </div>
-                          </div>
-                          <div className='vgty' style={{display:"flex", justifyContent:"center",flexDirection:"column", alignItems:"center"}}>
-                              <p >
-                              {collag[0]?.header?.shordesp}
-                              <br />
-                              <br />
-                              </p>
-                              <div style={{display:'flex', justifyContent:'space-evenly', gap:30}}>
-                                  <button onClick={()=>Change()}>Go Back</button>
-                                  <button onClick={()=>{Navigate('/login')}}>Apply Now</button>
-                              </div>
-                          </div>
-                     </div>      
+            <img src={collag[0]?.backgroundurl} alt='pic'></img>
+
+              <p>
+                <span>MBBS IN {collag[0]?.country.toUpperCase()}: Top Medical Universities, Fees Structure, Admission:</span><br/>
+                {collag[0]?.header?.shordesp}
+                <br />
+                <br />
+                <button style={{marginRight:20}} onClick={()=>Change()}>Go Back</button>
+                <button onClick={()=>{Navigate('/contact')}}>Apply Now</button>
+              </p>     
             </div>
 
       {/* 00000000000000000000000000000000000000000000000000000 */}
 
       <div className="nffd">
         
-            <img src="https://www.freepnglogos.com/uploads/doctor-png/png-woman-doctor-transparent-woman-doctor-images-17.png" alt='pic'></img>
+            <img src={collag[0].ba} alt='pic'></img>
         
         <div className="nhjip">
           <h3

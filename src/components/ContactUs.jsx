@@ -23,7 +23,7 @@ const ContactUs = () => {
                         </div>
                         <h6 className="mb-2 font-semibold leading-5 text-gray-800">Email</h6>
                         <p className="mb-3 text-sm text-gray-700 hover:text-gray-500 hover:no-underline duration-300 transition-colors">
-                            <a href="mailto:info@headstart.co.in">
+                            <a href="mailto:info@Mbbs Study Overseas.co.in">
                                 info@mbbsstudyoverseas.com
                             </a>
                         </p>

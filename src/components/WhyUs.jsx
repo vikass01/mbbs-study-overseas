@@ -24,7 +24,7 @@ const WhyUs = () => {
                             Why Us?
                         </h2>
                         <p className="mb-10 subdesc">
-                            9 Main Reasons to Choose Headstart
+                            9 Main Reasons to Choose Mbbs Study Overseas
                         </p>
                     </div>
                 </div>

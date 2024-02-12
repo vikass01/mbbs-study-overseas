@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/database": "^1.0.3",
     "@firebase/storage": "^0.12.0",
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",

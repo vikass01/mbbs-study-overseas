@@ -14,10 +14,10 @@ const BlogPost = () => {
               <address className="flex items-center mb-10 not-italic justify-center">
                 {/* px-10 mx-auto py-36 sm:px-20 sm:py-16 lg:py-28 */}
                 <div className="inline-flex items-center mr-3 text-sm text-gray-900">
-                  <img className="mr-4 w-16 h-16 rounded-full shadow-xl" src="https://dl.dropboxusercontent.com/scl/fi/tquj6ut28jey0o3bz6ewl/founder.jpg?rlkey=9qq5d9no36kkzyzes0agllap9&dl=0" alt="founder" />
+                  <img className="mr-4 w-16 h-16 rounded-full shadow-xl" src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="founder" />
                   <div>
-                    <span className="text-base lg:text-xl font-semibold text-gray-700">Piyush Khandelwal</span>
-                    <p className="text-sm lg:text-base text-gray-600">Founder, Educator & CEO Headstart</p>
+                    <span className="text-base lg:text-xl font-semibold text-gray-700">Mangal Verma</span>
+                    <p className="text-sm lg:text-base text-gray-600">Founder, Educator & CEO Mbbs Study Overseas</p>
                     <p className="text-sm lg:text-base font-light text-gray-500">
                       <time pubdate datetime="2022-02-08" title="February 8th, 2022">Feb. 8, 2022</time>
                     </p>
@@ -29,7 +29,7 @@ const BlogPost = () => {
               <h1 className="mt-12 mb-8 title text-center">How to finance your studies in Germany?</h1>
             </header>
 
-            <p className='text'>Studying in Germany can be a rewarding experience, but it's essential to figure out how to manage your finances as an international student. While education in Germany is free, there are still living expenses to consider. At HeadStart, we understand the importance of financial planning, so here are some tips and tricks to help you finance your stay and studies in Germany.</p>
+            <p className='text'>Studying in Germany can be a rewarding experience, but it's essential to figure out how to manage your finances as an international student. While education in Germany is free, there are still living expenses to consider. At Mbbs Study Overseas, we understand the importance of financial planning, so here are some tips and tricks to help you finance your stay and studies in Germany.</p>
 
             <figure><img src="https://dl.dropboxusercontent.com/scl/fi/k78g1gtiaw3ugk2tru4bk/finance.jpg?rlkey=fv0aygrwtncb360tbw4oo0w3c&dl=0" className='mt-14 rounded-2xl shadow-2xl' alt="" />
               {/* <figcaption>Digital art by Anonymous</figcaption> */}
@@ -60,7 +60,7 @@ const BlogPost = () => {
             </ol>
             <h3 className='mt-14 font-semibold text-xl text-gray-700'>Conclusion</h3>
             <p className='mt-4 text'>
-              Financing your studies in Germany requires careful financial planning and consideration of various options. Starting to save early, utilizing parental income, working part-time, exploring student loans, and seeking scholarships can all contribute to covering your living expenses. At HeadStart, we understand the importance of financial support, and we encourage our students to explore these opportunities to ensure a successful and fulfilling educational experience in Germany.
+              Financing your studies in Germany requires careful financial planning and consideration of various options. Starting to save early, utilizing parental income, working part-time, exploring student loans, and seeking scholarships can all contribute to covering your living expenses. At Mbbs Study Overseas, we understand the importance of financial support, and we encourage our students to explore these opportunities to ensure a successful and fulfilling educational experience in Germany.
             </p>
           </article>
         </div>

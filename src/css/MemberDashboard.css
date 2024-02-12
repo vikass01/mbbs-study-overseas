@@ -3,6 +3,9 @@
 
 .main-body {
     padding: 15px;
+    /* background-color: aqua; */
+    
+    
 }
 .card {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
@@ -24,6 +27,9 @@
     /* flex: 1 1 auto; */
     min-height: 1px;
     padding: 1rem;
+    background-color: #ccc;
+    border-radius: 5px;
+    /* width: max-content; */
 }
 
 .gutters-sm {
@@ -49,20 +55,32 @@
     box-shadow: none!important;
 }
 
+.expad{
+    margin-top: 100px;
+    background-color: #2c3e50;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
 @media screen and (max-width: 650px) {
     
-    .expad{
+    /* .expad{
         margin-top: 100px;
+    } */
+
+    .adminPhoto{
+        height: 200px;
     }
     
   
 }
 
-  @media screen and (min-width: 651px) {
+  /* @media screen and (min-width: 651px) {
    
     .expad{
         padding: 80px 150px 150px 150px;
     }
 
 
-}  
+}   */

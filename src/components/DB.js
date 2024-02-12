@@ -219,16 +219,16 @@ const DbData = {
                     "shordesp": "MBBS in Germany is very famous among Indian students. For every individual, Germany is becoming very popular because of its low-cost education. It is not completely free but the fee structure is comparatively low. MBBS from Germany has become a top choice in the last few years. It also includes the learning German language also with qualified lectures. It offers a very wide variety of programs for local and international students. "
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Berlin",
+                    "population":"8.32 crores(2021)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Euro(1 Euro=90.27 INR)",
+                    "currency_short":"Euro",
+                    "in_airport":"MBerlin",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
-                    "intake":"October",
+                    "intake":"",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
                     "neet_req":"Yes"
@@ -240,42 +240,54 @@ const DbData = {
                     "incentive":"1200$"
                 },
                 "duration":[
-                    "5 years of total academic term",
-                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
-                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                    "The total duration for completing the MBBS/MD in Germany from the best universities is 7.5 years. Some colleges with economical fee structure don’t follow this system. The time required is the same as in Russia and Germany. The MBBS course duration is 6 years. After MBBS, lots of students opt for PG in Germany. It is a new trend and good for fast career growth."
                 ],
                 "medium_teaching":[
                     "Having more than thousands of medical students from different parts of the world in Ukraine.",
                     "English being the global language helps students and professors to connect and communicate."
                 ],
                 "intake":[
-                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
-                    "Classes of MBBS study in Ukraine starts from the first week of September.",
-                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
-                    "The seats are specified based on first come first serve.",
-                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
-                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                    "Fill the application form of the different medical universities from which you want to do MBBS.",
+                    "Upload the required documents including academic certificates, German and English language proficiency certificate, passport, and other demanded documents.",
+                    "Wait for the confirmation sent from an institution shortlisting your application form.",
+                    "When an offer letter comes to you, you must save it for the future.",
+                    "Pay the University and enrolment fees.",
+                    "When the fees process is completed, then go for the VISA.",
+                    "Get all your documents checked, validated, and authenticated prior to VISA application Visit German Embassy in Delhi after you receive the Invitation Letter",
+                    "Proof of strong financial need to be shown to support your medical education in Germany",
+                    "Get a VISA for Germany then book a flight ticket for there."
                 ],
                 "eligibility":[
-                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
-                    "Student must be from a science background in 10+2",
-                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
-                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
-                    "Must not be from any open school.",
-                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                    "Indian students who have passed 12th in the mainstream Biology can apply for MBBS in Germany.",
+                    "The students who have achieved 60% or more than 60% in Physics, Chemistry, and Biology are preferred.",
+                    "He/she should have completed 17 years of age.",
+                    "TOEFL & IELTS score is necessary.",
+                    "One needs to clear TestDaf test",
+                    "Certificate of passing DSH (Deutsche Sprachprufung fur den Hochschulzugang) or other German language test like GDS and KDS is mandatory",
+                    "The minimum C1 level is required however, B2 level in German language is generally demanded",
+                    "If a student takes the preparatory course, B1 German Certificate is essential.",
+                    "Your documents should be checked by German Academic Exchange Service (DAAD) to verify if your academic qualifications are accredited and recognized. Also, to check if it meets the German medical school set necessary standards.",
+                    "Students may be required to appear for certain entrance tests",
+                    "The applicant should have a valid passport copy.",
+                    "The applicant should be medically fit for MBBS studies.",
+                    "The applicant should have cleared NEET with the minimum allowed score."
                 ],
                 "documents":[
+                    "Passport (18 Months Validity)",
+                    "10th certificate and marksheet",
+                    "12th certificate and mark sheet",
+                    "1st Year graduation marksheet",
+                    "All the documents need to be attested by a Gazetted Officer",
                     "Birth certificate",
-                    "10th and 12th mark sheet (Scanned or softcopy)",
-                    "Migration certificate",
-                    "Bank statement of parents to know if you can afford the university’s tuition fees",
-                    "Significant Passport",
-                    "Student visa",
-                    "Medical Reports",
-                    "Passport size photos",
-                    "Offer letter from the college where you got seat",
-                    "Scanned or soft copy of your NEET scorecard.",
-                    "Flight tickets"
+                    "10 passport size photos",
+                    "German and English language proficiency proof",
+                    "Recommendation letters",
+                    "Offer letter of the desired Medical University of Germany",
+                    "Authorization of all documents from the ministry of external affairs, New Delhi",
+                    "Legalization of all the documents from the German Embassy",
+                    "Visa Fees",
+                    "Bank - Receipt of University first-year tuition fee",
+                    "Medical NEET passing documents"
                 ],
             },
             {
@@ -302,53 +314,51 @@ const DbData = {
                 "name": "Al-Farebi National University",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "The MBBS in Kazakhstan is a very well-known course to all the medical aspirants as all top medical colleges in Kazakhstan is recognized by WHO, USMLE, IMED GMC, and NMC. Many well-known universities here are offering MBBS in Kazakhstan for Indian Students to achieve their dreams. You can find one of the best MBBS Universities in Kazakhstan. More than 5,000 Indian students come here every year and more than 60, 000 medical students to get their medical degree. And that’s why Kazakhstan is the #1 national medical university."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Nur-Sultan",
+                    "population":"1.88 crores(2020)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Kazakhstani Tenge(1Tenge=0.17 inr)",
+                    "currency_short":"Tenge",
+                    "in_airport":"Almaty",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
-                    "cost_of_stay":"20-25 lakhs (Approx)",
-                    "intake":"October",
+                    "cost_of_stay":"15-25 lakhs(Approx)",
+                    "intake":"Summer & Winter",
                     "score_required":"50% in PCB",
-                    "hostel":"200 to 260 USD Per Month",
-                    "neet_req":"Yes"
+                    "hostel":"Hostel & Apartment",
+                    "neet_req":""
                 },
                 "table":{
-                    "tution_fee":"3,23,600",
-                    "hostal_fee":"35,000",
-                    "otc":"2500$",
-                    "incentive":"1200$"
+                    "tution_fee":"3700$-4600$",
+                    "hostal_fee":"500$-2000$",
+                    "otc":"2000$-2500$",
+                    "incentive":"800$-1000$"
                 },
                 "duration":[
-                    "5 years of total academic term",
-                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
-                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                    "The duration of MBBS courses in Kazakhstan is 5 years in whole",
+                    "The candidates need to study for another 1 years for the internship",
+                    "It will take 4 years to complete clinical studies in MBBS Courses in Kazakhstan."
                 ],
                 "medium_teaching":[
-                    "Having more than thousands of medical students from different parts of the world in Ukraine.",
-                    "English being the global language helps students and professors to connect and communicate."
+                    "The students are taught local languages also",
+                    "It helps the students to communicate with the locals during the internship program"
                 ],
                 "intake":[
-                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
-                    "Classes of MBBS study in Ukraine starts from the first week of September.",
-                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
-                    "The seats are specified based on first come first serve.",
-                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
-                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                    "Generally, most of the universities closed their admission process of MBBS Courses in Kazakhstan within 15th of July",
+                    "Therefore, it will be better for the MBBS seekers to apply MBBS admission within June.",
+                    "Generally, the classes of MBBS start from August to September in Medical education in Kazakhstan."
                 ],
                 "eligibility":[
-                    "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
-                    "Student must be from a science background in 10+2",
-                    "He/she must have physics, biology, chemistry, and English as main subjects in 10+2",
-                    "Students must at least have 50% or more. (40-45% for SC/ST/OBC)",
-                    "Must not be from any open school.",
-                    "Must qualify the NEET entrance exam to be eligible for MBBS studies in Ukraine."
+                    "The age of the candidates must be 17 years",
+                    "The candidates must clear 10+2 examination",
+                    "It is necessary for the medical aspirants to secure 50 % marks in the 12th examination",
+                    "The subject combination should be Chemistry, Physics and Math for MBBS Seat in Kazakhstan",
+                    "As per the requirements of Kazakhstan universities, the candidates must qualify NEET-UG",
+                    "It is mandatory for the candidates to have valid passport to study Medicine in Kazakhstan",
+                    "As per the rules of NMC, the ST/SC/OBC candidates need to score at least 40 % marks in the same"
                 ],
                 "documents":[
                     "Birth certificate",
@@ -361,7 +371,9 @@ const DbData = {
                     "Passport size photos",
                     "Offer letter from the college where you got seat",
                     "Scanned or soft copy of your NEET scorecard.",
-                    "Flight tickets"
+                    "Flight tickets",
+                    "You need to carry student visa",
+                    "No Objection Certificate is required for the submission"
                 ],
             },
             {
@@ -413,19 +425,19 @@ const DbData = {
                 "name": "Alte University",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "MBBS in Georgia is one of the famous places to pursue a career in MBBS. It is the most preferred destination for all the aspiring medical students. MBBS universities in GEORGIA provides the best facilities for all the medical students and also allows who hasn’t passed the test of 2 languages (IELTS + TOEFL). The country is very much liberating in these cases. MBBS IN GEORGIA is a platform where medical students can ensure themselves to get a high-paying job in some top medical farms and hospitals throughout the whole world. Students who want to study MBBS IN GEORGIA and also have 50% marks can apply for the Scholarship."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Tbilisi",
+                    "population":"37.1 Lakhs(2020)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Georgian Lari(1 Lari= 27.00 inr)",
+                    "currency_short":"Lari",
+                    "in_airport":"Tbilisi",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
-                    "intake":"October",
+                    "intake":"Summer & Winter",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
                     "neet_req":"Yes"
@@ -472,7 +484,9 @@ const DbData = {
                     "Passport size photos",
                     "Offer letter from the college where you got seat",
                     "Scanned or soft copy of your NEET scorecard.",
-                    "Flight tickets"
+                    "Flight tickets",
+                   " You need to carry student visa",
+                    "No Objection Certificate is required for the submission"
                 ],
             },
             {
@@ -589,46 +603,44 @@ const DbData = {
                 "backgroundurl": "https://www.mbbsuniversities.com/files/catalog/jagiellonian_uni1_1.jpg",
                 "name": "Jagiellonian University Medical College",
                 "header": {
-                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "title": "Do you aspire to study MBBS in Poland? Are you looking for colleges of international repute to pursue medicine? Well, if you answer in positive, you must check out universities in Poland. Universities in Poland offer quality education at low-cost. The fee in the universities in Poland is low as compared to other European Countries. Therefore, it makes a great place for international students to study medicine. Poland has been the hubspot for Indians to study Medicine. MBBS in Poland is “The Dream” for many Indian students. Poland is also a part of EU which enables graduates to pursue MBBS in other European countries."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"	Warsaw",
+                    "population":"16.94 crores (2021)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
+                    "currency":"Polish Zloty (1 Polish Zloty= 19.73 INR)",
                     "currency_short":"ruble",
                     "in_airport":"Moscow",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
                     "intake":"October",
-                    "score_required":"50% in PCB",
+                    "score_required":"75% in PCB",
                     "hostel":"200 to 260 USD Per Month",
                     "neet_req":"Yes"
                 },
                 "table":{
-                    "tution_fee":"3,23,600",
-                    "hostal_fee":"35,000",
-                    "otc":"2500$",
-                    "incentive":"1200$"
+                    "tution_fee":"4200$",
+                    "hostal_fee":"200 to 260 USD Per Month",
+                    "otc":"",
+                    "incentive":"YES"
                 },
                 "duration":[
-                    "5 years of total academic term",
-                    "1 year of internship at renowned hospitals those are affiliated to individual university. (There are some universities which offers 3 years of internships)",
-                    "Five valuable years of your academics in MBBS abroad Ukraine gives you the right amount of exposure."
+                   " Polish Medical Universities offer 6 year courses in various specialities.",
+                    "The students can pursue courses in Medicine, Nursing, Pharmacy and Dentistry",
+                    "The courses offered to the student depend on the choice of the university",
+                    "Every university in Poland feature 1 year of compulsory internship included in the 6-year course.",
+                   " Indian students can choose NMC approved universities in Poland"
                 ],
                 "medium_teaching":[
                     "Having more than thousands of medical students from different parts of the world in Ukraine.",
                     "English being the global language helps students and professors to connect and communicate."
                 ],
                 "intake":[
-                    "Process of admissions in Medical universities in Ukraine usually starts after the entrance exams",
-                    "Classes of MBBS study in Ukraine starts from the first week of September.",
-                    "There are limited seats available in MBBS universities in Ukraine as the students apply from all over the world.",
-                    "The seats are specified based on first come first serve.",
-                    "Most students make their minds after the entrance exam. It is better to apply in the middle of July or August to get into Top 10 medical colleges in Ukraine.",
-                    "We suggest you to gather knowledge about the NMC approved list of Ukrainian universities on their website. You can always enquire your questions in their official chat support."
+                    "The students interested to pursue MBBS Poland must prepare in advance for the admissions",
+                    "The universities in Poland open admission in the month of April each year",
+                    "The deadline for application in the colleges for MBBS in Poland falls in the middle of October"
                 ],
                 "eligibility":[
                     "Aspiring students must be above 17+ years minimum and below 25 years as of on 31st December in the year of the admission.",
@@ -705,11 +717,10 @@ const DbData = {
                 "backgroundurl": "https://luminisabroad.com/wp-content/uploads/2022/08/slider3.jpg",
                 "name": "Nicole Testemitanu state University of Medicine and Pharmacy",
                 "header": {
-                    "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "title": "Moldova oficially the Republic of Moldova (Romanian :Republica Moldova),is a land-locked country in Eastern Europe . It is bordered by Romania to the west and Ukraine to the north , east, and south . The Unrecognised state of Transnistria lies across the Dnies-ter river on the country's eastern border with Ukraine. Moldova's capital and largest city is Chisinau."
                 },
                 "brief":{
-                    "capital":"Moscow",
+                    "capital":"Chisinau",
                     "population":"14.41 crore(2020)",
                     "medium":"English",
                     "currency":"Russian Ruble(1 lari=1.37 inr)",
@@ -718,13 +729,13 @@ const DbData = {
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
-                    "intake":"October",
+                    "intake":"Summer & Winter",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
-                    "neet_req":"Yes"
+                    "neet_req":""
                 },
                 "table":{
-                    "tution_fee":"3,23,600",
+                    "tution_fee":"5000 Euro",
                     "hostal_fee":"35,000",
                     "otc":"2500$",
                     "incentive":"1200$"
@@ -777,22 +788,22 @@ const DbData = {
                 "name": "University of Kraguyievac",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "Serbia officially the Republic of serbia is a landlocked country in southeastern and central Europe , situated at the crossroads of the pannonian Basin and the Balkans . It shares land border with Hungary to the north ,Romania to the northeast , Bulgaria to the south east , North Macedonia to the south , croatia and Bosnia and Herzegovina to the west and montenegro to the southwest , and claims a border with Albania through the disputed territory of kosovo Serbia without kosovo has about 6.7 million inhabitants , about 8.4 millions if kosovo is included. its capital Belgrade is also the largest city."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Belgrade",
+                    "population":"68.3lakh9(2021)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Serbian Dinar(1 serbian Dinar 0.77 INR)",
+                    "currency_short":"Dinar",
+                    "in_airport":"Belgrade",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
                     "intake":"October",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
-                    "neet_req":"Yes"
+                    "neet_req":""
                 },
                 "table":{
                     "tution_fee":"3,23,600",
@@ -863,22 +874,22 @@ const DbData = {
                 "name": "Institute Of Medicine (IOM)",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "Nestled Between the Majestic Himalayas . Nepal is Landlocked Between India and China ,Nar-rowly missing Bangladesh The Nation lies on the southern slopes of the mountanious Ranges of Himalayas."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Kathmandu",
+                    "population":"3 crores (2021)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Napalese Rupee (0.62 Indian Rupee)",
+                    "currency_short":"Rupee",
+                    "in_airport":"Tribhuvan",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
                     "intake":"October",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
-                    "neet_req":"Yes"
+                    "neet_req":""
                 },
                 "table":{
                     "tution_fee":"3,23,600",
@@ -1040,15 +1051,15 @@ const DbData = {
                 "name": "Al-Farebi National University",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "Italy, officially the italian Republic or the Repubic of Italy is a country in southern and western europe . Located in the middle of the mediterra nean sea , it consists of a peninsula delimited by territory largely coincides with the homonymous geographical region. italy shares land border with France, Switzerland , Austria , slovenia .It is the third most populous country in Europen and the tenth largest country in the continent by land area."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Rome",
+                    "population":"5.91 crores (2021)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Euro(1Euro-90.26INR)",
+                    "currency_short":"euro",
+                    "in_airport":"Rome",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
@@ -1151,22 +1162,22 @@ const DbData = {
                 "name": "Asian Medical Institute",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "MBBS in Kyrgyzstan is a golden opportunity for medical students who want to study abroad in a budget. To be a part of a well-known MBBS university in the world Medical Education in Kyrgyzstan is the best. Don’t miss out on the chance to study in universities that are approved by NMC & WHO with other bodies. According to Quora, there are more than 10,000 Indian students are studying in Kyrgyzstan."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Bishkek",
+                    "population":"65.9 lakhs(2020)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Kyrgyz (National/State language) Russian (Official and lnterethnic)",
+                    "currency_short":"Kyrgyz",
+                    "in_airport":"Bishkek",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
                     "intake":"October",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
-                    "neet_req":"Yes"
+                    "neet_req":""
                 },
                 "table":{
                     "tution_fee":"3,23,600",
@@ -1257,7 +1268,7 @@ const DbData = {
                 "name": "Andijan State Medical Institute",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "Studying MBBS in Uzbekistan currently turns into the ideal alternative for Indian students. It correlates with different medical examinations, experienced resources, looked after medical clinics, and phenomenal food quality. MBBS in Uzbekistan is a five years course and 100% English medium all through the five years. Medical schooling in Uzbekistan is excellent; it satisfies the worldwide guideline of instruction. From the previous years, there has been a tremendous tendency of students for studying MBBS abroad. MBBS in Uzbekistan 2022-23 is one of the commendable choices for Indian students to practice medicine abroad. Studying in medical colleges of Uzbekistan gives a more excellent calibre of training, regional pathology, learning diagnostics, taking care of the patients, practising medical care and some more."
                 },
                 "brief":{
                     "capital":"Moscow",
@@ -1268,12 +1279,13 @@ const DbData = {
                     "in_airport":"Moscow",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
-                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "cost_of_stay":"15-20 lakhs (Approx)",
                     "intake":"October",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
-                    "neet_req":"Yes"
+                    "neet_req":""
                 },
+
                 "table":{
                     "tution_fee":"3,23,600",
                     "hostal_fee":"35,000",
@@ -1353,14 +1365,14 @@ const DbData = {
                 "name": "Jalalabd Ragib Rabeya Medical College",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "Bangladesh officially the People's Republic of Bangladesh, is a country in South Asia. It is the eighth-most-populous country in the world, with a population of around 169 million people in an area of 148,460 square kilometers (57,320 sq mi). Bangladesh is among the most densely populated countries in the world, and shares land borders with India to the west, north, and east, and Myanmar to the southeast; to the south it has a coastline along the Bay of Bengal. It is narrowly separated from Bhutan and Nepal by the Siliguri Corridor; and from China by the Indian state of Sikkim in the north. Dhaka, the capital and largest city, is the nation's political, financial and cultural centre. Chittagong is the busiest port on the Bay of Bengal."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":"Dhaka",
+                    "population":"16.94 crores (2021)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
+                    "currency":"Bangladeshi Taka (1 Taka = 0.77 INR)",
+                    "currency_short":"Taka",
                     "in_airport":"Moscow",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
@@ -1368,7 +1380,7 @@ const DbData = {
                     "intake":"October",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
-                    "neet_req":"Yes"
+                    "neet_req":""
                 },
                 "table":{
                     "tution_fee":"3,23,600",
@@ -1560,18 +1572,18 @@ const DbData = {
                 "name": "Armenian Medical Institute",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "Studying MBBS in Armenia is a great option for international students looking for an affordable and high-quality education. Armenia has a number of well-respected medical universities that offer MBBS programs taught in English. The tuition fees for MBBS in Armenia are much lower than the cost of studying MBBS in many other countries.The quality of education in Armenia is also very good. The medical universities in Armenia are accredited by the World Health Organization (WHO) and the European Union (EU). This means that MBBS degrees from Armenia are recognized by many countries around the world."
                 },
                 "brief":{
-                    "capital":"Moscow",
-                    "population":"14.41 crore(2020)",
+                    "capital":	"Tashkent",
+                    "population":"27.9 lakhs(2021)",
                     "medium":"English",
-                    "currency":"Russian Ruble(1 lari=1.37 inr)",
-                    "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "currency":"Armenian Dram",
+                    "currency_short":"Dram",
+                    "in_airport":"Zvartnots",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
-                    "cost_of_stay":"20-25 lakhs (Approx)",
+                    "cost_of_stay":"25-50 lakhs(Approx)",
                     "intake":"October",
                     "score_required":"50% in PCB",
                     "hostel":"200 to 260 USD Per Month",
@@ -1652,19 +1664,19 @@ const DbData = {
             {
                 "id": "156",
                 "country":"Belarus",
-                "backgroundurl": "https://images.collegedunia.com/public/college_data/images/studyabroad/appImage/college_690_14-16:11_cov.jpeg?h=185&w=375&mode=stretch",
-                "name": "Ludwig Maxmilian-Universitat Munchen",
+                "backgroundurl": "https://www.ruseducation.in/wp-content/uploads/2022/01/Vitebsk-State-Medical-University.webp",
+                "name": " Vitebsk State Medical University",
                 "header": {
                     "title": "MBBS IN RUSSIA: Top Medical Universities, Fees Structure, Admission",
-                    "shordesp": "Russia is known worldwide for its academic excellence in higher studies. over 2 million students are enrolled in Russian Universities and institutes.Nearly 875000 science students and over tutes These students actively participate in exploring advanced technology and new scientific methods Russian medical institutes are well equipped with advanced technologies and adopt latest teaching methods. The Medical degrees granted by Russian medical colleges have grapped nearly 30 top position within the world ranking."
+                    "shordesp": "Belarus is one of the most considered places for Indian students who want to study MBBS because Belarus medical colleges and university are considered one of the best. The country's literacy is 99.97%. Students worldwide choose to do MBBS in Belarus because of the quality education Belarus provides and with high tech machines. MBBS in Belarus fees is low, and MBBS admission in Belarus is easy, and Belarus comes in one of the world's top safest countries, so MBBS in Belarus is best for Indian students. Most of the MBBS colleges in Belarus are listed in top medical commissions in the world like WHO and MCI ( national medical commission now). It is best to study MBBS in Belarus."
                 },
                 "brief":{
-                    "capital":"Moscow",
+                    "capital":"Minsk ",
                     "population":"14.41 crore(2020)",
                     "medium":"English",
                     "currency":"Russian Ruble(1 lari=1.37 inr)",
                     "currency_short":"ruble",
-                    "in_airport":"Moscow",
+                    "in_airport":"Minsk ",
                     "recognition":"NMC (MCI), WHO, ECFMG, FAIMER, WDOMS",
                     "duration":"6 Year (5 + 1 Year's Internship)",
                     "cost_of_stay":"20-25 lakhs (Approx)",
@@ -1720,18 +1732,18 @@ const DbData = {
             },
             {
                 "id": "157",
-                "backgroundurl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Berlin-Mitte_Bebelplatz1_05-2014.jpg/533px-Berlin-Mitte_Bebelplatz1_05-2014.jpg",
-                "name": "Humboldt-Universitat zu Berlin"
+                "backgroundurl": "https://www.ruseducation.in/wp-content/uploads/2022/01/Gomel-State-Medical-University-1.webp",
+                "name": "Gomel State Medical University"
             },
             {
                 "id": "158",
-                "backgroundurl": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/346000/346837-Universitatsbibliothek.jpg",
-                "name": "Universitat Heidelberg"
+                "backgroundurl": "https://www.ruseducation.in/wp-content/uploads/2022/01/Belarusian-State-Medical-University-2.webp",
+                "name": "Belarusian State Medical University"
             },
             {
                 "id": "159",
-                "backgroundurl": "https://www.fu-berlin.de/en/sites/nachhaltigkeit/_media/karussell/Holzelaube-fuer-web.jpg?width=500",
-                "name": "Freie Universitat Berlin"
+                "backgroundurl": "https://www.ruseducation.in/wp-content/uploads/2022/01/grodno-state-medical-university.webp",
+                "name": "Grodno State Medical University"
             }
         ],
         "default": [

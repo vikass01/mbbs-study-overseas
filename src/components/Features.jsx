@@ -41,7 +41,7 @@ const Features = () => {
                 </h2>
                 {/* <p className="text-sm lg:text-base text-gray-600 font-medium mb-10"> */}
                 <p className="mb-10 subdesc">
-                    Our entire team works enthusiastically to guide you about Headstart Programs
+                    Our entire team works enthusiastically to guide you about Mbbs Study Overseas Programs
                     which give you the following benefits:
                 </p>
             </div>

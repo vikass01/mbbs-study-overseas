@@ -1,0 +1,13 @@
+
+.loader{
+    width: 7%;
+}
+
+@media screen and (max-width: 650px) {
+    .loader{
+        width: 25%;
+    }
+    
+    
+  
+  }

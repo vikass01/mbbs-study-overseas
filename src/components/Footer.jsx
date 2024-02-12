@@ -25,7 +25,7 @@ const Footer = () => {
                         <img className="h-10 w-auto" src={brandimg} alt="brandlogo" />
 
                         {/* <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 ">
-                            Headstart
+                            Mbbs Study Overseas
                         </span> */}
                     </Link>
                     <div className="mt-4 lg:max-w-sm">
@@ -103,7 +103,7 @@ const Footer = () => {
                         <ul className="mt-2 space-y-2">
                             <li>
                                 <a
-                                    href="https://www.ug.headstart.co.in/" target='_blank'
+                                    href="https://www.ug.Mbbs Study Overseas.co.in/" target='_blank'
                                     className="text-gray-700 transition-colors duration-300 hover:text-deep-purple-accent-400 hover:text-gray-500" rel="noreferrer"
                                 >
                                     Bachelors
@@ -119,7 +119,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://www.ws.headstart.co.in/" target='_blank'
+                                    href="https://www.ws.Mbbs Study Overseas.co.in/" target='_blank'
                                     className="text-gray-700 transition-colors duration-300 hover:text-deep-purple-accent-400 hover:text-gray-500" rel="noreferrer"
                                 >
                                     Phd

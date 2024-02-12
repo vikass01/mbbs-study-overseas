@@ -1,6 +1,9 @@
 import React from 'react'
 
+
 const Newsletter = () => {
+
+    
     return (
         <section className="mt-20 p-6 mx-auto max-w-sm sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
