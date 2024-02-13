@@ -11,7 +11,8 @@ import { Context } from '../App';
 import ErrorPages from './ErrorPages';
 import Splash from './Splash';
 import { getFirestore } from "firebase/firestore"
-import { collection, addDoc,doc, setDoc } from "firebase/firestore"; 
+import { collection, addDoc,doc, setDoc,onSnapshot } from "firebase/firestore"; 
+import LoggedUserMenu from '../components/LoggedUserMenu';
 
 
 
@@ -29,15 +30,17 @@ const MemberDashboard=()=> {
   console.log('direct auth data',auth);
   const storage = getStorage(app)
 
-  const [usernamee, setusernamee] = useState("Your Name Here")
-  const [title, setTitle] = useState("Your Title Here")
-  const [mobile,setmobile] = useState("(239) 816-9029")
-  const [address,setaddress] = useState("Bay Area, San Francisco, CA")
-  const [statee,setstatee] = useState("Maharashtra")
-  const [pincode,setpincode] = useState("456789")
+  const [usernamee, setusernamee] = useState(null)
+  const [title, setTitle] = useState(null)
+  const [mobile,setmobile] = useState(null)
+  const [address,setaddress] = useState(null)
+  const [statee,setstatee] = useState(null)
+  const [pincode,setpincode] = useState(null)
   const [newprofile, setnewprofile] = useState("https://static.vecteezy.com/system/resources/previews/029/271/069/original/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg")
   const [editprofile,seteditprofile] = useState(true)
   const [showLoader, setShowLoader] = useState(false);
+  const [uploadSuccess, setUploadSuccess] = useState("");
+  const [clouduser, setclouduser] = useState(null);
 
   const writeUserData =async()=>{
     
@@ -47,9 +50,11 @@ const MemberDashboard=()=> {
         title: title,
         address: address,
         state:statee,
-        pincode:pincode
+        pincode:pincode,
+        mobile:mobile
       });
       console.log("Document written with ID: ", docRef);
+      seteditprofile(true)
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -64,10 +69,22 @@ const MemberDashboard=()=> {
  
   useEffect(() => {  
     window.addEventListener("beforeunload", alertUser)
-    // return () => {
-    //   window.removeEventListener("beforeunload", alertUser);
-    // };
+    
   }, []);
+
+  useEffect(()=>{
+      try {
+        const unsub = onSnapshot(doc(db, "users", authUser.user.email), (doc) => {
+          console.log("Current data: ", doc.data());
+          setclouduser(doc.data())
+      });
+        
+      } catch (error) {
+        console.log(error);
+      }
+  },[])
+
+
   const alertUser = (e) => {
     e.preventDefault();
     e.returnValue = "are you sure ?";
@@ -97,9 +114,12 @@ const MemberDashboard=()=> {
       await getDownloadURL(storeLocation).then(async(url) => {
       await updateProfile(auth.currentUser, {
         photoURL: url
-      }).then((resp)=>{console.log("upload url response",resp)})
+      }).then((resp)=>{
+        setUploadSuccess("Profile Photo Saved")
+
+        })
       })
-      await seteditprofile(true)
+      
       setShowLoader(false)
       
     
@@ -142,8 +162,8 @@ const MemberDashboard=()=> {
                     </div> */}
                     <div className="mt-3">
                       {/* <p>{authUser.auth.currentUser.displayName||"abc kumar"}</p> */}
-                      <p>{authUser.user.displayName|| "Your Name"}</p>
-                      <p className="text-secondary mb-1">Full Stack Developer</p>
+                      <p>{clouduser?.username || "Your Name Here"}</p>
+                      <p className="text-secondary mb-1">{clouduser?.title || "Your Title Here"}</p>
                       {/* <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p> */}
                       
                       <button className="btn btn-primary" style={{marginRight:5}} onClick={()=>seteditprofile(false)} >Edit</button>
@@ -153,32 +173,14 @@ const MemberDashboard=()=> {
                 </div>
               </div>
               <div className="card mt-3" >
-                <ul className="list-group list-group-flush" >
-                  <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <ul className="list-group list-group-flush nhnhnh" >
+                  <li className="list-group-item d-flex justify-content-center align-items-center flex-wrap gap-2" style={{backgroundColor:"#ccc"}}>
                     {/* <h6 className="mb-0">Website</h6>
                     <span className="text-secondary">https://bootdey.com</span> */}
-                    <Link style={{width:"100%"}} className="btn">Profile</Link>
-                    
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    {/* <h6 className="mb-0">Github</h6>
-                    <span className="text-secondary">bootdey</span> */}
-                    <Link style={{width:"100%"}} className="btn ">Profile</Link>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    {/* <h6 className="mb-0">Twitter</h6>
-                    <span className="text-secondary">@bootdey</span> */}
-                    <Link style={{width:"100%"}} className="btn">Profile</Link>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    {/* <h6 className="mb-0">Instagram</h6>
-                    <span className="text-secondary">bootdey</span> */}
-                    <Link style={{width:"100%"}} className="btn">Profile</Link>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    {/* <h6 className="mb-0">Facebook</h6>
-                    <span className="text-secondary">bootdey</span> */}
-                    <Link style={{width:"100%"}} className="btn">Profile</Link>
+                    <Link style={{width:200}} className="btn">My Dashboard</Link>
+                    <Link style={{width:200}} className="btn ">My Profile</Link>
+                    <Link style={{width:200}} className="btn">Apply For Admission</Link>
+                    <Link style={{width:200}} className="btn">Withdraw Application</Link>
                   </li>
                 </ul>
               </div>
@@ -196,7 +198,17 @@ const MemberDashboard=()=> {
                           </div>
                           <div className="col-sm-9 text-secondary">
                               {/* {authUser.auth.currentUser.displayName||"abc kumar"} */}
-                              {authUser?.user?.displayName|| "Your Name"}
+                              {clouduser?.username || "Your Name Here"}
+                          </div>
+                      </div>
+                      <hr />
+                      <div className="row">
+                          <div className="col-sm-3">
+                              <h6 className="mb-0">Title</h6>
+                          </div>
+                          <div className="col-sm-9 text-secondary">
+                              {/* {authUser.auth.currentUser.displayName||"abc kumar"} */}
+                              {clouduser?.title || "Your Title Here"}
                           </div>
                       </div>
                       <hr />
@@ -212,19 +224,10 @@ const MemberDashboard=()=> {
                       <hr />
                       <div className="row">
                           <div className="col-sm-3">
-                              <h6 className="mb-0">Phone</h6>
-                          </div>
-                          <div className="col-sm-9 text-secondary">
-                              (239) 816-9029
-                          </div>
-                      </div>
-                      <hr />
-                      <div className="row">
-                          <div className="col-sm-3">
                               <h6 className="mb-0">Mobile</h6>
                           </div>
                           <div className="col-sm-9 text-secondary">
-                              (320) 380-4539
+                          {clouduser?.mobile || "Your Number Here"}
                           </div>
                       </div>
                       <hr />
@@ -233,7 +236,7 @@ const MemberDashboard=()=> {
                               <h6 className="mb-0">Address</h6>
                           </div>
                           <div className="col-sm-9 text-secondary">
-                              Bay Area, San Francisco, CA
+                              {clouduser?.address || "Your Address Here"}
                           </div>
                       </div>
                       {/* <hr /> */}
@@ -257,7 +260,7 @@ const MemberDashboard=()=> {
                                     <h6 className="mb-0">Full Name</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                    <input type="text" className="form-control" placeholder={authUser.user.displayName || usernamee} onChange={(event)=>setusernamee(event.target.value)} />
+                                    <input type="text" className="form-control" defaultValue={clouduser?.username} value={usernamee} placeholder={clouduser?.username || "Your Name Here"} onChange={(event)=>setusernamee(event.target.value)} />
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -265,7 +268,7 @@ const MemberDashboard=()=> {
                                     <h6 className="mb-0">Title</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                    <input type="text" className="form-control" placeholder={authUser?.user?.title || title} onChange={(event)=>setTitle(event.target.value)} />
+                                    <input type="text" className="form-control" defaultValue={clouduser?.title} value={title} placeholder={clouduser?.title || "Your Title Here"} onChange={(event)=>setTitle(event.target.value)} />
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -281,7 +284,7 @@ const MemberDashboard=()=> {
                                       <h6 className="mb-0">Mobile</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                      <input type="text" className="form-control" placeholder={mobile} onChange={(event)=>setmobile(event.target.value)} />
+                                      <input type="text" className="form-control" defaultValue={clouduser?.mobile} value={mobile} placeholder={clouduser?.mobile || mobile} onChange={(event)=>setmobile(event.target.value)} />
                                   </div>
                               </div>
                               {/* <div className="row mb-0">
@@ -297,7 +300,7 @@ const MemberDashboard=()=> {
                                       <h6 className="mb-0">Address</h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary">
-                                      <input type="text" className="form-control" placeholder={address} onChange={(event)=>setaddress(event.target.value)}/>
+                                      <input type="text" className="form-control" defaultValue={clouduser?.address} value={address} placeholder={clouduser?.address || address} onChange={(event)=>setaddress(event.target.value)}/>
                                   </div>
                               </div>
                               <div className="row mb-0">
@@ -305,18 +308,20 @@ const MemberDashboard=()=> {
                                       <h6 className="mb-0"> </h6>
                                   </div>
                                   <div className="col-sm-9 text-secondary" style={{display:'flex',gap:2}}>
-                                      <input type="text" className="form-control" placeholder={statee} onChange={(event)=>setstatee(event.target.value)}/>
-                                      <input type="text" className="form-control" placeholder={pincode} onChange={(event)=>setpincode(event.target.value)}/>
+                                      <input type="text" className="form-control" defaultValue={clouduser?.state} value={statee} placeholder={clouduser?.state || statee} onChange={(event)=>setstatee(event.target.value)}/>
+                                      <input type="text" className="form-control" defaultValue={clouduser?.pincode} value={pincode} placeholder={clouduser?.pincode || pincode} onChange={(event)=>setpincode(event.target.value)}/>
                                   </div>
                               </div>
                               <div className="row mb-0">
                                   <div className="col-sm-3">
                                       <h6 className="mb-0">Profile Picture</h6>
                                   </div>
-                                  <div className="col-sm-9 text-secondary" aria-placeholder=''>
+                                  <div className="col-sm-9 text-secondary" aria-placeholder='' style={{gap:15}}>
                                       <input type="file" accept="image/*" className="form-control" onChange={(event)=>setnewprofile(event.target.files[0])} />
-                                      <Link onClick={saveProfilePhoto} > Upload Profile Picture </Link>
+                                      <Link onClick={saveProfilePhoto} >Upload</Link>
+                                      <p className="material-icons text-info mr-2">{uploadSuccess}</p>
                                   </div>
+                                  
                               </div>
                                   
                                 <div className="text-secondary" style={{display:'flex', flexDirection:'row-reverse', width:'100%', gap:30, marginTop:50}}>                                          
@@ -366,25 +371,25 @@ const MemberDashboard=()=> {
                   <div className="card h-100">
                     <div className="card-body">
                       <h6 className="d-flex align-items-center mb-3"><span style={{fontWeight:600}} className="material-icons text-info mr-2">Admission</span>Status by Universities</h6>
-                      <small>Web Design</small>
+                      <small>ALTAI STATE MEDICAL UNIVERSITY : <br/>Admission Approved</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar" role="progressbar" style={{width: '80%',backgroundColor:"#70467E"}} aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '100%',backgroundColor:"green"}} aria-valuenow={80} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>Website Markup</small>
+                      <small>FIRST MOSCOW STATE MEDICAL UNIVERSITY : <br/>Admission Rejected</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar" role="progressbar" style={{width: '72%',backgroundColor:"#70467E"}} aria-valuenow={72} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '100%',backgroundColor:"red"}} aria-valuenow={72} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>One Page</small>
+                      <small>FIRST MOSCOW STATE MEDICAL UNIVERSITY : <br/>Status Pending</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar" role="progressbar" style={{width: '89%',backgroundColor:"#70467E"}} aria-valuenow={89} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '100%',backgroundColor:"yellow"}} aria-valuenow={89} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>Mobile Template</small>
+                      <small>GOMEL STATE MEDICAL UNIVERSITY : <br/>Drwan Back</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar" role="progressbar" style={{width: '55%',backgroundColor:"#70467E"}} aria-valuenow={55} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '100%',backgroundColor:"black"}} aria-valuenow={55} aria-valuemin={0} aria-valuemax={100} />
                       </div>
-                      <small>Backend API</small>
+                      <small>TASHKENT MEDICAL ACADEMY : <br/>discrepancy(ies) in detail</small>
                       <div className="progress mb-3" style={{height: '5px'}}>
-                        <div className="progress-bar" role="progressbar" style={{width: '66%',backgroundColor:"#70467E"}} aria-valuenow={66} aria-valuemin={0} aria-valuemax={100} />
+                        <div className="progress-bar" role="progressbar" style={{width: '100%',backgroundColor:"orange"}} aria-valuenow={66} aria-valuemin={0} aria-valuemax={100} />
                       </div>
                     </div>
                   </div>

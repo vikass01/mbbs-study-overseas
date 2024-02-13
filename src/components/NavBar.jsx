@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import app from '../Config';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 //icons
 import {
@@ -37,13 +37,16 @@ function classNames(...classes) {
 
 
 const NavBar = () => {
+    const Location = useLocation()
+    console.log("Location",Location.pathname);
     const {authUser} = useContext(Context);
-    console.log("testingggggggg",authUser.user.emailVerified)
+    console.log("testingggggggg",authUser.user.emailVerified?"true":"false")
     const Navigate = useNavigate()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isPopoverOpen, setPopoverOpen] = useState(false);
     const [userLogged, setuserLogged] = useState(false);
-    
+    var w = window.innerWidth;
+  console.log("innerWidth",w);
 
     useEffect(()=>{
         const auth = getAuth(app);   
@@ -61,17 +64,25 @@ const NavBar = () => {
 
     },[])
 
-    const handlePopoverOpen = () => {
-        setPopoverOpen(true);
-    }
+    // const handlePopoverOpen = () => {
+    //     setPopoverOpen(true);
+    // }
 
     // const handlePopoverClose = () => {
     //     setPopoverOpen(false);
     // }
 
-    const navMyAccount =()=>{
-               
+    const logut =()=>{
+        const auth = getAuth(app);
         setMobileMenuOpen(false)
+        auth.signOut().then(() => {
+            // Sign-out successful.
+                console.log("Signed out successfully")
+                Navigate('/login')
+            }).catch((error) => {
+            // An error happened.
+            console.log(error);
+            });
         
     }
 
@@ -85,7 +96,7 @@ const NavBar = () => {
     //     auth.signOut().then(() => {
     //         // Sign-out successful.
     //             console.log("Signed out successfully")
-    //             navigate('/login')
+    //             Navigate('/login')
     //         }).catch((error) => {
     //         // An error happened.
     //         console.log(error);
@@ -189,17 +200,17 @@ const NavBar = () => {
                         </Link>
                     </Popover.Group>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        {userLogged ? 
-                        <Link
-                            to="/home"
-                            className="btn flex gap-1 items-center"
-                        >
-                            My Account <FaAngleRight size={15} />
-                        </Link>
-                            :
+                        {userLogged?
                         <Link
                             to="/login"
-                            className="btn flex gap-1 items-center"
+                            className="btn flex gap-1 items-center" onClick={logut}
+                        >
+                            Logout <FaAngleRight size={15} />
+                        </Link>
+                        :
+                        <Link
+                            to="/login"
+                            className="btn flex gap-1 items-center" 
                         >
                             Login <FaAngleRight size={15} />
                         </Link>
@@ -234,6 +245,45 @@ const NavBar = () => {
                         </div>
                         <div className="mt-16 flow-root" >
                             <div className="-my-6 divide-y divide-gray-500/10">
+
+                                {authUser.user.emailVerified && Location.pathname === "/home" && w <= "767" ?
+                                
+                                <div className="space-y-2 py-6">
+                                    <Link
+                                        
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        My Dashboard
+                                    </Link>
+                                    <Link
+                                        
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        My Profile
+                                    </Link>
+                                    <Link
+                                        
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Apply For Admission
+                                    </Link>
+                                    <Link
+                                        
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Withdraw Application
+                                    </Link>
+                                    <Link
+                                        to="/connect"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={logut}
+                                    >
+                                        Logout
+                                    </Link>
+                                    
+                                </div>
+                                :
+
+                                <>
                                 <div className="space-y-2 py-6">
                                     <Link
                                         to="/"
@@ -241,32 +291,6 @@ const NavBar = () => {
                                     >
                                         Home
                                     </Link>
-                                    {/* <Disclosure as="div" className="-mx-3">
-                                        {({ open }) => (
-                                            <>
-                                                <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50">
-                                                    Programs
-                                                    <ChevronDownIcon
-                                                        className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                        aria-hidden="true"
-                                                    />
-                                                </Disclosure.Button>
-                                                <Disclosure.Panel className="mt-2 space-y-2">
-                                                    {[...programs, ...callsToAction].map((item,index) => (
-                                                        <Link
-                                                            key={index}
-                                                            to={item.href}
-                                                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-700 hover:bg-gray-50"
-                                                            onClick={() => setMobileMenuOpen(false)}
-                                                        >
-                                                            {item.name}
-                                                            <span className='text-primary font-bold'>{item.direct}</span>
-                                                        </Link>
-                                                    ))}
-                                                </Disclosure.Panel>
-                                            </>
-                                        )}
-                                    </Disclosure> */}
                                     <Link
                                         to="/universities"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
@@ -291,40 +315,23 @@ const NavBar = () => {
                                     >
                                         Contact Us
                                     </Link>
+                                    
                                 </div>
                                 <div className="py-6">
-                                    {/* <Link
-                                        to="/connect"
-                                        className="inline-block rounded-xl px-3 py-2 text-base font-extrabold leading-7 text-primary border-2 border-primary hover:bg-primary-hover hover:text-white" onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        Connect
-                                    </Link> */}
-                                    {/* <Link style={{marginBottom:20}}
-                                        to="/connect"
-                                        className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
-                                        flex gap-1.5 items-center" onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        Contact us <FaArrowRight />
-                                    </Link> */}
-                                    {userLogged? 
-                                    <Link
-                                        to="/home"
-                                        onClick={navMyAccount}
-                                        className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
-                                        flex gap-1.5 items-center" 
-                                    >
-                                        My Account <FaArrowRight />
-                                    </Link>
-                                    :
                                     <Link
                                         to="/login"
                                         className="rounded-xl text-base font-extrabold leading-7 text-primary hover:bg-primary-hover hover:text-white 
-                                        flex gap-1.5 items-center" onClick={() => setMobileMenuOpen(false)}
+                                        flex gap-1.5 items-center" onClick={logut}
                                     >
                                         Login <FaArrowRight />
                                     </Link>
-                                    }
+                                    
                                 </div>
+                                </>
+        
+                                }
+
+
                             </div>
                         </div>
                     </Dialog.Panel>

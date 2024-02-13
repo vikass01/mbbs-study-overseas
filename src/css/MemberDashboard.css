@@ -64,13 +64,18 @@
 }
 
 @media screen and (max-width: 650px) {
-    
-    /* .expad{
-        margin-top: 100px;
-    } */
 
     .adminPhoto{
         height: 200px;
+    }
+    
+  
+}
+
+@media screen and (max-width: 767px) {
+
+    .nhnhnh{
+        display: none;
     }
     
   

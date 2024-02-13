@@ -26,6 +26,7 @@ import { useState,createContext} from "react";
 import Universities from "./pages/Universities";
 import UniversityHeader from "./components/UniversityHeader";
 import GetUniversityDetail from "./pages/GetUniversityDetail";
+import LoggedUserMenu from "./components/LoggedUserMenu";
 export const Context = createContext();
 
 
@@ -99,6 +100,7 @@ const App = ()=> {
           <Route path="/universityheader" element={<UniversityHeader />} />
           <Route path="/getdetail/:id" element={<GetUniversityDetail />} />
           <Route path="/splash" element={<Splash />} />
+          <Route path="/test" element={<LoggedUserMenu />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
