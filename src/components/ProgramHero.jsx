@@ -32,7 +32,7 @@ const ProgramHero = () => {
 
                                 {/* <span className="inline-block mb-8 px-3 py-1 text-white font-semibold bg-gray-600 rounded-full">
                                 #1 Brand Building Tool</span> */}
-                                <h1 className="text-4xl text-center font-semibold tracking-tight text-gray-800 sm:text-5xl sm:text-left">MSO Programs are <span style={{color:'#70467E'}} className='shadow-md'>{text}</span><span className='text-gray-800'><Cursor cursorStyle='|' /></span></h1>
+                                <h1 className="text-4xl text-center font-semibold tracking-tight text-gray-800 sm:text-5xl sm:text-left">Mbbs Study Overseas Programs are <span style={{color:'#70467E'}} className='shadow-md'>{text}</span><span className='text-gray-800'><Cursor cursorStyle='|' /></span></h1>
                                 {/* <div className="flex flex-wrap -m-2 mb-14">
                                     <div className="w-auto p-2"><a className="inline-block px-5 py-4 text-white font-semibold tracking-tight bg-indigo-500 hover:bg-indigo-600 rounded-lg focus:ring-4 focus:ring-indigo-400 transition duration-200" href="#">Try 14 Days Free Trial</a></div>
                                     <div className="w-auto p-2">

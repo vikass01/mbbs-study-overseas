@@ -134,7 +134,7 @@ const About = () => {
           <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-lg">
               <h1 className="text-4xl font-semibold tracking-tight text-gray-800 sm:text-4xl">
-                Welcome to <br /><span className='text-primary font-bold sm:text-6xl'>Mbbs Study Overseas</span>
+                Welcome to <br /><span className='font-bold sm:text-6xl' style={{color:"#70467E"}}>Mbbs Study Overseas</span>
               </h1>
               <p className="mt-6 text-sm text-gray-700 font font-medium lg:text-base">
                 Trusted international education consultants since 2010, <br />working for Student success.

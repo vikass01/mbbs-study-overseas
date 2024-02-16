@@ -7,10 +7,12 @@ import { BsBriefcaseFill } from 'react-icons/bs'
 import { GiSkills } from 'react-icons/gi'
 import { MdModelTraining } from 'react-icons/md'
 import { PiStudentFill } from 'react-icons/pi'
+const promisebanner = require('../assets/promisebanner.png')
+const imagee = "https://image.slidesdocs.com/responsive-images/background/medical-medicine-stethoscope-white-powerpoint-background_8766a01a5c__960_540.jpg"
 
 const Features = () => {
     return (
-        <div>
+        <div className="bg-cover bg-center h-auto text-white py-16 px-6 object-fill shadow-2xl rounded-2xl sm:rounded-3xl sm:px-20 sm:py-20" style={{ backgroundImage: `url(${imagee})` }}>
             <div className="max-w-xl text-center mx-auto lg:max-w-2xl mb-12">
                 <h2 className="mb-6">
                     <span className="relative inline-block">
@@ -40,7 +42,7 @@ const Features = () => {
                     </span>
                 </h2>
                 {/* <p className="text-sm lg:text-base text-gray-600 font-medium mb-10"> */}
-                <p className="mb-10 subdesc">
+                <p className="mb-10 subdesc" >
                     Our entire team works enthusiastically to guide you about Mbbs Study Overseas Programs
                     which give you the following benefits:
                 </p>
@@ -101,12 +103,12 @@ const FeatureCard = ({ icon, title, details }) => {
         <>
             {/* <div className="w-full px-4 md:w-1/2 lg:w-1/3"> */}
             <div className="mt-10 px-2 w-1/2 lg:w-1/6">
-                <div className="mb-2 rounded-[20px] bg-white p-5 shadow-md md:px-2 xl:px-5">
+                <div className="mb-2 rounded-[20px] bg-white p-4 shadow-md md:px-2 xl:px-5 flex items-center justify-center flex-col" style={{maxWidth:150, height:250}}>
                     <div
                         className={`mb-6 flex h-[60px] w-[60px] p-3 items-center justify-center rounded-2xl`} style={{backgroundColor:'#70467E'}}>
                         {icon}
                     </div>
-                    <h4 className="text-sm sm:text-base mb-2 font-semibold" style={{color:'#70467E'}}>{title}</h4>
+                    <h4 className="text-sm sm:text-base mb-2 font-semibold" style={{color:'#70467E', textAlign:'center'}}>{title}</h4>
                     {/* <p className="text-base font-medium">{details}</p> */}
                 </div>
             </div>

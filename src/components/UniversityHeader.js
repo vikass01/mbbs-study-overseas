@@ -24,6 +24,7 @@ function UniversityHeader() {
       
       spaceBetween={30}
       centeredSlides={true}
+      loop={true}
       speed={3000}
       autoplay={{
         delay: 3500,

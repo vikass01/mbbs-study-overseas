@@ -9,37 +9,37 @@ const features = [
     {
         name: 'Economical Study Options',
         description:
-            'MSO provides affordable study options, scholarships, and financial aid to make education accessible. They prioritize budget-friendly solutions for students, enabling them to pursue their dreams without financial barriers.',
+            'Mbbs Study Overseas provides affordable study options, scholarships, and financial aid to make education accessible. They prioritize budget-friendly solutions for students, enabling them to pursue their dreams without financial barriers.',
         icon: BanknotesIcon,
     },
     {
         name: 'Comprehensive Programs and Resources',
         description:
-            'MSO empowers students with programs and courses for academic and professional success. They offer resources for test prep, career guidance, and skill development. With tailored support, MSO helps students excel in academia and achieve career goals.',
+            'Mbbs Study Overseas empowers students with programs and courses for academic and professional success. They offer resources for test prep, career guidance, and skill development. With tailored support, Mbbs Study Overseas helps students excel in academia and achieve career goals.',
         icon: BookOpenIcon,
     },
     {
         name: 'Excellent Job Opportunities',
         description:
-            'MSO connects students to excellent job opportunities through industry connections and career development resources. They organize job fairs, internships, and workshops to help students succeed in the professional world. With MSO, students gain the skills and networking opportunities needed to stand out in the job market and secure desirable positions.',
+            'Mbbs Study Overseas connects students to excellent job opportunities through industry connections and career development resources. They organize job fairs, internships, and workshops to help students succeed in the professional world. With Mbbs Study Overseas, students gain the skills and networking opportunities needed to stand out in the job market and secure desirable positions.',
         icon: BriefcaseIcon,
     },
     {
         name: 'Best University Admissions',
         description:
-            'MSO secures top university admissions through personalized guidance. They help with applications, essays, and mock interviews to increase acceptance rates. For medical students, they provide assistance in exam prep and profile building for admission to prestigious medical schools.',
+            'Mbbs Study Overseas secures top university admissions through personalized guidance. They help with applications, essays, and mock interviews to increase acceptance rates. For medical students, they provide assistance in exam prep and profile building for admission to prestigious medical schools.',
         icon: AcademicCapIcon,
     },
     {
         name: 'Guranteed Outcomes',
         description:
-            'MSO guarantees successful outcomes by providing specialized training for high-paying careers. They support students in achieving their goals, including admission to top universities and securing jobs in their desired fields.',
+            'Mbbs Study Overseas guarantees successful outcomes by providing specialized training for high-paying careers. They support students in achieving their goals, including admission to top universities and securing jobs in their desired fields.',
         icon: CheckCircleIcon,
     },
     {
         name: 'Maximum Benefits',
         description:
-            'MSO prioritizes student success through valuable resources, support, and guidance. They offer budget-friendly programs, exclusive materials, counseling, and networking opportunities for an enhanced educational journey.',
+            'Mbbs Study Overseas prioritizes student success through valuable resources, support, and guidance. They offer budget-friendly programs, exclusive materials, counseling, and networking opportunities for an enhanced educational journey.',
         icon: StarIcon,
     },
 
@@ -54,7 +54,7 @@ const WhyPrograms = () => {
                 <div className="mx-auto max-w-2xl text-center">
                     {/* <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2> */}
                     <p className="mt-2 title">
-                        Why MSO Programs?
+                        Why Mbbs Study Overseas Programs?
                     </p>
                     <p className="mt-6 subdesc">
                         You can explore the features that we provide with fun and have their own feature.

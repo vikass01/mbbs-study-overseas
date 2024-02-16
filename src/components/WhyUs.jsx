@@ -11,10 +11,11 @@ import { TbProgressCheck } from 'react-icons/tb';
 import { AiOutlineSolution } from 'react-icons/ai';
 
 
+
 const WhyUs = () => {
     return (
         <div>
-            <div className="flex flex-wrap -mx-4">
+            <div className="flex flex-wrap -mx-4" >
                 <div className="w-full px-4">
                     <div className="mx-auto mb-12 max-w-[510px] text-center lg:mb-20">
                         {/* <span className="block mb-2 text-lg font-semibold text-primary">
@@ -41,7 +42,7 @@ const WhyUs = () => {
                         </p>
                     </div>
                 </div>
-                <div className="p-8 border-b lg:border-r">
+                {/* <div className="p-8 border-b lg:border-r">
                     <div className="max-w-md text-center">
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-16 sm:h-16 shadow-md">
                             <AiOutlineSolution className='w-10 h-10 text-gray-700' />
@@ -51,8 +52,8 @@ const WhyUs = () => {
                             We understand that each student is unique, and we provide personalized solutions based on their individual needs and requirements.
                         </p>
                     </div>
-                </div>
-                <div className="p-8 border-b sm:border-r lg:border-r-0">
+                </div> */}
+                {/* <div className="p-8 border-b sm:border-r lg:border-r-0">
                     <div className="max-w-md text-center">
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-16 sm:h-16 shadow-md">
                             <TbProgressCheck className='w-10 h-10 text-gray-700' />
@@ -62,7 +63,7 @@ const WhyUs = () => {
                             We maintain complete transparency throughout the process, and our students are regularly updated about the progress of their application.
                         </p>
                     </div>
-                </div>
+                </div> */}
                 <div className="p-8 border-b lg:border-r">
                     <div className="max-w-md text-center">
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-16 sm:h-16 shadow-md">
@@ -86,7 +87,7 @@ const WhyUs = () => {
                     </div>
                 </div>
 
-                <div className="p-8 border-b">
+                {/* <div className="p-8 border-b">
                     <div className="max-w-md text-center">
                         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-indigo-50 sm:w-16 sm:h-16 shadow-md">
                             <LiaHandsHelpingSolid className='w-10 h-10 text-gray-700' />
@@ -97,7 +98,7 @@ const WhyUs = () => {
                         </p>
                     </div>
 
-                </div>
+                </div> */}
 
                 <div className="p-8 border-b sm:border-r lg:border-b-0">
                     <div className="max-w-md text-center">

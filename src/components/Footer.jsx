@@ -30,7 +30,7 @@ const Footer = () => {
                     </Link>
                     <div className="mt-4 lg:max-w-sm">
                         <p className="text-sm text-gray-700 leading-6">
-                            Welcome to MSO International Education Consultancy, your trusted partner in the journey towards higher education in the world's top universities.
+                            Welcome to Mbbs Study Overseas International Education Consultancy, your trusted partner in the journey towards higher education in the world's top universities.
                         </p>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col justify-between pt-5 pb-10 border-t sm:flex-row">
                 <p className="text-sm text-gray-600">
-                    © Copyright 2024 MSO. All rights reserved.
+                    © Copyright 2024 Mbbs Study Overseas. All rights reserved.
                 </p>
                 <div className="flex items-center mt-4 space-x-4 sm:mt-0">
                     {/* <Link

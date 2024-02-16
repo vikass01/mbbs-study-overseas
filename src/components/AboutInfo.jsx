@@ -26,7 +26,7 @@ const AboutInfo = () => {
                 <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pl-16">
                     {/* <p className="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">know your data</p> */}
                     <h3 className="mt-2 text-xl font-semibold sm:text-left sm:text-2xl text-gray-800">Our Objective</h3>
-                    <p className="mt-5 text">All along our objective at MSO has been to benefit the Indian student community. “We Work for YOUR benefits only” being our sole motto behind our carefully picked affordable programs along with comprehensive and personalised guidance is to ensure best education with cost-effectiveness to help you make your dream of studying abroad a reality.</p>
+                    <p className="mt-5 text">All along our objective at Mbbs Study Overseas has been to benefit the Indian student community. “We Work for YOUR benefits only” being our sole motto behind our carefully picked affordable programs along with comprehensive and personalised guidance is to ensure best education with cost-effectiveness to help you make your dream of studying abroad a reality.</p>
                 </div>
             </div>
             <div className="flex flex-col mb-10 animated fadeIn sm:flex-row">
