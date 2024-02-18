@@ -152,14 +152,14 @@ const About = () => {
                       <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                         <div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
                           <img
-                            src='https://dl.dropboxusercontent.com/scl/fi/nx65dcou48gt7iguo3ymv/yellow.jpg?rlkey=hpboyxx5nwg562wgc2jzvbmwb&dl=0'
+                            src={require("../assets/company/yellowgirl.jpg")}
                             alt="Yellow"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src='https://dl.dropboxusercontent.com/scl/fi/mo9jx0nfc20wfr6m3vmsm/blueboy.jpg?rlkey=eh745dwfsiqz2qiesgtq8zu0h&dl=0'
+                            src={require("../assets/company/blueboy.jpg")}
                             alt="Blue"
                             className="h-full w-full object-cover object-center"
                           />
@@ -168,21 +168,21 @@ const About = () => {
                       <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src='https://dl.dropboxusercontent.com/scl/fi/5tm3aqvgd2r85ydw0zadq/brownboy.jpg?rlkey=79x6gk8j6lv8258f7giescanq&dl=0'
+                            src={require("../assets/company/brownboy.jpg")}
                             alt="Brown"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src='https://dl.dropboxusercontent.com/scl/fi/h1brkiy134tj4pwn6lkhi/purplegirl.jpg?rlkey=8brtat450f0da3gyifpypok9f&dl=0'
+                            src={require("../assets/company/purplegirl.jpg")}
                             alt="Purple"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src='https://dl.dropboxusercontent.com/scl/fi/nb9bnzczxi9q0437bx28f/smileywoman.jpg?rlkey=gex0a0o5xw0xne0o10l80dk0g&dl=0'
+                            src={require("../assets/company/smileyWoman.jpg")}
                             alt="Gray"
                             className="h-full w-full object-cover object-center"
                           />
@@ -191,14 +191,14 @@ const About = () => {
                       <div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src='https://dl.dropboxusercontent.com/scl/fi/n6qrc779mx1ce6umr5ml3/pinkgirl.jpg?rlkey=qxb8fnixchritehduwfnw06iy&dl=0'
+                            src={require("../assets/company/pinkgirl.jpg")}
                             alt="Pink"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
                         <div className="h-64 w-44 overflow-hidden rounded-lg">
                           <img
-                            src='https://dl.dropboxusercontent.com/scl/fi/9xqk5pei4dmt424n1ubbi/greengirll.jpg?rlkey=qmiy77j2m4d9l1gj4ze9fjala&dl=0'
+                            src={require("../assets/company/greengirll.jpg")}
                             alt="Green"
                             className="h-full w-full object-cover object-center"
                           />
@@ -229,7 +229,7 @@ const About = () => {
           </div>
           <div className="flex flex-col mb-10 animated fadeIn sm:flex-row">
             <div className="flex items-center mb-16 sm:w-1/2 md:w-5/12 sm:order-last">
-              <img className="rounded-lg shadow-xl" src='https://dl.dropboxusercontent.com/scl/fi/2xgwdibh2g91woux2fxe5/commitments.jpg?rlkey=9t77lclo7cvwspq2g41hj8k02&dl=0' alt="Commitments" />
+              <img className="rounded-lg shadow-xl" src={require("../assets/company/commitments.jpg")} alt="Commitments" />
             </div>
             <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
               {/* <p className="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Drag-n-drop design</p> */}
@@ -240,7 +240,7 @@ const About = () => {
           </div>
           <div className="flex flex-col mb-10 animated fadeIn sm:flex-row">
             <div className="flex items-center mb-16 sm:w-1/2 md:w-5/12">
-              <img className="rounded-lg shadow-xl" src='https://dl.dropboxusercontent.com/scl/fi/gjye4ck4gsu1h6ykd5yj9/objective.jpg?rlkey=4efckjkjbdx4xrrtjkaudtvb5&dl=0' alt="Objective" />
+              <img className="rounded-lg shadow-xl" src={require("../assets/company/objective.jpg")} alt="Objective" />
             </div>
             <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pl-16">
               {/* <p className="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">know your data</p> */}
@@ -250,7 +250,7 @@ const About = () => {
           </div>
           <div className="flex flex-col mb-10 animated fadeIn sm:flex-row">
             <div className="flex items-center mb-16 sm:w-1/2 md:w-5/12 sm:order-last">
-              <img className="rounded-lg shadow-xl" src='https://dl.dropboxusercontent.com/scl/fi/o7utsbd4uuljdpwq5juu1/benefits.jpg?rlkey=ykxlj2hbqxk7pv711ok1lhzzx&dl=0' alt="Student Benefits" />
+              <img className="rounded-lg shadow-xl" src={require("../assets/company/benefits.jpg")} alt="Student Benefits" />
             </div>
             <div className="flex flex-col justify-center mt-5 mb-8 md:mt-0 sm:w-1/2 md:w-7/12 sm:pr-16">
               {/* <p className="mb-2 text-sm font-semibold leading-none text-left text-indigo-600 uppercase">Easy to customize</p> */}

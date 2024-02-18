@@ -194,7 +194,12 @@ const NavBar = () => {
 
                         <Link to="/blogs" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Blogs
-                        </Link>                        
+                        </Link> 
+
+                        <Link to="/programs" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
+                            Programs
+                        </Link> 
+
                         <Link to="/connect" className="text-sm font-semibold leading-6 text-gray-700 hover:text-gray-500 duration-300 transition-colors">
                             Contact Us
                         </Link>
@@ -302,6 +307,12 @@ const NavBar = () => {
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
                                     >
                                         Blogs
+                                    </Link>
+                                    <Link
+                                        to="/programs"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-700 hover:bg-gray-50" onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Programs
                                     </Link>
                                     <Link
                                         to="/about"

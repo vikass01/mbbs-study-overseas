@@ -6,6 +6,8 @@ import Stats from '../components/Stats';
 import Features from '../components/Features';
 import WhyUs from '../components/WhyUs';
 import Banner from '../components/Banner';
+import Gallery from '../components/Gallery'
+import PCTA from '../components/PCTA'
 
 const Home = () => {
   return (
@@ -14,7 +16,9 @@ const Home = () => {
       <Stats />
       <Features />
       <WhyUs />
+      <Gallery/>
       <Banner />
+      <PCTA />
     </div>
   )
 }

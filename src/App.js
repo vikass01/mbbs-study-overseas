@@ -8,6 +8,8 @@ import Connect from "./pages/Connect";
 import BlogPost from "./components/BlogPost";
 import Company from "./pages/Company";
 import Splash from "./pages/Splash"
+import { getToken } from "firebase/messaging";
+import { messaging } from "./Config";
 
 
 import {
@@ -22,12 +24,13 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import MemberDashboard from "./pages/MemberDashboard";
 import Profile from "./pages/Profile";
-import { useState,createContext} from "react";
+import { useState,createContext, useEffect} from "react";
 import Universities from "./pages/Universities";
 import UniversityHeader from "./components/UniversityHeader";
 import GetUniversityDetail from "./pages/GetUniversityDetail";
 import LoggedUserMenu from "./components/LoggedUserMenu";
 export const Context = createContext();
+
 
 
 
@@ -69,6 +72,28 @@ const App = ()=> {
   const LoginData =(data)=>{
     setuserData(data)
   }
+
+  const NotificationPermission =async()=>{
+    
+    if (Notification.permission !== "denied"){
+      const permission = await Notification.requestPermission()
+        if (permission === "granted"){
+        const token = await getToken(messaging, {vapidKey: "BPt3jM_tdom6Eqa1D51PzJVYMWeQxMdn0kD8vp1aatXFPhcphTs5joQDinnGUWgQ9r5pQXKMiu49QhyBq7coX-w"});
+        console.log("token",token);
+        }else{
+          alert("Notification Alert Disabled")
+        }
+
+
+
+    }else{
+      console.log("Notification.permission",Notification.permission);
+    }
+  }
+
+  useEffect(()=>{
+    NotificationPermission()
+  },[])
 
 
 

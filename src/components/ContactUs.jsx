@@ -1,9 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 //icons
 import { AtSymbolIcon, PhoneArrowUpRightIcon, BuildingOfficeIcon } from '@heroicons/react/20/solid'
 
 const ContactUs = () => {
+
+    useEffect(()=>{
+        alert("activated")
+        window.Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "mbbsstudyoverseas@gmail.com",
+            Password : "5CB155A3B6C6FC61E70AF5323E47034917E1",
+            To : 'eng.vikas90@gmail.com',
+            From : "mbbsstudyoverseas@gmail.com",
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+          message => alert(message)
+        );
+    },[])
+
+   
+
+
     return (
         <div className="mx-auto">
             <div className="mx-auto mb-8 lg:mb-16 text-center">

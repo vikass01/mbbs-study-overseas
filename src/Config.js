@@ -4,6 +4,7 @@
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import { getMessaging } from "firebase/messaging";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,6 +22,7 @@ measurementId: process.env.REACT_APP_measurementId
 };
 
 const app = initializeApp(firebaseConfig);
+export const messaging = getMessaging(app);
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);

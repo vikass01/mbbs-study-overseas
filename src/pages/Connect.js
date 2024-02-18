@@ -14,6 +14,43 @@ function classNames(...classes) {
 
 const Connect = () => {
     const [agreed, setAgreed] = useState(false);
+    const [name, setname] = useState("");
+    const [lastName, setlastName] = useState("");
+    const [company, setcompany] = useState("");
+    const [fromEmail, setfromEmail] = useState('');
+    // const [email, setemail] = useState("");    
+    const [countryCode, setcountryCode] = useState("");
+    const [phoneNumber, setphoneNumber] = useState("");    
+    const [subject, setsubject] = useState("Subject...");
+    const [body, setbody] = useState("");
+
+    const sendEmail =()=>{
+        console.log("name",name);
+        console.log("lastName",lastName);
+        console.log("company",company);
+        console.log("fromEmail",fromEmail);
+        console.log("phoneNumber",phoneNumber);
+        console.log("countryCode",countryCode); 
+        console.log("subject",subject); 
+        console.log("body",body);
+
+        window.Email.send({
+            Host : process.env.REACT_APP_Host,
+            Username : process.env.REACT_APP_Username,
+            Password : process.env.REACT_APP_Password,
+            To : 'mbbsstudyoverseas@gmail.com',
+            From : "mbbsstudyoverseas@gmail.com",
+            Subject : subject,
+            Body : body
+        }).then(
+          message => alert("Email Send Successfully "+message)
+        );
+
+        
+
+    }
+        
+    
 
     return (
         // <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8"> --original
@@ -56,6 +93,7 @@ const Connect = () => {
                                 id="first-name"
                                 autoComplete="given-name"
                                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                onChange={(event)=>setname(event.target.value)}
                             />
                         </div>
                     </div>
@@ -70,6 +108,7 @@ const Connect = () => {
                                 id="last-name"
                                 autoComplete="family-name"
                                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                onChange={(event)=>setlastName(event.target.value)}
                             />
                         </div>
                     </div>
@@ -84,6 +123,7 @@ const Connect = () => {
                                 id="company"
                                 autoComplete="organization"
                                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                onChange={(event)=>setcompany(event.target.value)}
                             />
                         </div>
                     </div>
@@ -98,6 +138,7 @@ const Connect = () => {
                                 id="email"
                                 autoComplete="email"
                                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                onChange={(event)=>setfromEmail(event.target.value)}
                             />
                         </div>
                     </div>
@@ -114,6 +155,7 @@ const Connect = () => {
                                     id="country"
                                     name="country"
                                     className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                                    onChange={(event)=>setcountryCode(event.target.value)}
                                 >
                                     <option>US</option>
                                     <option>IND</option>
@@ -130,6 +172,7 @@ const Connect = () => {
                                 id="phone-number"
                                 autoComplete="tel"
                                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                onChange={(event)=>setphoneNumber(event.target.value)}
                             />
                         </div>
                     </div>
@@ -144,6 +187,7 @@ const Connect = () => {
                                 rows={4}
                                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 defaultValue={''}
+                                onChange={(event)=>setbody(event.target.value)}
                             />
                         </div>
                     </div>
@@ -174,7 +218,7 @@ const Connect = () => {
                 </div>
                 <div className="mt-10">
                     <button
-                        type="submit"
+                        type="button" onClick={sendEmail}
                         className="block w-full rounded-xl bg-primary px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xl hover:bg-primary-hover focus:bg-primary-hover duration-300 transition-colors"
                     >
                         Let's talk
