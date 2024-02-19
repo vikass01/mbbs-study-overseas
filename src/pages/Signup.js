@@ -32,7 +32,7 @@ function Signup() {
           console.log("result",result);
         sendEmailVerification(result.user.auth.currentUser)
         .then((resp) => {
-          console.log("email sent ", resp);
+          alert("email sent ", resp);
         });
 
         navigate('/home') 

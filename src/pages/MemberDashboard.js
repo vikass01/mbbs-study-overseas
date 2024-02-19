@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useContext, } from 'react'
-import app from '../Config';
+import app, { messaging } from '../Config';
 import { getAuth, updateProfile } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import {  signOut } from "firebase/auth";
@@ -13,6 +13,7 @@ import Splash from './Splash';
 import { getFirestore } from "firebase/firestore"
 import { collection, addDoc,doc, setDoc,onSnapshot } from "firebase/firestore"; 
 import LoggedUserMenu from '../components/LoggedUserMenu';
+import { getToken } from 'firebase/messaging';
 
 
 
@@ -41,9 +42,33 @@ const MemberDashboard=()=> {
   const [showLoader, setShowLoader] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState("");
   const [clouduser, setclouduser] = useState(null);
+  const [token, settoken] = useState(null);
+
+
+  const getvapidToken =()=>{
+    
+      Notification.requestPermission().then((permission)=>{
+
+        console.log("permission",permission);
+        if (permission === "granted"){
+            getToken(messaging, {vapidKey: "BPt3jM_tdom6Eqa1D51PzJVYMWeQxMdn0kD8vp1aatXFPhcphTs5joQDinnGUWgQ9r5pQXKMiu49QhyBq7coX-w"}).then((currentToken)=>{
+              console.log("currentToken",currentToken)
+              settoken(currentToken)
+            })
+            
+        }else if (permission === "denied"){
+            console.log("permission Denied");
+        }
+
+
+      })
+      
+      
+ 
+  }
 
   const writeUserData =async()=>{
-    
+    await getvapidToken()
     try {
       const docRef = await setDoc(doc(db, "users", authUser.user.email), {
         username: usernamee,
@@ -51,13 +76,23 @@ const MemberDashboard=()=> {
         address: address,
         state:statee,
         pincode:pincode,
-        mobile:mobile
+        mobile:mobile,
+        fcm_token:token
       });
       console.log("Document written with ID: ", docRef);
       seteditprofile(true)
     } catch (e) {
       console.error("Error adding document: ", e);
     }
+
+    try {
+      const docRef = await setDoc(doc(db,"users", "All_FCM"), {token});
+      console.log("Document written with ID: ", docRef);
+      seteditprofile(true)
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+    
   }
 
   

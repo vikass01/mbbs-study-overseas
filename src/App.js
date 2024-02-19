@@ -27,7 +27,7 @@ import Universities from "./pages/Universities";
 import UniversityHeader from "./components/UniversityHeader";
 import GetUniversityDetail from "./pages/GetUniversityDetail";
 import LoggedUserMenu from "./components/LoggedUserMenu";
-import { generateToken } from "./Config";
+// import { generateToken } from "./Config";
 import { onMessage } from "firebase/messaging";
 import { messaging } from "./Config";
 
@@ -68,10 +68,12 @@ const App = ()=> {
 
   
   useEffect(()=>{
-    generateToken()
+    // generateToken()
     onMessage(messaging, (payload) => {
       console.log('Message received. ', payload);
     });
+
+   
   },[])
 
 
