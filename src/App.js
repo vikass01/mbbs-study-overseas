@@ -8,8 +8,6 @@ import Connect from "./pages/Connect";
 import BlogPost from "./components/BlogPost";
 import Company from "./pages/Company";
 import Splash from "./pages/Splash"
-import { getToken } from "firebase/messaging";
-import { messaging } from "./Config";
 
 
 import {
@@ -29,17 +27,10 @@ import Universities from "./pages/Universities";
 import UniversityHeader from "./components/UniversityHeader";
 import GetUniversityDetail from "./pages/GetUniversityDetail";
 import LoggedUserMenu from "./components/LoggedUserMenu";
+import { getToken } from "firebase/messaging";
+import { messaging } from "./Config";
+
 export const Context = createContext();
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -56,13 +47,13 @@ const App = ()=> {
     }   
 
   }
- const funChange = ()=>{
+//  const funChange = ()=>{
 
- }
+//  }
   const [userData,setuserData] = useState(defaultUser)  
     
     if (userData) {
-      console.log('data received in App.js',userData);
+      // console.log('data received in App.js',userData);
       
     } else {
       console.log("something bad in app and data not received from login page ");
@@ -75,8 +66,10 @@ const App = ()=> {
 
   const NotificationPermission =async()=>{
     
-    if (Notification.permission !== "denied"){
+    if (Notification.permission === "denied"){
+      console.log("Notification.permission",Notification.permission);
       const permission = await Notification.requestPermission()
+      console.log("permission",permission);
         if (permission === "granted"){
         const token = await getToken(messaging, {vapidKey: "BPt3jM_tdom6Eqa1D51PzJVYMWeQxMdn0kD8vp1aatXFPhcphTs5joQDinnGUWgQ9r5pQXKMiu49QhyBq7coX-w"});
         console.log("token",token);
@@ -86,8 +79,9 @@ const App = ()=> {
 
 
 
-    }else{
-      console.log("Notification.permission",Notification.permission);
+    }else if(Notification.permission === "granted"){
+      getToken(messaging, {vapidKey: "BPt3jM_tdom6Eqa1D51PzJVYMWeQxMdn0kD8vp1aatXFPhcphTs5joQDinnGUWgQ9r5pQXKMiu49QhyBq7coX-w"}).then((CurrentToken)=>
+      console.log("CurrentToken",CurrentToken))
     }
   }
 

@@ -1,20 +1,23 @@
-mportScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
 importScripts(
   "https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"
 );
 
 const firebaseConfig = {
-apiKey: process.env.REACT_APP_apiKey,
-authDomain: process.env.REACT_APP_authDomain,
-projectId: process.env.REACT_APP_projectId,
-storageBucket: process.env.REACT_APP_storageBucket,
-messagingSenderId: process.env.REACT_APP_messagingSenderId,
-appId: process.env.REACT_APP_appId,
-measurementId: process.env.REACT_APP_measurementId
+  apiKey:"AIzaSyDZpNP39PBOECaaUlQaHpq_ar9vdE2sWKs",
+  authDomain:"mbbs-study-overseas.firebaseapp.com",
+  projectId:"mbbs-study-overseas",
+  storageBucket:"mbbs-study-overseas.appspot.com",
+  messagingSenderId:"533857373470",
+  appId:"1:533857373470:web:9160dfb9886d8726364d0f",
+  measurementId:"G-26QFEK1P60"
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
+
+
+
 
 messaging.onBackgroundMessage((payload) => {
   console.log(

@@ -38,15 +38,15 @@ function classNames(...classes) {
 
 const NavBar = () => {
     const Location = useLocation()
-    console.log("Location",Location.pathname);
+    // console.log("Location",Location.pathname);
     const {authUser} = useContext(Context);
-    console.log("testingggggggg",authUser.user.emailVerified?"true":"false")
+    // console.log("testingggggggg",authUser.user.emailVerified?"true":"false")
     const Navigate = useNavigate()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isPopoverOpen, setPopoverOpen] = useState(false);
     const [userLogged, setuserLogged] = useState(false);
     var w = window.innerWidth;
-  console.log("innerWidth",w);
+//   console.log("innerWidth",w);
 
     useEffect(()=>{
         const auth = getAuth(app);   
