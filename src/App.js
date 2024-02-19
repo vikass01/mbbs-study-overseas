@@ -27,8 +27,10 @@ import Universities from "./pages/Universities";
 import UniversityHeader from "./components/UniversityHeader";
 import GetUniversityDetail from "./pages/GetUniversityDetail";
 import LoggedUserMenu from "./components/LoggedUserMenu";
-import { getToken } from "firebase/messaging";
+import { generateToken } from "./Config";
+import { onMessage } from "firebase/messaging";
 import { messaging } from "./Config";
+
 
 export const Context = createContext();
 
@@ -64,29 +66,12 @@ const App = ()=> {
     setuserData(data)
   }
 
-  const NotificationPermission =async()=>{
-    
-    if (Notification.permission === "denied"){
-      console.log("Notification.permission",Notification.permission);
-      const permission = await Notification.requestPermission()
-      console.log("permission",permission);
-        if (permission === "granted"){
-        const token = await getToken(messaging, {vapidKey: "BPt3jM_tdom6Eqa1D51PzJVYMWeQxMdn0kD8vp1aatXFPhcphTs5joQDinnGUWgQ9r5pQXKMiu49QhyBq7coX-w"});
-        console.log("token",token);
-        }else{
-          alert("Notification Alert Disabled")
-        }
-
-
-
-    }else if(Notification.permission === "granted"){
-      getToken(messaging, {vapidKey: "BPt3jM_tdom6Eqa1D51PzJVYMWeQxMdn0kD8vp1aatXFPhcphTs5joQDinnGUWgQ9r5pQXKMiu49QhyBq7coX-w"}).then((CurrentToken)=>
-      console.log("CurrentToken",CurrentToken))
-    }
-  }
-
+  
   useEffect(()=>{
-    NotificationPermission()
+    generateToken()
+    onMessage(messaging, (payload) => {
+      console.log('Message received. ', payload);
+    });
   },[])
 
 
