@@ -37,7 +37,7 @@ const Connect = () => {
         window.Email.send({
             Host : process.env.REACT_APP_Host,
             Username : process.env.REACT_APP_Username,
-            Password : process.env.REACT_APP_Password,
+            Password : process.env.REACT_APP_Pass,
             To : 'mbbsstudyoverseas@gmail.com',
             From : "mbbsstudyoverseas@gmail.com",
             Subject : subject,
