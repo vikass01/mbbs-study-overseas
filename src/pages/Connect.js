@@ -16,15 +16,15 @@ const Connect = () => {
     const [agreed, setAgreed] = useState(false);
     const [name, setname] = useState("");
     const [lastName, setlastName] = useState("");
-    const [company, setcompany] = useState("");
+    const [subject, setsubject] = useState("");
     const [fromEmail, setfromEmail] = useState('');
     // const [email, setemail] = useState("");    
     const [countryCode, setcountryCode] = useState("");
     const [phoneNumber, setphoneNumber] = useState("");    
-    const [subject, setsubject] = useState("Subject...");
+    // const [subject, setsubject] = useState("");
     const [body, setbody] = useState("");
 
-    var Body=`Subject : ${subject}<br>Name : ${name}: ${lastName}<br>From Email : ${fromEmail}<br>Country: ${countryCode}<br>Phone: ${phoneNumber}<br>Company: ${company}<br>Message: ${body}<br>Phone Call Allowed: ${agreed}`;
+    var EmailBody=`Subject : ${subject}<br>Name : ${name} ${lastName}<br>From Email : ${fromEmail}<br>Country: ${countryCode}<br>Phone: ${phoneNumber}<br>Company: ${company}<br>Message: ${body}<br>Phone Call Allowed: ${agreed}`;
            
 
     const sendEmail =()=>{
@@ -36,7 +36,7 @@ const Connect = () => {
             To : 'info@mbbsstudyoverseas.com',
             From : 'mbbsstudyoverseas@gmail.com',
             Subject : subject,
-            Body : Body
+            Body : EmailBody
         }).then(
           message => alert("Email Send Successfully "+message)
         );
@@ -107,7 +107,7 @@ const Connect = () => {
                             />
                         </div>
                     </div>
-                    <div className="sm:col-span-2">
+                    {/* <div className="sm:col-span-2">
                         <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-600">
                             Company
                         </label>
@@ -121,7 +121,7 @@ const Connect = () => {
                                 onChange={(event)=>setcompany(event.target.value)}
                             />
                         </div>
-                    </div>
+                    </div> */}
                     <div className="sm:col-span-2">
                         <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-600">
                             Email
@@ -168,6 +168,21 @@ const Connect = () => {
                                 autoComplete="tel"
                                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 onChange={(event)=>setphoneNumber(event.target.value)}
+                            />
+                        </div>
+                    </div>
+                    <div className="sm:col-span-2">
+                        <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-600">
+                            Subject
+                        </label>
+                        <div className="mt-2.5">
+                            <input
+                                type="text"
+                                name="company"
+                                id="company"
+                                autoComplete="organization"
+                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                onChange={(event)=>setsubject(event.target.value)}
                             />
                         </div>
                     </div>
