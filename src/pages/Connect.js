@@ -24,6 +24,9 @@ const Connect = () => {
     const [subject, setsubject] = useState("Subject...");
     const [body, setbody] = useState("");
 
+    var Body=`Subject : ${subject}<br>Name : ${name}: ${lastName}<br>From Email : ${fromEmail}<br>Country: ${countryCode}<br>Phone: ${phoneNumber}<br>Company: ${company}<br>Message: ${body}<br>Phone Call Allowed: ${agreed}`;
+           
+
     const sendEmail =()=>{
 
         window.Email.send({
@@ -33,7 +36,7 @@ const Connect = () => {
             To : 'info@mbbsstudyoverseas.com',
             From : 'mbbsstudyoverseas@gmail.com',
             Subject : subject,
-            Body : body
+            Body : Body
         }).then(
           message => alert("Email Send Successfully "+message)
         );
