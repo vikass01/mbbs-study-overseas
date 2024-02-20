@@ -219,11 +219,11 @@ const Connect = () => {
             </form>
 
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                <a href="mailto:info@Mbbs Study Overseas.co.in" className="text-primary font-semibold hover:text-gray-500 duration-300 transition-colors">info@Mbbs Study Overseas.co.in</a>
+                <a href="mailto:info@Mbbs Study Overseas.co.in" className="text-primary font-semibold hover:text-gray-500 duration-300 transition-colors">info@Mbbsstudyoverseas.com</a>
                 <p className="leading-normal my-5 text-gray-700 ">
                     <a href="https://goo.gl/maps/Rko9qVf1rBpS9qe2A" className='hover:text-gray-500 duration-300 transition-colors'>
-                        608-A, Pinnacle Business Park
-                        <br />Corporate Road, Prahladnagar, Ahmedabad
+                    Plot No 2/49, opposite Dwarka, 
+                        <br />Bhagwati Garden, New Delhi, Delhi 110059
                     </a>
                 </p>
                 <span className="inline-flex">

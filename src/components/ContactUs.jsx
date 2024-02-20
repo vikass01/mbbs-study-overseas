@@ -5,24 +5,6 @@ import { AtSymbolIcon, PhoneArrowUpRightIcon, BuildingOfficeIcon } from '@heroic
 
 const ContactUs = () => {
 
-    useEffect(()=>{
-        alert("activated")
-        window.Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "mbbsstudyoverseas@gmail.com",
-            Password : "5CB155A3B6C6FC61E70AF5323E47034917E1",
-            To : 'eng.vikas90@gmail.com',
-            From : "mbbsstudyoverseas@gmail.com",
-            Subject : "This is the subject",
-            Body : "And this is the body"
-        }).then(
-          message => alert(message)
-        );
-    },[])
-
-   
-
-
     return (
         <div className="mx-auto">
             <div className="mx-auto mb-8 lg:mb-16 text-center">
@@ -56,7 +38,8 @@ const ContactUs = () => {
                         <h6 className="mb-2 font-semibold leading-5 text-gray-800">Phone</h6>
                         <p className="mb-3 text-sm text-gray-700 hover:text-gray-500 hover:no-underline duration-300 transition-colors">
                             <a href="tel:+917226812550">
-                                +91 72268 12550 / <br /> +91 72268 41550
+                                +91 8700732669 / <br />
+                                 {/* +91 72268 41550 */}
                             </a>
                         </p>
                     </div>
@@ -69,7 +52,7 @@ const ContactUs = () => {
                         <h6 className="mb-2 font-semibold leading-5 text-gray-800">Address</h6>
                         <p className="mb-3 text-sm text-gray-700 hover:text-gray-500 hover:no-underline duration-300 transition-colors">
                             <a href="https://goo.gl/maps/Rko9qVf1rBpS9qe2A" target='_blank' rel="noreferrer">
-                                608-A, Pinnacle Business Park, Corporate Road, Prahladnagar, Ahmedabad
+                            Plot No 2/49, opposite Dwarka, Bhagwati Garden, New Delhi, Delhi 110059
                             </a>
                         </p>
                     </div>
