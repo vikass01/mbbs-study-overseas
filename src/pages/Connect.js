@@ -30,8 +30,8 @@ const Connect = () => {
             Host : process.env.REACT_APP_Host,
             Username : process.env.REACT_APP_Username,
             Password : process.env.REACT_APP_Pass,
-            To : 'mbbsstudyoverseas@gmail.com',
-            From : fromEmail,
+            To : 'info@mbbsstudyoverseas.com',
+            From : "mbbsstudyoverseas@gmail.com",
             Subject : subject,
             Body : body
         }).then(
