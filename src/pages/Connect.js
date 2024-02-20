@@ -25,20 +25,12 @@ const Connect = () => {
     const [body, setbody] = useState("");
 
     const sendEmail =()=>{
-        console.log("name",name);
-        console.log("lastName",lastName);
-        console.log("company",company);
-        console.log("fromEmail",fromEmail);
-        console.log("phoneNumber",phoneNumber);
-        console.log("countryCode",countryCode); 
-        console.log("subject",subject); 
-        console.log("body",body);
 
         window.Email.send({
             Host : process.env.REACT_APP_Host,
             Username : process.env.REACT_APP_Username,
             Password : process.env.REACT_APP_Pass,
-            To : 'mbbsstudyoverseas@gmail.com',
+            To : 'eng.vikas90@gmail.com@gmail.com',
             From : "mbbsstudyoverseas@gmail.com",
             Subject : subject,
             Body : body
